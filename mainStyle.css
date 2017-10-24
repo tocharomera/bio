@@ -137,6 +137,11 @@
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
+	-webkit-animation-name: fadeout; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
 }
 #mobMess{
 	position: absolute;
@@ -158,6 +163,11 @@ div.main:hover ~li#n1{
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
+	-webkit-animation-name: fadein; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
 }
 .navigation li#n1 {
 	
@@ -173,6 +183,11 @@ div.main:hover ~li#n1{
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
+	-webkit-animation-name: fadeout; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
 }
 div.main:hover ~li#n2 {
 	-webkit-transition:all 0.2s ease ;
@@ -186,6 +201,11 @@ div.main:hover ~li#n2 {
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
+	-webkit-animation-name: fadein; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
 }
 #babyDuck{
 	position: absolute;
@@ -208,6 +228,11 @@ div.main:hover ~li#n2 {
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
+	-webkit-animation-name: fadeout; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
 }
 div.main:hover ~li#n3 {
 	-webkit-transition:all 0.2s ease ;
