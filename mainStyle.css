@@ -301,8 +301,9 @@ div.main:hover ~li#n3 {
 	text-decoration: none!important;
 	font-family: pixeled;
 	font-size: 5px;
-	bottom: 5%;
-	right:5%;
+	bottom: 10%;
+	right:0%;
+	transform: rotate(90deg)
 }
 #front{
 	top: 10%;
