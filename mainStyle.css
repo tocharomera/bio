@@ -295,4 +295,21 @@ div.main:hover ~li#n3 {
 	font: bold;
 	transform: skewX( -40deg) translate(-50%, 0%);
 }
+#signature{
+	position:absolute;
+	color:grey;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 5px;
+	bottom: 5%;
+	right:5%;
+}
+#front{
+	top: 10%;
+	left: 10%;
+	width:80%;
+	height:80%;
+	position: absolute;
+	z-index: -100;
+}
 
