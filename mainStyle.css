@@ -161,7 +161,7 @@ div.main:hover ~li#n1{
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(20%, 250%);
+	transform: translate(15%, 240%);
 	animation-name: fadein; 
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -207,7 +207,72 @@ div.main:hover ~li#n2 {
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-15%, 400%);
+	transform: translate(-18%, 400%);
+	background:  #126302;
+	animation-name: fadein; 
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein; 
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+#power{
+	color: aliceblue;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-66%, -10%);
+}
+#plant{
+	color: #126302;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-1%, 80%);
+}
+.navigation li#n2 {
+	background: #126302;
+	-webkit-transition: 1.2s ease;
+	-o-transition: 1.2s ease;
+	transition: 1.2s ease;
+	transform: translate(25%, 100%);
+	-webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+	z-index: -2;
+	animation-name: fadeout; 
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadeout; 
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadeout; 
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+
+div.main:hover ~li#n3 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-58%, 590%);
 	background:  #FFDD30;
 	animation-name: fadein; 
 	animation-duration:3s;
@@ -232,12 +297,12 @@ div.main:hover ~li#n2 {
 	font-size: 30px;
 	transform: skewX( -40deg) translate(-45%, 0%);
 }
-.navigation li#n2 {
+.navigation li#n3 {
 	background: #FFDD30;
 	-webkit-transition: 1.2s ease;
 	-o-transition: 1.2s ease;
 	transition: 1.2s ease;
-	transform: translate(25%, 100%);
+	transform: translate(10%, 150%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -2;
@@ -257,12 +322,13 @@ div.main:hover ~li#n2 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-div.main:hover ~li#n3 {
+
+div.main:hover ~li#n9 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-45%, 550%);
+	transform: translate(-90%, 250%);
  background: -webkit-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Safari 5.1-6.0 */
     background: -moz-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Firefox 3.6-15 */
     background: linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF);
@@ -271,14 +337,14 @@ div.main:hover ~li#n3 {
 	background-size: 600% 600%;
 }
 
-.navigation li#n3 {
+.navigation li#n9 {
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
     background: linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1);  
 	background-size: 600% 600%;
 	-webkit-transition: 1.2s ease;
 	-o-transition: 1.2s ease;
 	transition: 1.2s ease;
-	transform: translate(10%, 100%);
+	transform: translate(10%, -500%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -4;
@@ -303,7 +369,7 @@ div.main:hover ~li#n3 {
 	font-size: 5px;
 	bottom: 18%;
 	right:0%;
-	transform: rotate(90deg)
+	transform: rotate(90deg);
 }
 #front{
 	top: 10%;

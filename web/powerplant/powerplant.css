@@ -1,0 +1,58 @@
+@charset "utf-8";
+@font-face {
+	font-family: Consolas;
+	src: url(powerplant/Consolas.ttf);
+}
+@font-face {
+	font-family: Pixeled;
+	src: url(Pixeled.ttf);
+	font-size: 2.5vw;
+	text-decoration: none;
+	color:blueviolet;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+body{
+	color:#164201;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 1.3vw;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+@media (max-width: 1221px){
+}
+#images{
+	width:"90%"
+	
+}
+#image2{
+	width:"90%"
+	
+}
+#dradoc1{
+	display: block;
+	float: down;
+	width: 100%;
+	
+	margin: auto;
+}
+#dradoc2{
+	display: block;
+	float: none;
+	width:100%;
+	margin: auto;
+}
+#light{
+	display: block;
+	float: none;
+	width:100%;
+	margin: auto;
+}
+#back{
+	float:right;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
