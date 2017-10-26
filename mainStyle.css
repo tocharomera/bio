@@ -57,11 +57,11 @@
 @-webkit-keyframes crossing {
   	0% {
 		background-position: 0% 50%
-			  
+
 	}
 	50% {
 		background-position: 100% 50%
-			 
+
 	}
 	100% {
 		background-position: 0% 50%
@@ -74,7 +74,7 @@
 .navigation, .navigation a.main {
 	border-radius: 0px;
 	transform: skew(40deg);
-	z-index: -3;
+	z-index: 1;
 
 }
 .navigation:hover, .navigation:hover a.main {
@@ -86,7 +86,7 @@
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
     background: linear-gradient(-45deg,#66FF66,#FF6EFF,#AAF0D1);
 	-webkit-animation: crossing 8s ease infinite;
-	animation: crossing 8s ease infinite; 
+	animation: crossing 8s ease infinite;
 		background-size: 600% 600%;
 	display: block;
 	height: 40px;
@@ -133,17 +133,17 @@
 	background-repeat: repeat-x;
 	background-size: 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px;
 	z-index: 0;
-	animation-name: fadeout; 
+	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadeout; 
+	-webkit-animation-name: fadeout;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadeout; 
+	-moz-animation-name: fadeout;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -163,17 +163,17 @@ div.main:hover ~li#n1{
 	transition: all 0.2s ease ;
 	visibility: visible;
 	transform: translate(15%, 240%);
-	animation-name: fadein; 
+	animation-name: fadein;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadein; 
+	-webkit-animation-name: fadein;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadein; 
+	-moz-animation-name: fadein;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -187,17 +187,17 @@ div.main:hover ~li#n1{
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -1;
-	animation-name: fadeout; 
+	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadeout; 
+	-webkit-animation-name: fadeout;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadeout; 
+	-moz-animation-name: fadeout;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -210,17 +210,17 @@ div.main:hover ~li#n2 {
 	visibility: visible;
 	transform: translate(-18%, 400%);
 	background:  #126302;
-	animation-name: fadein; 
+	animation-name: fadein;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadein; 
+	-webkit-animation-name: fadein;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadein; 
+	-moz-animation-name: fadein;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -251,17 +251,17 @@ div.main:hover ~li#n2 {
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -2;
-	animation-name: fadeout; 
+	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadeout; 
+	-webkit-animation-name: fadeout;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadeout; 
+	-moz-animation-name: fadeout;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -275,17 +275,17 @@ div.main:hover ~li#n3 {
 	visibility: visible;
 	transform: translate(-58%, 590%);
 	background:  #FFDD30;
-	animation-name: fadein; 
+	animation-name: fadein;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadein; 
+	-webkit-animation-name: fadein;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadein; 
+	-moz-animation-name: fadein;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -307,17 +307,17 @@ div.main:hover ~li#n3 {
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -2;
-	animation-name: fadeout; 
+	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
 	animation-delay:2s;
 	animation-directionn: normal;
-	-webkit-animation-name: fadeout; 
+	-webkit-animation-name: fadeout;
 	-webkit-animation-duration:3s;
 	-webkit-animation-timing-function:ease;
 	-webkit-animation-delay:2s;
 	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadeout; 
+	-moz-animation-name: fadeout;
 	-moz-animation-duration:3s;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
@@ -334,13 +334,13 @@ div.main:hover ~li#n9 {
     background: -moz-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Firefox 3.6-15 */
     background: linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF);
 	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
-	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ; 
+	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
 	background-size: 600% 600%;
 }
 
 .navigation li#n9 {
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
-    background: linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1);  
+    background: linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1);
 	background-size: 600% 600%;
 	-webkit-transition: 1.2s ease;
 	-o-transition: 1.2s ease;
@@ -374,15 +374,14 @@ div.main:hover ~li#n9 {
 }
 #front{
 	top: 10%;
-	left: 30%;
+	right: 10%;
 	width:60%;
 	height:90%;
 	position: absolute;
-	z-index: -100;
+	z-index: 1;
 	display: table;
 	margin: auto;
 }
 #mobMessVideo{
 
 }
-
