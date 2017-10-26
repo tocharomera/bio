@@ -74,7 +74,7 @@
 .navigation, .navigation a.main {
 	border-radius: 0px;
 	transform: skew(40deg);
-	z-index: 1;
+	z-index: 2;
 
 }
 .navigation:hover, .navigation:hover a.main {
@@ -103,7 +103,7 @@
 	-o-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
 	transform: translate(50%, 100%);
-		z-index: 1;
+		z-index: 20;
 
 }
 .navigation li {
@@ -118,6 +118,7 @@
 	-o-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
 	transform: translate(40%, 100%);
+	z-index: 20;
 }
 .navigation li:nth-child(2) {
 	background-image:
@@ -329,7 +330,7 @@ div.main:hover ~li#n9 {
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-90%, 250%);
+	transform: translate(-90%, 750%);
  background: -webkit-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Safari 5.1-6.0 */
     background: -moz-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Firefox 3.6-15 */
     background: linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF);
@@ -342,10 +343,10 @@ div.main:hover ~li#n9 {
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
     background: linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1);
 	background-size: 600% 600%;
-	-webkit-transition: 1.2s ease;
-	-o-transition: 1.2s ease;
-	transition: 1.2s ease;
-	transform: translate(10%, -500%);
+	-webkit-transition: 1.5s ease;
+	-o-transition: 1.5s ease;
+	transition: 1.5s ease;
+	transform: translate(30%, -200%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -4;
@@ -378,7 +379,7 @@ div.main:hover ~li#n9 {
 	width:60%;
 	height:90%;
 	position: absolute;
-	z-index: 1;
+	z-index: -1;
 	display: table;
 	margin: auto;
 }
