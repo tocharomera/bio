@@ -74,6 +74,7 @@
 .navigation, .navigation a.main {
 	border-radius: 0px;
 	transform: skew(40deg);
+	z-index: -3;
 
 }
 .navigation:hover, .navigation:hover a.main {
