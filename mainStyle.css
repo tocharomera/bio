@@ -352,17 +352,17 @@ div.main:hover ~li#n4 {
 	
 	position: absolute;
 	text-decoration: none!important;
-		color: #0000;
+		color: #000000;
 	font-familY: Pixeled;
 	font-size: 20px;
 	transform: skewX( -40deg) translate(-45%, 0%);
 }
-.navigation li#n3 {
+.navigation li#n4 {
 	background: #F87173;
 	-webkit-transition: 1.2s ease;
 	-o-transition: 1.2s ease;
 	transition: 1.2s ease;
-	transform: translate(10%, 150%);
+	transform: translate(0%, 50%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -2;
@@ -403,7 +403,7 @@ div.main:hover ~li#n9 {
 	-webkit-transition: 1.5s ease;
 	-o-transition: 1.5s ease;
 	transition: 1.5s ease;
-	transform: translate(30%, -200%);
+	transform: translate(0%, -100%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -4;
