@@ -274,7 +274,7 @@ div.main:hover ~li#n3 {
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-58%, 590%);
+	transform: translate(-62%, 615%);
 	background:  #FFDD30;
 	animation-name: fadein;
 	animation-duration:3s;
@@ -330,7 +330,7 @@ div.main:hover ~li#n4 {
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-98%, 790%);
+	transform: translate(-101%, 800%);
 	background:  #F87173;
 	animation-name: fadein;
 	animation-duration:3s;
@@ -387,7 +387,7 @@ div.main:hover ~li#n9 {
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-140%, 1000%);
+	transform: translate(-140%, 980%);
  background: -webkit-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Safari 5.1-6.0 */
     background: -moz-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Firefox 3.6-15 */
     background: linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF);
