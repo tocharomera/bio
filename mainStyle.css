@@ -325,12 +325,69 @@ div.main:hover ~li#n3 {
 	-moz-animation-directionn: normal;
 }
 
+div.main:hover ~li#n4 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-98%, 790%);
+	background:  #F87173;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+#mundoGorila{
+	
+	position: absolute;
+	text-decoration: none!important;
+		color: #0000;
+	font-familY: Pixeled;
+	font-size: 20px;
+	transform: skewX( -40deg) translate(-45%, 0%);
+}
+.navigation li#n3 {
+	background: #F87173;
+	-webkit-transition: 1.2s ease;
+	-o-transition: 1.2s ease;
+	transition: 1.2s ease;
+	transform: translate(10%, 150%);
+	-webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+	z-index: -2;
+	animation-name: fadeout;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadeout;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
 div.main:hover ~li#n9 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-90%, 750%);
+	transform: translate(-140%, 1000%);
  background: -webkit-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Safari 5.1-6.0 */
     background: -moz-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Firefox 3.6-15 */
     background: linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF);
