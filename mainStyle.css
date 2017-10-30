@@ -72,9 +72,11 @@
 
 }
 .navigation, .navigation a.main {
-	border-radius: 0px;
-	transform: skew(40deg);
+
+	transform: skew(40deg) translate(-15%, 0%);
 	z-index: 2;
+	height:0px;
+	
 
 }
 .navigation:hover, .navigation:hover a.main {
