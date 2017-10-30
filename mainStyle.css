@@ -362,6 +362,78 @@ div.main:hover ~li#n4 {
 	-webkit-transition: 1.2s ease;
 	-o-transition: 1.2s ease;
 	transition: 1.2s ease;
+	transform: translate(10%, 50%);
+	-webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+	z-index: -2;
+	animation-name: fadeout;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadeout;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+
+div.main:hover ~li#n5 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-136%, 1000%);
+	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
+  radial-gradient(#2a2c4d 15%, transparent 5%),
+  radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
+  radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
+	 background-size: 10px 10px;
+  background-color: #FFF;
+	
+ 
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+#comuna{
+	
+	position: absolute;
+	text-decoration: none!important;
+		color: #FFF;
+	text-shadow: -1px 0 #FD0105, 0 1px #FD0105, 1px 0 #FD0105, 0 -1px #FD0105;
+	font-familY: Pixeled;
+	font-size: 20px;
+	transform: skewX( -40deg) translate(-50%, -10%);
+}
+.navigation li#n5 {
+		background:radial-gradient(#303258 5%, transparent 15%) 0 0,
+  radial-gradient(#2a2c4d 15%, transparent 5%),
+  radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
+  radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
+	 background-size: 10px 10px;
+  background-color: #FFF;
+		
+	-webkit-transition: 1.2s ease;
+	-o-transition: 1.2s ease;
+	transition: 1.2s ease;
 	transform: translate(0%, 50%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
@@ -387,30 +459,32 @@ div.main:hover ~li#n9 {
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
 	visibility: visible;
-	transform: translate(-133%, 980%);
- background: -webkit-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Safari 5.1-6.0 */
-    background: -moz-linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF); /* Firefox 3.6-15 */
-    background: linear-gradient(-45deg, #AAF0D1,#66FF66,#FF6EFF);
+	transform: translate(-173%, 1180%);
+ 	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+   
 	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
 	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
-	background-size: 600% 600%;
+	
 }
 
 .navigation li#n9 {
-	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
-    background: linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1);
-	background-size: 600% 600%;
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+    background-size: 25px 25px;
 	-webkit-transition: 1.5s ease;
 	-o-transition: 1.5s ease;
 	transition: 1.5s ease;
-	transform: translate(0%, -100%);
+	transform: translate(30%, -300%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
 	z-index: -4;
 	-webkit-animation: crossing 8s ease infinite, 3s ease 2s normal forwards 1 fadeout ;
 	animation: crossing 8s ease infinite, 3s ease 2s normal forwards 1 fadeout ;
 }
-#blog{
+#Fragiles{
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	color: white;
 	position: absolute;
