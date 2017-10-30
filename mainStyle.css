@@ -73,7 +73,7 @@
 }
 .navigation, .navigation a.main {
 
-	transform: skew(40deg) translate(-15%, 0%);
+	transform: skew(40deg) translate(-10%, 0%);
 	z-index: 2;
 	height:0px;
 	
