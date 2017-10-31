@@ -2,8 +2,7 @@
 
 @media (max-width: 1221px) {
 }
-#menu {
-}
+
 @font-face {
 	font-family: babyblocks;
 	src: url(web/babyblocks.ttf);
@@ -83,6 +82,76 @@
 
 
 }
+
+#profile{
+	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
+    background: linear-gradient(-45deg,#66FF66,#FF6EFF,#AAF0D1);
+	-webkit-animation: crossing 8s ease infinite;
+	animation: crossing 8s ease infinite;
+		background-size: 600% 600%;
+	display: block;
+	height: 40px;
+	width: 250px;
+	font: bold 15px/40px arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+	color: #000;
+	background-color: #333;
+	-webkit-transition: 0.2s ease;
+	-o-transition: 0.2s ease;
+	transition: 0.2s ease;
+	-webkit-transform-origin: 50% 0%;
+	-o-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	transform:  rotate(90deg) skew(-40deg);
+		bottom: 15%;
+	right:-3%;
+		z-index: -2;
+	position: absolute;
+	
+}
+#signature{
+	position:absolute;
+	color:grey;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 5px;
+	
+	right:2%;
+	transform: skew(40deg);
+}
+#profile:hover ~.front{
+	
+-webkit-transition:all 0.51s ease ;
+	-o-transition:all 0.51s ease ;
+	transition: all 0.51s ease ;
+opacity:0;
+}
+#profile:hover ~#cv{
+-webkit-transition:all 3.2s ease ;
+	-o-transition:all 3.2s ease ;
+	transition: all 3.2s ease ;
+
+	opacity:1;
+
+}
+#cv{
+	position: absolute;
+opacity:0;
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	width:50%;
+	height:90%;
+	left:30%;
+	top:5%;
+	margin: auto;
+	font-family: Consolas;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 .navigation .main {
 
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
@@ -496,17 +565,14 @@ div.main:hover ~li#n9 {
 	font: bold;
 	transform: skewX( -40deg) translate(-50%, 0%);
 }
-#signature{
-	position:absolute;
-	color:grey;
-	text-decoration: none!important;
-	font-family: pixeled;
-	font-size: 5px;
-	bottom: 18%;
-	right:0%;
-	transform: rotate(90deg);
-}
+
+
+
 #front{
+	opacity:1;
+	-webkit-transition:all 1.2s ease ;
+	-o-transition:all 1.2s ease ;
+	transition: all 1.2s ease ;
 	top: 10%;
 	right: 10%;
 	width:60%;
@@ -515,7 +581,6 @@ div.main:hover ~li#n9 {
 	z-index: -1;
 	display: table;
 	margin: auto;
+	
 }
-#mobMessVideo{
 
-}
