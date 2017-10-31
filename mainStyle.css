@@ -106,7 +106,7 @@
 	transform:  rotate(90deg) skew(-40deg);
 		bottom: 15%;
 	right:-3%;
-		z-index: -2;
+		z-index: 2;
 	position: absolute;
 	
 }
