@@ -570,7 +570,7 @@ div.main:hover ~li#n9 {
 
 #front{
 	opacity:1;
-	-webkit-transition:all 1.2s ease ;
+	-webkit-transition:opacity 1.2s ease ;
 	-o-transition:all 1.2s ease ;
 	transition: all 1.2s ease ;
 	top: 10%;
