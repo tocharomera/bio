@@ -106,7 +106,7 @@
 	transform:  rotate(90deg) skew(-40deg);
 		bottom: 15%;
 	right:-3%;
-		z-index: 2;
+	z-index: 1;
 	position: absolute;
 	
 }
@@ -186,14 +186,11 @@ animation-name: fadein;
 	opacity: 0;
 
 	position: absolute;
-
-	-webkit-transition:all 0.2s ease ;
-	-o-transition:all 0.2s ease ;
-	transition: all 0.2s ease ;
+z-index: -3;
 	width:50%;
 	height:90%;
 	left:30%;
-	top:5%;
+	top:10%;
 	margin: auto;
 	font-family: Consolas;
 	overflow-wrap: break-word;
@@ -223,8 +220,8 @@ animation-name: fadein;
 	-o-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
 	transform: translate(50%, 100%);
-		z-index: 20;
-
+	z-index: 1;
+	
 }
 .navigation li {
 	visibility: hidden;
@@ -238,7 +235,7 @@ animation-name: fadein;
 	-o-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
 	transform: translate(40%, 100%);
-	z-index: 20;
+	z-index: 2;
 }
 .navigation li:nth-child(2) {
 	background-image:
@@ -253,7 +250,7 @@ animation-name: fadein;
 	background-position: 0 0, 0 5px, 0 10px, 0 15px, 0 20px, 0 25px, 0 30px, 0 35px;
 	background-repeat: repeat-x;
 	background-size: 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px;
-	z-index: 0;
+	z-index: 2;
 	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -307,7 +304,7 @@ div.main:hover ~li#n1{
 	transform: translate(35%, 120%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
-	z-index: -1;
+	z-index: 2;
 	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -371,7 +368,7 @@ div.main:hover ~li#n2 {
 	transform: translate(25%, 100%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
-	z-index: -2;
+	z-index: 2;
 	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -427,7 +424,7 @@ div.main:hover ~li#n3 {
 	transform: translate(10%, 150%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
-	z-index: -2;
+	z-index: 2;
 	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -485,7 +482,7 @@ div.main:hover ~li#n4 {
 	transform: translate(10%, 50%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
-	z-index: -2;
+	z-index: 2;
 	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -557,7 +554,7 @@ div.main:hover ~li#n5 {
 	transform: translate(0%, 50%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
-	z-index: -2;
+	z-index: 2;
 	animation-name: fadeout;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -583,7 +580,7 @@ div.main:hover ~li#n9 {
  	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
     linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
     linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
-   
+   z-index: 2;
 	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
 	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
 	
@@ -600,7 +597,7 @@ div.main:hover ~li#n9 {
 	transform: translate(30%, -300%);
 	-webkit-transition-delay: 2s; /* Safari */
     transition-delay: 2s;
-	z-index: -4;
+	z-index: 2;
 	-webkit-animation: crossing 8s ease infinite, 3s ease 2s normal forwards 1 fadeout ;
 	animation: crossing 8s ease infinite, 3s ease 2s normal forwards 1 fadeout ;
 }
@@ -644,7 +641,7 @@ div.main:hover ~li#n9 {
 	width:60%;
 	height:90%;
 	position: absolute;
-	z-index: 2;
+	z-index: -1;
 	display: table;
 	margin: auto;
 	
