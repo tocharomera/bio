@@ -165,21 +165,7 @@ animation-name: fadein;
 	opacity: 1;
 }
 #cv{
-	animation-name: fadeout;
-	animation-duration:01.21s;
-	animation-timing-function:ease;
-	animation-delay:0s;
-	animation-directionn: normal;
-	-webkit-animation-name: fadeout;
-	-webkit-animation-duration:01.2s;
-	-webkit-animation-timing-function:ease;
-	-webkit-animation-delay:0s;
-	-webkit-animation-directionn: normal;
-	-moz-animation-name: fadeout;
-	-moz-animation-duration:01.2s;
-	-moz-animation-timing-function:ease;
-	-moz-animation-delay:0s;
-	-moz-animation-directionn: normal;
+
 		-webkit-transition:opacity 1.2s ease ;
 	-o-transition:opacity 1.2s ease ;
 	transition:opacity all 1.2s ease ;
