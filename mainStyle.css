@@ -67,22 +67,11 @@
 	}
 
 }
-.navigation {
-
-}
 .navigation, .navigation a.main {
-
 	transform: skew(40deg) translate(-10%, 0%);
 	z-index: 2;
 	height:0px;
-	
-
 }
-.navigation:hover, .navigation:hover a.main {
-
-
-}
-
 #profile{
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
     background: linear-gradient(-45deg,#66FF66,#FF6EFF,#AAF0D1);
@@ -108,7 +97,6 @@
 	right:-3%;
 	z-index: 1;
 	position: absolute;
-	
 }
 #signature{
 	position:absolute;
@@ -116,12 +104,10 @@
 	text-decoration: none!important;
 	font-family: pixeled;
 	font-size: 5px;
-	
 	right:2%;
 	transform: skew(40deg);
 }
 #profile:hover ~.front{
-	
 animation-name: fadeout;
 	animation-duration:01.21s;
 	animation-timing-function:ease;
@@ -137,7 +123,6 @@ animation-name: fadeout;
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:0s;
 	-moz-animation-directionn: normal;
-	
 		-webkit-transition:opacity 1.2s ease ;
 	-o-transition:opacity 1.2s ease ;
 	transition:opacity all 1.2s ease ;
@@ -165,12 +150,10 @@ animation-name: fadein;
 	opacity: 1;
 }
 #cv{
-
 		-webkit-transition:opacity 1.2s ease ;
 	-o-transition:opacity 1.2s ease ;
 	transition:opacity all 1.2s ease ;
 	opacity: 0;
-
 	position: absolute;
 z-index: -3;
 	width:50%;
@@ -185,7 +168,6 @@ z-index: -3;
 }
 
 .navigation .main {
-
 	background: -webkit-linear-gradient(-45deg, #66FF66,#FF6EFF,#AAF0D1); /* Safari 5.1-6.0 */
     background: linear-gradient(-45deg,#66FF66,#FF6EFF,#AAF0D1);
 	-webkit-animation: crossing 8s ease infinite;
@@ -207,7 +189,6 @@ z-index: -3;
 	transform-origin: 50% 0%;
 	transform: translate(50%, 100%);
 	z-index: 1;
-	
 }
 .navigation li {
 	visibility: hidden;
@@ -261,11 +242,12 @@ z-index: -3;
 	font-size: 30px;
 	transform: skewX( -40deg) translate(-40%, -10%);
 }
+
 div.main:hover ~li#n1{
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
-	visibility: visible;
+
 	transform: translate(18%, 250%);
 	animation-name: fadein;
 	animation-duration:3s;
@@ -282,7 +264,9 @@ div.main:hover ~li#n1{
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
+	 		visibility: visible!important;
 }
+
 .navigation li#n1 {
 	-webkit-transition:all 1.2s ease ;
 	-o-transition:all 1.2s ease ;
@@ -306,8 +290,20 @@ div.main:hover ~li#n1{
 	-moz-animation-timing-function:ease;
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
+
 }
-div.main:hover ~li#n2 {
+li#n1:hover{
+	 -webkit-transition:all paused ease ;
+ 	-o-transition:all paused ease ;
+ 	transition: all paused ease ;
+ 	visibility: visible;
+transform: translate(18%, 250%);
+	-webkit-animation-play-state: paused;
+	 -moz-animation-play-state: paused;
+	 -o-animation-play-state: paused;
+		animation-play-state: paused;
+}
+li#n1:hover ~li#n2{
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
@@ -330,6 +326,64 @@ div.main:hover ~li#n2 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
+div.main:hover ~li#n2 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+
+	transform: translate(-17%, 410%);
+	background:  #126302;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+	 	visibility: visible!important;
+}
+li#n2:hover ~  #n1 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	transform: translate(18%, 250%)!important;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+			visibility: visible!important;
+}
+li#n2:hover{
+	-webkit-transition:all paused ease ;
+ -o-transition:all paused ease ;
+ transition: all paused ease ;
+ visibility: visible;
+ transform: translate(-17%, 410%)!important;
+ -webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-o-animation-play-state: paused;
+	 animation-play-state: paused;
+}
+
 #power{
 	color: aliceblue;
 	position: absolute;
@@ -371,7 +425,87 @@ div.main:hover ~li#n2 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-
+li#n2:hover ~li#n3
+{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-59%, 615%);
+	background:  #FFDD30;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n1:hover ~li#n3{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-59%, 615%);
+	background:  #FFDD30;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n3:hover ~  #n4 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-96%, 800%);
+	background:  #F87173;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n3:hover {
+-webkit-transition:all paused ease ;
+-o-transition:all paused ease ;
+transition: all paused ease ;
+visibility: visible;
+	transform: translate(-59%, 615%)!important;
+-webkit-animation-play-state: paused;
+-moz-animation-play-state: paused;
+-o-animation-play-state: paused;
+ animation-play-state: paused;
+}
 div.main:hover ~li#n3 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -428,6 +562,86 @@ div.main:hover ~li#n3 {
 	-moz-animation-directionn: normal;
 }
 
+li#n1:hover ~li#n4{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-96%, 800%);
+	background:  #F87173;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n2:hover ~li#n4{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-96%, 800%);
+	background:  #F87173;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n3:hover ~li#n4{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-96%, 800%);
+	background:  #F87173;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n4:hover {
+-webkit-transition:all paused ease !important;
+-o-transition:all paused ease !important;
+transition: all paused ease !important;
+visibility: visible!important;
+transform: translate(-96%, 800%)!important;
+-webkit-animation-play-state: paused!important;
+-moz-animation-play-state: paused!important;
+-o-animation-play-state: paused!important;
+ animation-play-state: paused!important;
+}
 div.main:hover ~li#n4 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -452,7 +666,6 @@ div.main:hover ~li#n4 {
 	-moz-animation-directionn: normal;
 }
 #mundoGorila{
-	
 	position: absolute;
 	text-decoration: none!important;
 		color: #000000;
@@ -485,7 +698,129 @@ div.main:hover ~li#n4 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-
+li#n1:hover ~li#n5{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-136%, 1000%);
+	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
+	radial-gradient(#2a2c4d 15%, transparent 5%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
+	 background-size: 10px 10px;
+	background-color: #FFF;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n2:hover ~li#n5{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-136%, 1000%);
+	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
+	radial-gradient(#2a2c4d 15%, transparent 5%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
+	 background-size: 10px 10px;
+	background-color: #FFF;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n3:hover ~li#n5{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-136%, 1000%);
+	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
+	radial-gradient(#2a2c4d 15%, transparent 5%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
+	 background-size: 10px 10px;
+	background-color: #FFF;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n4:hover ~li#n5{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-136%, 1000%);
+	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
+	radial-gradient(#2a2c4d 15%, transparent 5%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
+	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
+	 background-size: 10px 10px;
+	background-color: #FFF;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+}
+li#n5:hover {
+-webkit-transition:all paused ease !important;
+-o-transition:all paused ease !important;
+transition: all paused ease !important;
+visibility: visible!important;
+	transform: translate(-136%, 1000%)!important;
+-webkit-animation-play-state: paused!important;
+-moz-animation-play-state: paused!important;
+-o-animation-play-state: paused!important;
+ animation-play-state: paused!important;
+}
 div.main:hover ~li#n5 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -498,8 +833,6 @@ div.main:hover ~li#n5 {
   radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
 	 background-size: 10px 10px;
   background-color: #FFF;
-	
- 
 	animation-name: fadein;
 	animation-duration:3s;
 	animation-timing-function:ease;
@@ -517,7 +850,6 @@ div.main:hover ~li#n5 {
 	-moz-animation-directionn: normal;
 }
 #comuna{
-	
 	position: absolute;
 	text-decoration: none!important;
 		color: #FFF;
@@ -533,7 +865,6 @@ div.main:hover ~li#n5 {
   radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
 	 background-size: 10px 10px;
   background-color: #FFF;
-		
 	-webkit-transition: 1.2s ease;
 	-o-transition: 1.2s ease;
 	transition: 1.2s ease;
@@ -557,6 +888,82 @@ div.main:hover ~li#n5 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
+li#n1:hover ~li#n9{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-173%, 1180%);
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+		linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+		linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+	 z-index: 2;
+	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
+	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
+}
+li#n2:hover ~li#n9{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-173%, 1180%);
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+		linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+		linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+	 z-index: 2;
+	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
+	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
+}
+li#n3:hover ~li#n9{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-173%, 1180%);
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+		linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+		linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+	 z-index: 2;
+	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
+	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
+}
+li#n4:hover ~li#n9{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-173%, 1180%);
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+		linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+		linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+	 z-index: 2;
+	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
+	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
+}
+li#n5:hover ~li#n9{
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	visibility: visible;
+	transform: translate(-173%, 1180%);
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+		linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+		linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+	 z-index: 2;
+	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
+	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
+}
+li#n9:hover{
+-webkit-transition:all paused ease !important;
+-o-transition:all paused ease !important;
+transition: all paused ease !important;
+visibility: visible!important;
+	transform: translate(-173%, 1180%)!important;
+-webkit-animation-play-state: paused!important;
+-moz-animation-play-state: paused!important;
+-o-animation-play-state: paused!important;
+ animation-play-state: paused!important;
+}
 div.main:hover ~li#n9 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -569,14 +976,11 @@ div.main:hover ~li#n9 {
    z-index: 2;
 	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein ;;
 	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  ;
-	
 }
-
 .navigation li#n9 {
 	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
     linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
     linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
-   
 	-webkit-transition: 1.5s ease;
 	-o-transition: 1.5s ease;
 	transition: 1.5s ease;
@@ -597,9 +1001,6 @@ div.main:hover ~li#n9 {
 	font: bold;
 	transform: skewX( -40deg) translate(-50%, 0%);
 }
-
-
-
 #front{
 	animation-name: fadein;
 	animation-duration:02.21s;
@@ -620,16 +1021,12 @@ div.main:hover ~li#n9 {
 	-o-transition:opacity 1.2s ease ;
 	transition:opacity all 1.2s ease ;
 	opacity: 1;
-	
-
 	top: 10%;
 	right: 10%;
-	width:60%;
+	width:70%;
 	height:90%;
 	position: absolute;
 	z-index: -1;
 	display: table;
 	margin: auto;
-	
 }
-
