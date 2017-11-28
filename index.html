@@ -7,7 +7,10 @@
 </style>
 <link href="mainStyle.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
+<link rel="stylesheet" type="text/css"
+  href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
 <script>
 
 	var processor = {};
@@ -17,9 +20,8 @@
 	var height = 674;
 $( document ).ready(function() {
 
-	var stop  = document.getElementById('stop');
-	var start = document.getElementById('start');
-	var take = document.getElementById('take');
+	var button = document.getElementById('button');
+
 	var videoStream = null;
 	var video = document.getElementById("video");
 
@@ -47,67 +49,70 @@ $( document ).ready(function() {
 			document.getElementById('gum-partially-supported').classList.remove('hidden');
 		}
 
-		start.addEventListener('click', function() {
-			// Capture user's audio and video source
-			navigator.getUserMedia({
-				video: true,
-				audio: false
-			},
-			function(stream) {
-				videoStream = stream;
-				// Stream the data
-				video.src = createSrc(stream);
+		button.addEventListener('click', function() {
+      if ($(this).hasClass('icon-camera')) {
+        navigator.getUserMedia({
+  				video: true,
+  				audio: false
+  			},
+  			function(stream) {
+  				videoStream = stream;
+  				video.src = createSrc(stream);
+  				video.play();
+  				var c1 = document.getElementById('canvas1');
+  	 		 var ctx1 = c1.getContext('2d');
+  			 interact = "true";
+  			 (function loop() {
+  			 if (!video.paused && !video.ended) {
+  				 height = video.videoHeight;
+  				 c1.setAttribute('height', height*1.4);
+  				 c1.setAttribute('width', width*1.6);
+  					 ctx1.drawImage(video, -width/2, 0, width*1.6, height*1.4);
+  					 setTimeout(loop, 1000 / 30); // drawing at 30fps
+  			 }
+  	 		})();
+  			},
+  			function(error) {
+  				console.log("Video capture error: ", error.code);
+  			});
+      $(this).removeClass('icon-camera ').addClass('icon-stop');
+  } else if ($(this).hasClass('icon-stop')) {
+    var c = document.getElementById('canvas');
+    var c1 = document.getElementById('canvas1');
+    var context = c.getContext('2d');
+    var ctx1 = c1.getContext('2d');
+    interact = "true";
+      c1.setAttribute('height', height*1.4);
+      c1.setAttribute('width', width*1.6);
+      c.setAttribute('height', height*1.4);
+      c.setAttribute('width', width*1.6);
+        ctx1.drawImage(video, 0, 0, width*1.6, height*1.4);
+        var data = c.toDataURL('image/jpg');
+        img.setAttribute('src', data);
+        var temp = new Image;
+          temp.setAttribute('src', data);
+    video.pause();
+    ctx1.drawImage(temp, 0, 0, width*1.6, height*1.4);
 
-				video.play();
+      $(this).removeClass('icon-stop').addClass('icon-play');
+  } else if ($(this).hasClass('icon-play')) {
+    var c = document.getElementById('canvas');
+    var c1 = document.getElementById('canvas1');
 
-				var c1 = document.getElementById('canvas1');
+    var data = c1.toDataURL('image/jpg');
+    video.pause();
+    interact = "false";
 
-	 		 var ctx1 = c1.getContext('2d');
-
-			 interact = "true";
-			 (function loop() {
-			 if (!video.paused && !video.ended) {
-				 height = video.videoHeight;
-
-				 c1.setAttribute('height', height*1.4);
-				 c1.setAttribute('width', width*1.6);
-					 ctx1.drawImage(video, -width/2, 0, width*1.6, height*1.4);
-					 setTimeout(loop, 1000 / 30); // drawing at 30fps
-			 }
-	 		})();
-
-
-			},
-			function(error) {
-				console.log("Video capture error: ", error.code);
-			});
-
-			take.addEventListener('click', function() {
-    	var context = canvas.getContext('2d');
-			height = video.videoHeight;
-			video.pause();
-      context.drawImage(video, -width/2, 0, width*1.6, height*1.4);
-			var c1 = document.getElementById('canvas1');
-			height =  canvas.height;
-			width = canvas.width;
-      var data = canvas.toDataURL('image/jpg');
-      img.setAttribute('src', data);
-			interact = "false";
-			processor.doLoad();
+    img.setAttribute('src', data);
+    processor.doLoad()
+    // Stop the stream
+    videoStream.stop();
+      $(this).removeClass('icon-play').addClass('icon-camera');
+  }
 		});
-		});
-		stop.addEventListener('click', function() {
-			// Pause the video
-			video.pause();
-			interact = "false";
 
-			img.setAttribute('src', data);
-			processor.doLoad()
-			// Stop the stream
-			videoStream.stop();
-		});
 	}
-});
+
   processor.doLoad = function doLoad() {
 		 var c = document.getElementById('canvas');
 		 var ctx = c.getContext('2d');
@@ -245,6 +250,8 @@ $( document ).ready(function() {
           return id;
 
       };
+      processor.doLoad();
+      });
 	</script>
 
 <meta charset="utf-8">
@@ -273,7 +280,7 @@ $( document ).ready(function() {
 
   <div id="profile" href="">
   	<div id="signature">
-	<h1>Mario Romera Gomez 2017</h1>
+	<p>Mario Romera Gomez 2017</p>
 </div>
   </div>
 
@@ -281,13 +288,17 @@ $( document ).ready(function() {
 
 	<video id="video"  style="display:none"></video>
 
-		<button id="start" class="button-demo"  >Start</button>
-		<button id="stop" class="button-demo"  >Stop </button>
-		<button id="take" class="button-demo"  >Take </button>
+
   <canvas id="canvas" class="canvases" width="418px" height="674px" style="display: none;margin:auto;"></canvas>
 <canvas id="canvas1" class="canvases" width="418px" height="674px" style="display: block; margin:auto;"></canvas>
 	<!--<img id="orig" src="perfil.jpg" display="none!important">-->
-	<img onload="processor.doLoad()" id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
+	<img onload="" id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
+	<div id="button" class='btn btn-default btn-circle icon-camera'>
+
+
+	</div>
+
+
 <!--<iframe class="video" id="mobMessVideo" src="https://player.vimeo.com/video/235053964?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <iframe class="video" id="powerPlantVideo" src="https://player.vimeo.com/video/170283974?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <iframe class="video" id="baby" src="https://player.vimeo.com/video/168608161?title=0&byline=0&portrait=0&loop=1" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
