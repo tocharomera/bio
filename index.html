@@ -20,7 +20,7 @@
 	var height = 674;
 $( document ).ready(function() {
 
-	var button = document.getElementById('button');
+	var button = document.getElementById('icon');
 
 	var videoStream = null;
 	var video = document.getElementById("video");
@@ -59,15 +59,17 @@ $( document ).ready(function() {
   				videoStream = stream;
   				video.src = createSrc(stream);
   				video.play();
+          var c = document.getElementById('canvas');
   				var c1 = document.getElementById('canvas1');
+
   	 		 var ctx1 = c1.getContext('2d');
   			 interact = "true";
   			 (function loop() {
   			 if (!video.paused && !video.ended) {
   				 height = video.videoHeight;
-  				 c1.setAttribute('height', height*1.4);
-  				 c1.setAttribute('width', width*1.6);
-  					 ctx1.drawImage(video, -width/2, 0, width*1.6, height*1.4);
+  				 c1.setAttribute('height', c.height);
+  				 c1.setAttribute('width', c.width);
+  					 ctx1.drawImage(video, 0, -video.width/2, width, c.height);
   					 setTimeout(loop, 1000 / 30); // drawing at 30fps
   			 }
   	 		})();
@@ -82,17 +84,16 @@ $( document ).ready(function() {
     var context = c.getContext('2d');
     var ctx1 = c1.getContext('2d');
     interact = "true";
-      c1.setAttribute('height', height*1.4);
-      c1.setAttribute('width', width*1.6);
-      c.setAttribute('height', height*1.4);
-      c.setAttribute('width', width*1.6);
-        ctx1.drawImage(video, 0, 0, width*1.6, height*1.4);
+      c1.setAttribute('height', c.height);
+      c1.setAttribute('width', c.width);
+
+        ctx1.drawImage(video, 0, 0, width, c.height);
         var data = c.toDataURL('image/jpg');
         img.setAttribute('src', data);
         var temp = new Image;
           temp.setAttribute('src', data);
     video.pause();
-    ctx1.drawImage(temp, 0, 0, width*1.6, height*1.4);
+    ctx1.drawImage(temp, 0, -video.width/2, width, c.height);
 
       $(this).removeClass('icon-stop').addClass('icon-play');
   } else if ($(this).hasClass('icon-play')) {
@@ -100,12 +101,17 @@ $( document ).ready(function() {
     var c1 = document.getElementById('canvas1');
 
     var data = c1.toDataURL('image/jpg');
+        img.setAttribute('src', data);
     video.pause();
     interact = "false";
+    processor.doLoad();
 
-    img.setAttribute('src', data);
-    processor.doLoad()
-    // Stop the stream
+    var ajax = new XMLHttpRequest();
+    var postdata='saveimage.php';
+    ajax.open('POST', postdata, false);
+    ajax.setRequestHeader('Content-Type', 'application/upload');
+    ajax.send(data);
+
     videoStream.stop();
       $(this).removeClass('icon-play').addClass('icon-camera');
   }
@@ -119,7 +125,7 @@ $( document ).ready(function() {
 		 var c1 = document.getElementById('canvas1');
 		 var ctx1 = c1.getContext('2d');
 		 c1.setAttribute('width', width);
-		 c1.setAttribute('height', height);
+		 c1.setAttribute('height', c.height);
 		 if(interact ===  "false"){
 
 			 setTimeout(function(){
@@ -132,8 +138,8 @@ $( document ).ready(function() {
 		 }else{
 
 		 }
-	      ctx.drawImage(img, 0, 0, img.width, img.height);
-    let frame = ctx.getImageData(0, 0, img.width, img.height);
+	      ctx.drawImage(img, 0, 0, width, c.height);
+    let frame = ctx.getImageData(0, 0, width, c.height);
 
      frame= sobel(frame);
     ctx1.putImageData(frame, 0, 0);
@@ -293,9 +299,10 @@ $( document ).ready(function() {
 <canvas id="canvas1" class="canvases" width="418px" height="674px" style="display: block; margin:auto;"></canvas>
 	<!--<img id="orig" src="perfil.jpg" display="none!important">-->
 	<img onload="" id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
-	<div id="button" class='btn btn-default btn-circle icon-camera'>
+	<div id="button" >
+    <div id="icon" class='btn btn-default btn-circle icon-camera'>
 
-
+    </div>
 	</div>
 
 
