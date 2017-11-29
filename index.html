@@ -88,7 +88,7 @@ $( document ).ready(function() {
       c1.setAttribute('width', c.width);
 
         ctx1.drawImage(video, 0, 0, width, c.height);
-        var data = c.toDataURL('image/jpg');
+        var data = c.toDataURL('image/jpeg');
         img.setAttribute('src', data);
         var temp = new Image;
           temp.setAttribute('src', data);
@@ -100,17 +100,18 @@ $( document ).ready(function() {
     var c = document.getElementById('canvas');
     var c1 = document.getElementById('canvas1');
 
-    var data = c1.toDataURL('image/jpg');
+    var data = c1.toDataURL('image/jpeg');
         img.setAttribute('src', data);
     video.pause();
     interact = "false";
-    processor.doLoad();
 
+    processor.doLoad();
     var ajax = new XMLHttpRequest();
-    var postdata='saveimage.php';
+    var postdata='/saveimage.php';
     ajax.open('POST', postdata, false);
     ajax.setRequestHeader('Content-Type', 'application/upload');
     ajax.send(data);
+
 
     videoStream.stop();
       $(this).removeClass('icon-play').addClass('icon-camera');
@@ -274,13 +275,6 @@ $( document ).ready(function() {
 	<li class="list" id="n4"><a id="mundoGorila" href="https://tocharomera.github.io/mundoGorila">MundoGorila</a></li>
 	<li class="list" id="n5"><a id="comuna" href="https://tocharomera.github.io/Comuna-con-la-Cocina">Comuna</a></li>
 
-
-	<!--<li class="list" id="n4"><a href="4">item #4</a></li>
-	<li class="list" id="n5"><a href="5">item #5</a></li>
-	<li class="list" id="n6"><a href="6">item #2</a></li>
-	<li class="list" id="n7"><a href="7">item #2</a></li>
-	<li class="list" id="n8"><a href="8">item #2</a></li>-->
-
 	<li class="list" id="n9"><a id="Fragiles" href="https://tocharomera.github.io/Fragiles">Fragiles</a></li>
 </ul>
 
@@ -303,20 +297,12 @@ $( document ).ready(function() {
     <div id="icon" class='btn btn-default btn-circle icon-camera'>
 
     </div>
+    <br>
+    <br>
+    <br>
+    <p>U THINK YOU WOULD LOOK BETTER?</p>
 	</div>
 
-
-<!--<iframe class="video" id="mobMessVideo" src="https://player.vimeo.com/video/235053964?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe class="video" id="powerPlantVideo" src="https://player.vimeo.com/video/170283974?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe class="video" id="baby" src="https://player.vimeo.com/video/168608161?title=0&byline=0&portrait=0&loop=1" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe class="video" id="gorilla" src="https://player.vimeo.com/video/129450877?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<iframe class="video" id="comunaVid" src="https://player.vimeo.com/video/91565964?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="display:block; margin:auto;"></iframe>
-<iframe id="rest" src="https://player.vimeo.com/video/123565594?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe id="doner" src="https://player.vimeo.com/video/108715664?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe id="laruta" src="https://player.vimeo.com/video/102427288?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<iframe id="interiorizacion" src="https://player.vimeo.com/video/66734666?title=0&byline=0&portrait=0" width="320" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
--->
 </div>
 <div id="cv">
 	<p>
