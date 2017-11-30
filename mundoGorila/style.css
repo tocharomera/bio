@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: Consolas;
+	src: url(web/Consolas.ttf);
+}
+@font-face {
+	font-family: Pixeled;
+	src: url(web/Pixeled.ttf);
+	font-size: 2.5vw;
+	text-decoration: none;
+	color:blueviolet;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+@media (max-width: 1298px){
+}
+.banner{
+	display: table;
+	float:left;
+	position: absolute;
+}
+#gorila{
+	display: block;
+	margin: auto;
+}
+.title{
+	color:black;
+}
+body{
+	font-family: Consolas;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+	color:#292828;
+	left: 0px;
+	top:0px;
+	display: block;
+	margin: auto;
+	width: 90%;
+	background-color: #F87173;
+}
+#back{
+	float:right;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}

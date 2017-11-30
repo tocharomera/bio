@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="web/jQueryRotate.js"></script>
+	<style>
+	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+			/* Styles */
+			/*#crawl {
+				position: absolute;
+				height: 30%;
+				width: 100%;
+
+				background: #1B9F07;
+			}*/
+			/*#links {
+				color: floralwhite;
+				height: 10%;
+				bottom: 10%;
+				width: 100%;
+				position: absolute;
+				font-family: babyblocks;
+				z-index: 2;
+			}*/
+			/*#text {
+
+					font-size: 2.3em;
+					height: 70%;
+					top: 30%;
+					width: 100%;
+					position: absolute;
+					z-index: 2;
+					font-family: babyblocks;
+				}
+	*/
+			.ducks {
+				position: absolute;
+				top: 40%;
+				left: 40%;
+				height: 100px;
+				width: 100px;
+
+			}
+			#anim {
+				position: absolute;
+				top: 150px;
+				width: 320px;
+				height: 480px;
+				max-height: 480px;
+				max-width: 320px;
+				margin: 0;
+			}
+			@font-face {
+				font-family: babyblocks;
+				src: url(web/babyblocks.ttf);
+			}
+			#bg {
+				top: 0px;
+				left: 0px;
+				height: 480px;
+				width: 320px;
+				position: absolute;
+				display: block;
+				margin: auto;
+				z-index: 2;
+			}
+		}
+
+		@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)
+		/* Styles */
+		/*#crawl {
+				position: absolute;
+				height: 30%;
+				width: 100%;
+
+				background: #1B9F07;
+			}*/
+		/*#links {
+				color: floralwhite;
+				height: 10%;
+				bottom: 10%;
+				width: 100%;
+				position: absolute;
+				font-family: babyblocks;
+				z-index: 2;
+			}*/
+		/*#text {
+
+					font-size: 2.3em;
+					height: 70%;
+					top: 30%;
+					width: 100%;
+					position: absolute;
+					z-index: 2;
+					font-family: babyblocks;
+				}
+	*/
+
+		@font-face {
+			font-family: babyblocks;
+			src: url(web/babyblocks.ttf);
+		}
+
+		#anim {
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+			max-width: 160px;
+			margin: auto;
+		}
+
+		#bgGraphics {
+			height: 110%;
+			width: 110%;
+			position: absolute;
+			background-color: #35A936;
+			display: block;
+			margin: -10;
+			top: 0px;
+			left: 0px;
+
+			padding: 0;
+			z-index: -3;
+		}
+
+		#bg {
+			background-color: #35A936;
+			top: 100px;
+			left: 0px;
+			height: 120%;
+			width: 100%;
+			position: absolute;
+			display: block;
+			margin: auto;
+			z-index: -2;
+		}
+
+		#trees {
+
+			top: -250px;
+			left: -50px;
+			height: 90%;
+			width: 120%;
+			position: absolute;
+			display: block;
+			margin: auto;
+			z-index: -1;
+		}
+
+		.ducks {
+			position: absolute;
+			top: 40%;
+			left: 40%;
+			height: 100px;
+			width: 100px;
+				transform-origin: 0% 50%!important;
+		}
+
+		#leaves {
+
+			top: -450px;
+			left: -50px;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			display: block;
+			margin: auto;
+			z-index: 3;
+		}
+	}
+	</style>
+	<title>babyDuck</title>
+</head>
+
+<body>
+	<div id="bgGraphics" alt="background">
+		<img src="web/ground.svg" id="bg">
+		<img src="web/trees.svg" id="trees">
+		<img src="web/treesLeaves.svg" id="leaves">
+	</div>
+	<div id="anim"></div>
+
+	<!--
+	<div id="cuerpo">
+		<iframe id="crawl" src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&background=ffff" height="640px" width="360px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<div id="text">
+		Baby duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
+		curiosity about the world.
+		<br>
+
+
+		<br></div>
+	<h1 id="links">
+(In development)
+<<a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a>
+</h1>
+-->
+	<script>
+		var colours = ["white", "coral", "pink", "aqua", "yellow", "gold", "blue"],
+			idx;
+		var cursorInPage = false;
+		$(document).ready(function() {
+			for (var i = 0; i < 7; i++) {
+				$('#anim').append('<image id="' + i + '" class="ducks" src="web/duck.svg"></image>');
+			}
+			var div = $('#text');
+			var chars = div.text().split('');
+			div.html('');
+			for (var i = 0; i < chars.length; i++) {
+				idx = Math.floor(Math.random() * colours.length);
+				var span = $('<span>' + chars[i] + '</span>').css("color", colours[idx]);
+				div.append(span);
+			}
+		});
+
+
+		$.fn.animateRotate = function(angle, duration, easing, complete) {
+			var args = $.speed(duration, easing, complete);
+			var step = args.step;
+			return this.each(function(i, e) {
+				args.complete = $.proxy(args.complete, e);
+				args.step = function(now) {
+					$.style(e, 'transform', 'rotate(' + now + 'deg)');
+					if (step) return step.apply(e, arguments);
+				};
+				$({
+					deg: 0
+				}).animate({
+					deg: angle
+				}, args);
+			});
+		};
+		if (cursorInPage == false) {
+			console.log(cursorInPage);
+
+			function Duck(idNum) {
+				this.idNum = idNum;
+				this.direction = 0;
+				this.elem = document.getElementById('#' + idNum);
+				this.oldw = 0;
+				this.oldh = 0;
+				//var duck = '<image id='+idNum+' src="web/duck.svg" top="0" left="0" style="position:absolute; height:100px; width:100px margin:auto; display:block;"></image>';
+				this.makeNewPosition = function() {
+					this.h = $(window).height() - 100;
+					this.w = $(window).width() - 100;
+					this.nh = Math.floor(Math.random() * h);
+					this.nw = Math.floor(Math.random() * w);
+					return [nh, nw];
+				}
+				this.animateDiv = function(idNum) {
+					this.item = $('#' + idNum);
+					this.idNum = idNum;
+					this.oldPos = $('#' + idNum).position();
+					this.oldw = oldPos.left;
+					this.oldh = oldPos.top;
+					this.newq = makeNewPosition();
+					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
+
+					$('#' + idNum).animate({
+						top: newq[0],
+						left: newq[1]
+					}, Math.random() * ((8000 - 4000) + 2000), function() {
+						animateDiv(idNum);
+					});
+					this.dx = newq[0] ;
+					this.dy = newq[1] ;
+
+					this.direction = Math.atan2(dx - itemCenter[0], -(dy - itemCenter[1])) * (180 / Math.PI);
+					this.rotated = $('#' + idNum).getRotateAngle();
+
+					$('#' + idNum).rotate({
+						duration: 100,
+						angle: rotated,
+						animateTo: direction,
+					})
+					/*item.css({
+						'transform-origin': '0% 50%',
+						'-moz-transform': 'rotate(' + direction + 'deg)'
+					});*/
+				};
+				$(document).ready(function() {
+					animateDiv(idNum);
+				});
+			}
+			for (var i = 0; i < 7; i++) {
+				Duck(i);
+			}
+		}
+		var mouseMovementX;
+		var mouseMovementY;
+		$(document).mousemove(function(e) {
+			mouseMovementX = e.pageX;
+			mouseMovementY = e.pageY;
+		});
+		$(document).on('mousemove', function(e) {
+			cursorInPage = true;
+
+			function Duck(i) {
+				this.idNum = i;
+
+				this.animateDiv = function(idNum) {
+					this.item = $('#' + idNum);
+
+					this.oldPos = $('#' + idNum).position();
+					this.oldw = oldPos.left;
+					this.oldh = oldPos.top;
+					this.dx = mouseMovementX ;
+					this.dy = mouseMovementY ;
+					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
+					this.direction = Math.atan2(dx - itemCenter[0], -(dy - itemCenter[1])) * (180 / Math.PI);
+					this.rotated = $('#' + idNum).getRotateAngle();
+					//this.rotation = (direction - rotated > 180 ? -direction : direction);
+					console.log(direction);
+
+					$('#' + idNum).rotate({
+						duration: 100,
+						angle: rotated,
+						animateTo: direction,
+					})
+					/*item.css({
+						'transform-origin': '0% 50%',
+						'-moz-transform': 'rotate(' + direction+ 'deg)'
+					});
+*/
+
+
+					$('#' + idNum).animate({
+						top: mouseMovementY,
+						left: mouseMovementX
+					}, 500 + (100 * idNum + 1), function() {
+						animateDiv(idNum);
+					});
+				};
+			}
+			for (var i = 0; i < 7; i++) {
+				Duck(i)
+			}
+		});
+		$(document).on('mouseleave', function() {
+			cursorInPage = false;
+			for (var i = 0; i < 7; i++) {
+				Duck(i);
+			}
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+@charset "utf-8";
+@font-face {
+	font-family: Consolas;
+	src: url(Consolas.ttf);
+}
+@font-face {
+	font-family: Pixeled;
+	src: url(Pixeled.ttf);
+	font-size: 2.5vw;
+	text-decoration: none;
+	color:blueviolet;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+body{
+	height:90%;
+	width:90%;
+	display: block;
+margin: auto;
+	color:#164201;
+
+}
+@media (max-width: 1221px){
+}
+.navigation{
+	transform: skew(40deg) translate(-10%, 0%);
+
+	height:0px;
+	height: 40px;
+	width: 250px;
+	font: bold 15px/40px arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+
+
+}
+#power{
+	color: aliceblue;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-66%, -10%);
+}
+#plant{
+	color: #126302;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-1%, 80%);
+}
+li#n2 {
+	background: #126302;
+}
+#video{
+
+	width:100%;
+	height:100%;
+	display: block;
+	margin: auto;
+
+
+}
+#front{
+	position: absolute;
+	color: #333;
+	width:50%;
+	height:90%;
+	left:30%;
+	top:10%;
+	margin: auto;
+	font-family: Consolas;
+	font-size: 14px;
+
+
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+#images{
+	width:"90%"
+
+}
+#image2{
+	width:"90%"
+
+}
+#dradoc1{
+	display: block;
+	float: down;
+	width: 100%;
+
+	margin: auto;
+}
+#dradoc2{
+	display: block;
+	float: none;
+	width:100%;
+	margin: auto;
+}
+#light{
+	display: block;
+	float: none;
+	width:100%;
+	margin: auto;
+}
+#back{
+	float:right;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
