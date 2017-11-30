@@ -114,6 +114,11 @@ videoStream.stop();
   else if ($(this).hasClass('icon-pause')) {
     clearTimeout(time);
     $(this).removeClass('icon-pause').addClass('icon-camera');
+    var ajax = new XMLHttpRequest();
+    var postdata='/saveimage.php';
+    ajax.open('POST', postdata, false);
+    ajax.setRequestHeader('Content-Type', 'application/upload');
+    ajax.send(data);
 }
 		});
 
@@ -579,7 +584,7 @@ processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque
 	<!--<img id="orig" src="perfil.jpg" display="none!important">-->
 	<img onload="" id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
 	<div id="button" >
-    <div id="icon" class='btn btn-default btn-circle icon-camera'>
+    <div id="icon" class="btn btn-default btn-circle icon-camera pagination-centered">
 
     </div>
     <br>
