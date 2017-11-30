@@ -75,9 +75,9 @@
 .icon-camera{
 
 }
-#button{
-
-
+video {
+    height: auto;
+    width: 100%!important;
 }
 #button{
 	text-align: center!important;
@@ -128,7 +128,7 @@
 	color:grey;
 	text-decoration: none!important;
 	font-family: pixeled;
-	font-size:1.5vw!important;
+	font-size:1.3vw!important;
 	right:2%;
 	transform: skew(40deg);
 }

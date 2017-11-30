@@ -18,7 +18,6 @@
 	var interact = "false";
 	var width =  418;    // We will scale the photo width to this
 	var height = 674;
-  var time;
 $( document ).ready(function() {
 
 	var button = document.getElementById('icon');
@@ -109,12 +108,12 @@ $( document ).ready(function() {
     interact = "false";
 videoStream.stop();
     processor.doLoad();
+
+
+
+
       $(this).removeClass('icon-play').addClass('icon-pause');
   }
-  else if ($(this).hasClass('icon-pause')) {
-    clearTimeout(time);
-    $(this).removeClass('icon-pause').addClass('icon-camera');
-}
 		});
 
 	}
@@ -133,21 +132,20 @@ videoStream.stop();
        r2=Math.random()*10.0;
        r3=Math.random()*2.0;
      }, 400);
-			 time = setTimeout(function(){
+			 setTimeout(function(){
+
          steps()
 				 doLoad();
-			 }, 1700);
+			 }, 1300);
 		 }else{
 
 		 }
      function steps(){
        setTimeout(brightness, 300)
-       setTimeout(sobel1, 500)
-       setTimeout(gaussianBlur, 700)
-       setTimeout(grayscale, 900)
-       setTimeout(threshold, 1100)
-       setTimeout(sobel1, 1300)
-
+       setTimeout(grayscale, 500)
+       setTimeout(threshold, 700)
+       setTimeout(sobel1, 900)
+       setTimeout(sobel1, 1100)
      }
      ctx1.drawImage(frame, 0, 0, width, c.height);
      frame = c1.toDataURL('image/jpeg');
@@ -184,22 +182,6 @@ videoStream.stop();
       img.setAttribute('src', data);
 
 }
-function sharpen1(){
-frame = ctx1.getImageData(0, 0, width, c.height);
-frame= sharpen(frame);
-ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
-    img.setAttribute('src', data);
-
-}
-function gaussianBlur(){
-frame = ctx1.getImageData(0, 0, width, c.height);
-frame= processor.gaussianBlur(frame, 2);
-ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
-    img.setAttribute('src', data);
-
-}
 function sobel1(){
 frame = ctx1.getImageData(0, 0, width, c.height);
 frame= sobel(frame);
@@ -211,23 +193,6 @@ var data = c1.toDataURL('image/jpeg');
     }
 	  ///////////////////////////////////////////////
 	  //  FROM : https://www.html5rocks.com/en/tutorials/canvas/imagefilters/#toc-convolution
-    if (typeof Float32Array == 'undefined') {
-  processor.getFloat32Array =
-  processor.getUint8Array = function(len) {
-    if (len.length) {
-      return len.slice(0);
-    }
-    return new Array(len);
-  };
-} else {
-  processor.getFloat32Array = function(len) {
-    return new Float32Array(len);
-  };
-  processor.getUint8Array = function(len) {
-    return new Uint8Array(len);
-  };
-}
-
 		processor.brightness = function(pixels, adjustment) {
 			var d = pixels.data;
 			for (var i=0; i<d.length; i+=4) {
@@ -264,49 +229,7 @@ var data = c1.toDataURL('image/jpeg');
 
           return px;
         };
-        processor.convolute = function(pixels, weights, opaque) {
-  var side = Math.round(Math.sqrt(weights.length));
-  var halfSide = Math.floor(side/2);
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-  // pad output by the convolution matrix
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageData(w, h);
-  var dst = output.data;
-  // go through the destination image pixels
-  var alphaFac = opaque ? 1 : 0;
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      // calculate the weighed sum of the source image pixels that
-      // fall under the convolution matrix
-      var r=0, g=0, b=0, a=0;
-      for (var cy=0; cy<side; cy++) {
-        for (var cx=0; cx<side; cx++) {
-          var scy = sy + cy - halfSide;
-          var scx = sx + cx - halfSide;
-          if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
-            var srcOff = (scy*sw+scx)*4;
-            var wt = weights[cy*side+cx];
-            r += src[srcOff] * wt;
-            g += src[srcOff+1] * wt;
-            b += src[srcOff+2] * wt;
-            a += src[srcOff+3] * wt;
-          }
-        }
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
+
 				processor.convoluteFloat32 = function(pixels, weights, opaque) {
 					var side = Math.round(Math.sqrt(weights.length));
 					var halfSide = Math.floor(side/2);
@@ -356,168 +279,6 @@ var data = c1.toDataURL('image/jpeg');
 				processor.createImageData = function(w,h) {
 					return this.tmpCtx.createImageData(w,h);
 				};
-        processor.identity = function(pixels, args) {
-  var output = processor.createImageData(pixels.width, pixels.height);
-  var dst = output.data;
-  var d = pixels.data;
-  for (var i=0; i<d.length; i++) {
-    dst[i] = d[i];
-  }
-  return output;
-};
-//https://github.com/kig/canvasfilters/blob/master/filters.js
-processor.createImageDataFloat32 = function(w, h) {
-  return {width: w, height: h, data: this.getFloat32Array(w*h*4)};
-};
-processor.verticalConvolveFloat32 = function(pixels, weightsVector, opaque) {
-  var side = weightsVector.length;
-  var halfSide = Math.floor(side/2);
-
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageDataFloat32(w, h);
-  var dst = output.data;
-
-  var alphaFac = opaque ? 1 : 0;
-
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      var r=0, g=0, b=0, a=0;
-      for (var cy=0; cy<side; cy++) {
-        var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
-        var scx = sx;
-        var srcOff = (scy*sw+scx)*4;
-        var wt = weightsVector[cy];
-        r += src[srcOff] * wt;
-        g += src[srcOff+1] * wt;
-        b += src[srcOff+2] * wt;
-        a += src[srcOff+3] * wt;
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
-processor.verticalConvolve = function(pixels, weightsVector, opaque) {
-  var side = weightsVector.length;
-  var halfSide = Math.floor(side/2);
-
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageData(w, h);
-  var dst = output.data;
-
-  var alphaFac = opaque ? 1 : 0;
-
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      var r=0, g=0, b=0, a=0;
-      for (var cy=0; cy<side; cy++) {
-        var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
-        var scx = sx;
-        var srcOff = (scy*sw+scx)*4;
-        var wt = weightsVector[cy];
-        r += src[srcOff] * wt;
-        g += src[srcOff+1] * wt;
-        b += src[srcOff+2] * wt;
-        a += src[srcOff+3] * wt;
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
-
-processor.horizontalConvolve = function(pixels, weightsVector, opaque) {
-  var side = weightsVector.length;
-  var halfSide = Math.floor(side/2);
-
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageData(w, h);
-  var dst = output.data;
-
-  var alphaFac = opaque ? 1 : 0;
-
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      var r=0, g=0, b=0, a=0;
-      for (var cx=0; cx<side; cx++) {
-        var scy = sy;
-        var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
-        var srcOff = (scy*sw+scx)*4;
-        var wt = weightsVector[cx];
-        r += src[srcOff] * wt;
-        g += src[srcOff+1] * wt;
-        b += src[srcOff+2] * wt;
-        a += src[srcOff+3] * wt;
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
-
-processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque) {
-  return this.horizontalConvolve(
-    this.verticalConvolveFloat32(pixels, vertWeights, opaque),
-    horizWeights, opaque
-  );
-};
-        processor.gaussianBlur = function(pixels, diameter) {
-    diameter = Math.abs(diameter);
-    if (diameter <= 1) return processor.identity(pixels);
-    var radius = diameter / 2;
-    var len = Math.ceil(diameter) + (1 - (Math.ceil(diameter) % 2))
-    var weights = this.getFloat32Array(len);
-    var rho = (radius+0.5) / 3;
-    var rhoSq = rho*rho;
-    var gaussianFactor = 1 / Math.sqrt(2*Math.PI*rhoSq);
-    var rhoFactor = -1 / (2*rho*rho)
-    var wsum = 0;
-    var middle = Math.floor(len/2);
-    for (var i=0; i<len; i++) {
-      var x = i-middle;
-      var gx = gaussianFactor * Math.exp(x*x*rhoFactor);
-      weights[i] = gx;
-      wsum += gx;
-    }
-    for (var i=0; i<weights.length; i++) {
-      weights[i] /= wsum;
-    }
-    return processor.separableConvolve(pixels, weights, weights, false);
-  };
-
 		var sobel = function sobel(px) {
 
           px = processor.grayscale(px);
@@ -585,7 +346,7 @@ processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque
     <br>
     <br>
     <br>
-    <p>U THINK IT WILL LOOK BETTER</p>
+    <p>U THINK IT WOULD LOOK BETTER?</p>
 	</div>
 
 </div>
