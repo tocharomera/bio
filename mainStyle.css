@@ -83,7 +83,11 @@ video {
 	display: block;
 		  margin:auto;
 	text-align: center!important;
+<<<<<<< HEAD
 	-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+=======
+	-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; 
+>>>>>>> a6cccdc118b29faad34152c9ab0b904cde97241c
 }
 #icon{
 		display: inline;
@@ -91,7 +95,11 @@ video {
 		text-align: center;
 		  width: 25px;
 		  height: 30px;
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> a6cccdc118b29faad34152c9ab0b904cde97241c
 		  padding: 20px 20px!important;
 		  font-size: 32px;
 		  line-height: 0;
