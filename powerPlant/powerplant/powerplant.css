@@ -27,12 +27,13 @@ margin: auto;
 	height:0px;
 	height: 40px;
 	width: 250px;
-	font: bold 15px/40px arial, sans-serif;
+	font: bold 0px/40px arial, sans-serif;
 	text-align: center;
 	text-decoration: none;
 
 
 }
+
 #power{
 	color: aliceblue;
 	position: absolute;
@@ -78,11 +79,11 @@ li#n2 {
 	text-justify: inter-word;
 }
 #images{
-	width:"90%"
+	width:90%;
 
 }
 #image2{
-	width:"90%"
+	width:100%;
 
 }
 #dradoc1{

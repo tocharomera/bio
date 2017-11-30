@@ -24,20 +24,35 @@
 	margin: auto;
 }
 .title{
+	font-family:  Consolas;
 	color:black;
 }
 body{
+	color:#292828;
+	height: 90%;
+	width:90%;
+	display: block;
+	margin: auto;
+	background-color: #F87173;
+}
+#video{
+	width:100%;
+	
+	display: block;
+	margin: auto;
+}
+#front{
+	color: #333;
+	width:50%;
+	height:90%;
+	left:30%;
+
+	margin: auto;
 	font-family: Consolas;
+	font-size: 14px;
 	overflow-wrap: break-word;
 	text-align: justify;
 	text-justify: inter-word;
-	color:#292828;
-	left: 0px;
-	top:0px;
-	display: block;
-	margin: auto;
-	width: 90%;
-	background-color: #F87173;
 }
 #back{
 	float:right;

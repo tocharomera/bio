@@ -1,0 +1,394 @@
+@font-face {
+font-family: babyblocks;
+src: url(web/babyblocks.ttf);
+}
+@font-face {
+font-family: Consolas;
+src: url(web/Consolas.ttf);
+}
+@font-face {
+font-family: Pixeled;
+src: url(web/Pixeled.ttf);
+
+}
+@media only screen and (min-width : 1224px) {/* Styles */
+  .navigation{
+  	transform: skew(40deg) translate(-10%, 0%);
+
+  	height:0px;
+  	height: 40px;
+  	width: 250px;
+  	font: bold 0px/40px arial, sans-serif;
+  	text-align: center;
+  	text-decoration: none;
+  }
+  #babyDuck{
+  	position: absolute;
+  	text-decoration: none!important;
+  	font-family: babyblocks;
+  	font-size: 30px;
+  	transform: skewX( -40deg) translate(-45%, 0%);
+  }
+  li#n3 {
+    	background: #FFDD30;
+  }
+body{
+  height:90%;
+	width:90%;
+	display: block;
+margin: auto;
+  background-color: #FFF;
+}
+#video{
+	width:100%;
+
+	display: block;
+	margin: auto;
+}
+#front{
+	color: #333;
+	width:50%;
+	height:90%;
+	left:30%;
+
+	margin: auto;
+	font-family: Consolas;
+	font-size: 14px;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+#crawl {
+position: absolute;
+height: 30%;
+width: 100%;
+background: #1B9F07;
+}
+#links {
+color: hotpink;
+text-align:right;
+
+width: 95%;
+;
+font-family: babyblocks;
+z-index: 4;
+}
+#text1 {
+  font-size: 18px;
+z-index: 4;
+font-family: babyblocks;
+overflow-wrap: break-word;
+text-align: justify;
+text-justify: inter-word;
+}
+h1{
+  color:#164201;
+text-decoration: none!important;
+font-family: Consolas;
+font-size: 2.3vw;
+}
+#text2 {
+
+
+
+color:#164201;
+text-decoration: none!important;
+font-family: Consolas;
+font-size: 1.3vw;
+  overflow-wrap: break-word;
+text-align: justify;
+text-justify: inter-word;
+}
+#anim {
+position: absolute;
+width: 100%;
+height: 100%;
+margin: auto;
+}
+#topCrawl {
+position: absolute;
+/*errror
+width: 300px;
+height: 200px;*/
+top: 50%;
+left: 50%;
+transform-origin: 150px 100px!important;
+}
+.ducks {
+position: absolute;
+top: 40%;
+left: 40%;
+transform-origin: 0% 50%!important;
+}
+#bg {
+top: 0px;
+left: 0px;
+position: absolute;
+height: 100%;
+width: 100%;
+background-image: url("web/pantallas/bgL.png");
+background-repeat: no-repeat;
+background-size: cover;
+}
+#back{
+	float:right;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
+}
+
+@media (min-width: 480px) and (max-width: 1224px) {
+  .navigation{
+    transform: skew(40deg) translate(-10%, 0%);
+	
+
+    height: 40px;
+    width: 250px;
+    font: bold 0px/40px arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+  }
+  li#n3 {
+    	background: #FFDD30;
+  }
+  #babyDuck{
+  	position: absolute;
+  	text-decoration: none!important;
+  	font-family: babyblocks;
+  	font-size: 30px;
+  	transform: skewX( -40deg) translate(-45%, 0%);
+  }
+  body{
+    height:90%;
+  	width:90%;
+  	display: block;
+  margin: auto;
+    background-color: #FFF;
+  }
+  #video{
+  	width:100%;
+
+  	display: block;
+  	margin: auto;
+  }
+  #front{
+  	color: #333;
+  	width:50%;
+  	height:90%;
+  	left:30%;
+
+  	margin: auto;
+  	font-family: Consolas;
+  	font-size: 14px;
+  	overflow-wrap: break-word;
+  	text-align: justify;
+  	text-justify: inter-word;
+  }
+@font-face {
+font-family: babyblocks;
+src: url(web/babyblocks.ttf);
+}
+
+#text1 {
+font-size: 18px;
+z-index: 4;
+font-family: babyblocks;
+overflow-wrap: break-word;
+text-align: justify;
+text-justify: inter-word;
+}
+h1{
+  color:grey;
+text-decoration: none!important;
+font-family: Consolas;
+font-size: 2.3vw;
+}
+#text2 {
+
+  margin: auto;
+
+color:#164201;
+text-decoration: none!important;
+font-family: Consolas;
+font-size: 1.5vw;
+  overflow-wrap: break-word;
+text-align: justify;
+text-justify: inter-word;
+}
+#anim {
+position: absolute;
+width: 100%;
+height: 100%;
+margin: auto;
+}
+#topCrawl {
+position: absolute;
+/*EERROORR
+width: 300px;
+height: 200px;*/
+top: 50%;
+left: 50%;
+transform-origin: 150px 100px!important;
+}
+.ducks {
+position: absolute;
+top: 40%;
+left: 40%
+transform-origin: 0% 50%!important;
+}
+#bg {
+top: 0px;
+left: 0px;
+position: absolute;
+height: 100%;
+width: 100%;
+background-image: url("web/pantallas/bgM.png");
+background-repeat: no-repeat;
+background-size: cover;
+}
+#links {
+color: lightseagreen;
+text-align: left;
+
+width: 100%;
+
+font-family: babyblocks;
+z-index: 4;
+}
+#back{
+	float:right;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
+}
+
+@media (max-width: 480px) {
+@font-face {
+font-family: babyblocks;
+src: url(web/babyblocks.ttf);
+}
+.navigation{
+
+  transform: skew(40deg) translate(-10%, 0%);
+
+  height:0px;
+  height: 40px;
+  width: 250px;
+  font: bold 0px/40px arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+}
+li#n3 {
+    background: #FFDD30;
+}
+#babyDuck{
+	position: absolute;
+	text-decoration: none!important;
+	font-family: babyblocks;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-45%, 0%);
+}
+body{
+  height:90%;
+	width:90%;
+	display: block;
+margin: auto;
+  background-color: #FFF;
+}
+#video{
+	width:100%;
+
+	display: block;
+	margin: auto;
+}
+#front{
+	color: #333;
+	width:50%;
+	height:90%;
+	left:30%;
+
+	margin: auto;
+	font-family: Consolas;
+	font-size: 14px;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+#text1 {
+
+font-size: 18px;
+z-index: 4;
+font-family: babyblocks;
+overflow-wrap: break-word;
+text-align: justify;
+text-justify: inter-word;
+}
+  h1{
+  color:#164201;
+text-decoration: none!important;
+font-family: Consolas;
+font-size: 2.3vw;
+}
+#text2 {
+
+
+color:#164201;
+text-decoration: none!important;
+font-family: Consolas;
+font-size: 2.3vw;
+  overflow-wrap: break-word;
+text-align: justify;
+text-justify: inter-word;
+}
+#anim {
+top: 0px;
+left: 0px;
+position: absolute;
+width: 100%;
+height: 100%;
+
+}
+#topCrawl {
+position: absolute;
+top: 50%;
+left: 50%;
+transform-origin: 150px 100px!important;
+}
+.ducks {
+position: absolute;
+top: 40%;
+  left: 40%;
+transform-origin: 0% 50%!important;
+}
+#bg {
+top: 0px;
+left: 0px;
+position: absolute;
+height: 100%;
+width: 100%;
+background-image: url("web/pantallas/bgS.png");
+background-repeat: no-repeat;
+background-size: cover;
+}
+#back{
+	float:right;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
+#links {
+color: darkorange;
+
+
+width: 100%;
+
+font-family: babyblocks;
+z-index: 4;
+}
+}

@@ -34,7 +34,7 @@
 		<iframe id="video" src="https://player.vimeo.com/video/238389654?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 		  <p class="mainText">
-				
+
 				mobMess is a social interface project dedicated to reveal the capabilities of mobile technologies for participatory art.<br>
 			<br> Random interactions on the streets of contemporary cities have been diminished by the increasing use of social networks, mail and communications via smart devices.<br>
 			<br> The interactions made in the streets of contemporary cities have been diminished by the increasing use of communication via devices. The relationships that people establish are condensed in the communication through diverse profiles and representation
@@ -150,21 +150,24 @@
 		      x[i].style.display = "none";
 		    }
 		    slideIndex++;
+				if (slideIndex === 1) {setTimeout(function(){
+					slideIndex++;
+				}), 2500};
 		    if (slideIndex > x.length) {slideIndex = 1}
 		    x[slideIndex-1].style.display = "block";
-		    setTimeout(carousel, 5000); // Change image every 2 seconds
-		}</script>
+		    setTimeout(carousel, 7500); // Change image every 2 seconds
+
+
+	}
+	$(document).ready(function() {
+		msgQueue("hello world!");
+	});
+</script>
 
 		  <br><br>
-		   <a href="https://tocharomera.github.io/bio/" id="back">Way back</a>
+		   <a href="/" id="back">Way back</a>
 	  </div>
 
-
-	<script>
-	$(document).ready(function() {
-	  msgQueue("hello world!");
-	});
-	</script>
 	</body>
 
 	</html>

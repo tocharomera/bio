@@ -4,303 +4,23 @@
 <meta charset="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="web/jQueryRotate.js"></script>
-<style>
-	@font-face {
-	font-family: babyblocks;
-	src: url(web/babyblocks.ttf);
-}
-	@font-face {
-	font-family: Consolas;
-	src: url(web/Consolas.ttf);
-}
-@font-face {
-	font-family: Pixeled;
-	src: url(web/Pixeled.ttf);
+<link href="style.css" rel="stylesheet" type="text/css">
 
-}
-@media only screen and (min-width : 1224px) {/* Styles */
-
-	body{
-		background-color: #FFF;
-	}
-#crawl {
-	position: absolute;
-	height: 30%;
-	width: 100%;
-	background: #1B9F07;
-}
-#links {
-	color: hotpink;
-	text-align:right;
-	bottom: 0%;
-	width: 95%;
-	position: absolute;
-	font-family: babyblocks;
-	z-index: 4;
-}
-#text1 {
-	font-size: 2.3em;
-	height: 70%;
-	top: 5%;
-	width: 95%;
-	position: absolute;
-	z-index: 4;
-	font-family: babyblocks;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-	h1{
-		color:#164201;
-	text-decoration: none!important;
-	font-family: Consolas;
-	font-size: 2.3vw;
-	}
-	#text2 {
-		
-		position: absolute;
-	top: 25%;
-	width:95%;
-		
-	color:#164201;
-	text-decoration: none!important;
-	font-family: Consolas;
-	font-size: 1.3vw;
-		overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-#anim {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-}
-#topCrawl {
-	position: absolute;
-	/*errror
-	width: 300px;
-	height: 200px;*/
-	top: 50%;
-	left: 50%;
-	transform-origin: 150px 100px!important;
-}
-.ducks {
-	position: absolute;
-	top: 40%;
-	left: 40%;
-	transform-origin: 0% 50%!important;
-}
-#bg {
-	top: 0px;
-	left: 0px;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-image: url("web/pantallas/bgL.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-	#back{
-		position: absolute;
-		text-align: left;
-	bottom: 1%;
-	font-size:  1.3vw;
-	color:grey;
-	text-decoration: none!important;
-	font-family: Pixeled;
-}
-}
-
-@media (min-width: 480px) and (max-width: 1224px) {
-	body{
-		
-	}
-@font-face {
-	font-family: babyblocks;
-	src: url(web/babyblocks.ttf);
-}
-
-#text1 {
-	font-size: 2.3em;
-	height: 70%;
-	top: 10%;
-	width: 95%;
-	position: absolute;
-	z-index: 4;
-	font-family: babyblocks;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-	h1{
-		color:grey;
-	text-decoration: none!important;
-	font-family: Consolas;
-	font-size: 2.3vw;
-	}
-	#text2 {
-		position: absolute;
-		margin: auto;
-	top: 35%;
-	width:95%;
-	color:#164201;
-	text-decoration: none!important;
-	font-family: Consolas;
-	font-size: 1.5vw;
-		overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-#anim {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-}
-#topCrawl {
-	position: absolute;
-	/*EERROORR
-	width: 300px;
-	height: 200px;*/
-	top: 50%;
-	left: 50%;
-	transform-origin: 150px 100px!important;
-}
-.ducks {
-	position: absolute;
-	top: 40%;
-	left: 40%
-	transform-origin: 0% 50%!important;
-}
-#bg {
-	top: 0px;
-	left: 0px;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-image: url("web/pantallas/bgM.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-	#links {
-	color: lightseagreen;
-	text-align: left;
-	bottom: 2%;
-	width: 100%;
-	position: absolute;
-	font-family: babyblocks;
-	z-index: 4;
-}
-	#back{
-	
-		text-align: right;
-	bottom: 2%;
-		width: 95%;
-	font-size:  1.3vw;
-	color:grey;
-	text-decoration: none!important;
-	font-family: Pixeled;
-			position: absolute;
-}
-}
-
-@media (max-width: 480px) {
-@font-face {
-	font-family: babyblocks;
-	src: url(web/babyblocks.ttf);
-}
-	body{
-		background-color: #FFF;
-	}
-
-#text1 {
-	font-size: 5.3vw;
-	height: 70%;
-	top: 10%;
-	width: 95%;
-	position: absolute;
-	z-index: 4;
-	font-family: babyblocks;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-		h1{
-		color:#164201;
-	text-decoration: none!important;
-	font-family: Consolas;
-	font-size: 2.3vw;
-	}
-	#text2 {
-		position: absolute;
-	top: 35%;
-	width:95%;
-	color:#164201;
-	text-decoration: none!important;
-	font-family: Consolas;
-	font-size: 2.3vw;
-		overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-#anim {
-	top: 0px;
-	left: 0px;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	
-}
-#topCrawl {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform-origin: 150px 100px!important;
-}
-.ducks {
-	position: absolute;
-	top: 40%;
-		left: 40%;
-	transform-origin: 0% 50%!important;
-}
-#bg {
-	top: 0px;
-	left: 0px;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-image: url("web/pantallas/bgS.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-	#back{
-		position: absolute;
-		text-align: right;
-	bottom: 2%;
-		width:95%;
-	font-size:  1.3vw;
-	color:grey;
-	text-decoration: none!important;
-	font-family: Pixeled;
-}
-	#links {
-	color: darkorange;
-	
-	bottom: 2%;
-	width: 100%;
-	position: absolute;
-	font-family: babyblocks;
-	z-index: 4;
-}
-}
-</style>
 <title>babyDuck</title>
 </head>
 
 <body>
+	<br>
+	<ul class="navigation">
+	<li class="list" id="n3"><a id="babyDuck" style="" >BabyDuck</a></li>
+	</ul>
+
+	<div id="anim">
+
 <!--<div id="bg" alt="background"> </div>-->
-<div id="anim"> <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">--> </div>
+<div id="front">
+	<iframe id="video" src="https://player.vimeo.com/video/168608161?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	 <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">-->
 <div id="text1"> Baby Duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
   curiosity about the world.
    <br>
@@ -321,7 +41,9 @@ The development of the game will be done into an 3D space with no barriers but l
 <br>
 </div>
 <h1 id="links"> (In development) <a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a> </h1>
-<a href="https://tocharomera.github.io/bio/" id="back">Back</a>
+<a href="/" id="back">Back</a>
+</div>
+</div>
 <script>
 		var colours = ["green", "red", "grey", "violet", "orange", "brown", "blue"],
 			idx;
@@ -374,7 +96,7 @@ The development of the game will be done into an 3D space with no barriers but l
 				this.idNum = idNum;
 				this.direction = 0;
 				this.elem = document.getElementById('#' + idNum);
-				
+
 				//var duck = '<image id='+idNum+' src="web/duck.svg" top="0" left="0" style="position:absolute; height:100px; width:100px margin:auto; display:block;"></image>';
 				this.makeNewPosition = function() {
 					this.h = $(window).height() - 100;
@@ -386,7 +108,7 @@ The development of the game will be done into an 3D space with no barriers but l
 				this.animateDiv = function(idNum) {
 					this.idNum = idNum;
 					this.item = $('#' + idNum);
-					
+
 					this.newq = makeNewPosition();
 					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
 
