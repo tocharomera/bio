@@ -16,10 +16,10 @@
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 body{
-	height:90%;
+	
 	width:90%;
 	display: block;
-margin: auto;
+	margin: auto;
 	color:#333;
 	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
 	radial-gradient(#2a2c4d 15%, transparent 5%),
@@ -54,7 +54,6 @@ li{
 	position: absolute;
 	color: #333;
 	width:50%;
-	height:90%;
 	left:30%;
 	top:10%;
 	margin: auto;

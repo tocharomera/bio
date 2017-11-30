@@ -91,9 +91,9 @@ $( document ).ready(function() {
     var ctx1 = c1.getContext('2d');
     interact = "true";
 
-clearTimeout(time);
+
          ctx1.drawImage(video, -video.videoWidth/3, 0, video.videoWidth, video.videoHeight*1.68);
-        var data = c1.toDataURL('image/jpeg');
+        var data = c1.toDataURL('image/png');
         temp.setAttribute('src', data);
         img.setAttribute('src', data);
     video.pause();
@@ -103,7 +103,7 @@ clearTimeout(time);
   } else if ($(this).hasClass('icon-play')) {
 
     var c1 = document.getElementById('canvas1');
-    var data = c1.toDataURL('image/jpeg');
+    var data = c1.toDataURL('image/png');
         img.setAttribute('src', data);
     video.pause();
     interact = "false";
@@ -134,31 +134,28 @@ videoStream.stop();
 		 c1.setAttribute('height', c.height);
 		 if(interact ===  "false"){
        setTimeout(function(){
-       r1=Math.floor(Math.random()*2.0) == 1 ? 1 : -1;
-       r2=Math.floor(Math.random()*1.0) == 1 ? 1 : -1;
-       r3=Math.floor(Math.random()*2.0) == 1 ? 1 : -1;
+       r1=Math.random()*5.0;
+       r2=Math.random()*10.0;
+       r3=Math.random()*2.0;
      }, 400);
 			 time = setTimeout(function(){
          steps()
 				 doLoad();
-			 }, 200);
+			 }, 1700);
 		 }else{
 
 		 }
      function steps(){
-       setTimeout(custom1, 10)
-       setTimeout(brightness, 200)
-       setTimeout(custom1, 30)
-        setTimeout(sobel1, 40)
-       setTimeout(custom1, 50)
-       setTimeout(gaussianBlur, 60)
-       setTimeout(grayscale, 70)
-       setTimeout(threshold, 80)
-       setTimeout(sobel1, 90)
+       setTimeout(brightness, 300)
+       setTimeout(sobel1, 500)
+       setTimeout(gaussianBlur, 700)
+       setTimeout(grayscale, 900)
+       setTimeout(threshold, 1100)
+       setTimeout(sobel1, 1300)
 
      }
      ctx1.drawImage(frame, 0, 0, width, c.height);
-     frame = c1.toDataURL('image/jpeg');
+     frame = c1.toDataURL('image/png');
 	     /* ctx1.drawImage(img, 0, 0, width, c.height);
     let frame = ctx1.getImageData(0, 0, width, c.height);
 
@@ -170,46 +167,17 @@ videoStream.stop();
 
     frame= processor.brightness(frame, 10);
     ctx1.putImageData(frame, 0, 0);
-    var data = c1.toDataURL('image/jpeg');
+    var data = c1.toDataURL('image/png');
         img.setAttribute('src', data);
 
   }
-
-  function custom1(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  var randominput = [Math.random()*0.2,Math.random()*3.2,Math.random()*3.2,Math.random()*1.2,Math.random()*1.2,Math.random()*1.2,-Math.random()*3.2,-Math.random()*3.2,-Math.random()*3.2];
-  frame= processor.convolute(frame, randominput, true);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
-
-  }
-  function custom2(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  var randominput = [Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0]
-  frame= processor.convolute(frame, randominput, true);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
-
-  }
-  function custom3(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  var randominput = [Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0]
-  frame= processor.convolute(frame, randominput, true);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
-
-  }
-
     function grayscale(){
 
     frame = ctx1.getImageData(0, 0, width, c.height);
 
     frame= processor.grayscale(frame);
     ctx1.putImageData(frame, 0, 0);
-    var data = c1.toDataURL('image/jpeg');
+    var data = c1.toDataURL('image/png');
         img.setAttribute('src', data);
 
   }
@@ -217,7 +185,7 @@ videoStream.stop();
   frame = ctx1.getImageData(0, 0, width, c.height);
   frame= processor.threshold(frame, 155);
   ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
+  var data = c1.toDataURL('image/png');
       img.setAttribute('src', data);
 
 }
@@ -225,7 +193,7 @@ function sharpen1(){
 frame = ctx1.getImageData(0, 0, width, c.height);
 frame= sharpen(frame);
 ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
+var data = c1.toDataURL('image/png');
     img.setAttribute('src', data);
 
 }
@@ -233,16 +201,15 @@ function gaussianBlur(){
 frame = ctx1.getImageData(0, 0, width, c.height);
 frame= processor.gaussianBlur(frame, 2);
 ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
+var data = c1.toDataURL('image/png');
     img.setAttribute('src', data);
 
 }
 function sobel1(){
 frame = ctx1.getImageData(0, 0, width, c.height);
-var randominput = [Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0]
-frame= sobel(frame, randominput, randominput);
+frame= sobel(frame);
 ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
+var data = c1.toDataURL('image/png');
     img.setAttribute('src', data);
 
 }
@@ -555,21 +522,18 @@ processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque
     }
     return processor.separableConvolve(pixels, weights, weights, false);
   };
-  var  custom = function(px, inputs) {
 
-    var arr = [];
-    for (var i=0; i<inputs.length; i++) {
-      arr.push(parseFloat(inputs[i].value));
-    }
-   processor.convolute(px, arr, true);
-  }
-
-		var sobel = function sobel(px, inputV, inputH) {
+		var sobel = function sobel(px) {
 
           px = processor.grayscale(px);
-          var vertical = processor.convoluteFloat32(px,inputV
-          );
-          var horizontal = processor.convoluteFloat32(px, inputH);
+          var vertical = processor.convoluteFloat32(px,
+            [-r1,-r2,-r3,
+              0, 0, 0,
+              r1, r2, r3]);
+          var horizontal = processor.convoluteFloat32(px,
+            [-r3,0,r3,
+             -r2,0,r2,
+             -r1,0,r1]);
           var id = processor.createImageData(vertical.width, vertical.height);
           for (var i=0; i<id.data.length; i+=4) {
             var v = Math.abs(vertical.data[i]);
@@ -599,6 +563,7 @@ processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque
 
  	<li class="list" id="n2"><a id="power" href="/powerPlant/">Power</a><a id="plant" href="/powerPlant/">PLant</a></li>
 
+ 	<li class="list" id="n2"><a id="power" href="/powerPlant/">Power</a><a id="plant" href="https://tocharomera.github.io/powerPlant/">PLant</a></li>
 
 	<li class="list" id="n3"><a id="babyDuck" href="/babyDuck/">BabyDuck</a></li>
 	<li class="list" id="n4"><a id="mundoGorila" href="/mundoGorila/">MundoGorila</a></li>
@@ -621,11 +586,10 @@ processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque
   <canvas id="canvas" class="canvases" width="418px" height="674px" style="display: none;margin:auto;"></canvas>
 <canvas id="canvas1" class="canvases" width="418px" height="674px" style="display: block; margin:auto;"></canvas>
 	<!--<img id="orig" src="perfil.jpg" display="none!important">-->
-	<img onload="" id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
+	<img onload="processor.doload()" id="img" width="418px" height="674px" src="perfil.png" style="display:none;width: 50%;">
 	<div id="button" class="text-center"  >
-    <div id="icon" class="btn btn-default btn-circle icon-camera"></div><br><br><br>
-    <p>U THINK IT WILL LOOK BETTER</p>
-    <p>BUT IT WILL BE BROKEN</p>
+
+
 	</div>
 
 </div>

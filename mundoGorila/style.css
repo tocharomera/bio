@@ -24,12 +24,12 @@
 	margin: auto;
 }
 .title{
-	font-family:  Consolas;
+	font-family: Pixeled;
 	color:black;
 }
 body{
 	color:#292828;
-	height: 90%;
+
 	width:90%;
 	display: block;
 	margin: auto;
@@ -37,14 +37,14 @@ body{
 }
 #video{
 	width:100%;
-	
+
 	display: block;
 	margin: auto;
 }
 #front{
 	color: #333;
 	width:50%;
-	height:90%;
+
 	left:30%;
 
 	margin: auto;
