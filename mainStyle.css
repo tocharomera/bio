@@ -68,6 +68,7 @@
 
 }
 .navigation, .navigation a.main {
+	padding-left: 10%;
 	transform: skew(40deg) translate(-10%, 0%);
 	z-index: 2;
 	height:0px;
@@ -75,7 +76,32 @@
 .icon-camera{
 
 }
+ video {
+    height: auto;
+    width: 100%!important;
+}
+#button{
+	display: block;
+		  margin:auto;
+	text-align: center!important;
 
+	-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+	-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+
+}
+#icon{
+		display: inline;
+		  margin:auto;
+		text-align: center;
+		  width: 25px;
+		  height: 30px;
+
+		  padding: 20px 20px!important;
+		  font-size: 32px;
+		  line-height: 0;
+		  border-radius: 50px;
+}
 
 
 
