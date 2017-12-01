@@ -11,197 +11,56 @@
   href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
 <link rel="stylesheet" type="text/css"
   href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+
 <script>
 
 	var processor = {};
-	var r1,r2,r3;
+	var r1,r2,r3,r4;
 	var interact = "false";
 	var width =  418;    // We will scale the photo width to this
 	var height = 674;
   var time;
 $( document ).ready(function() {
 
-	var button = document.getElementById('icon');
-
-	var videoStream = null;
-	var video = document.getElementById("video");
-
-	// Test browser support
-	window.navigator = window.navigator || {};
-	navigator.getUserMedia = navigator.getUserMedia       ||
-													 navigator.webkitGetUserMedia ||
-													 navigator.mozGetUserMedia    ||
-													 null;
-
-	if (navigator.getUserMedia === null) {
-		document.getElementById('gum-unsupported').classList.remove('hidden');
-		document.getElementById('button-play-gum').setAttribute('disabled', 'disabled');
-		document.getElementById('button-stop-gum').setAttribute('disabled', 'disabled');
-	} else {
-		// Opera <= 12.16 accepts the direct stream.
-		// More on this here: http://dev.opera.com/articles/view/playing-with-html5-video-and-getusermedia-support/
-		var createSrc = window.URL ? window.URL.createObjectURL : function(stream) {return stream;};
-
-		// Opera <= 12.16 support video only.
-		var audioContext = window.AudioContext       ||
-											 window.webkitAudioContext ||
-											 null;
-		if (audioContext === null) {
-			document.getElementById('gum-partially-supported').classList.remove('hidden');
-		}
-
-		button.addEventListener('click', function() {
-      if ($(this).hasClass('icon-camera')) {
-        navigator.getUserMedia({
-  				video: true,
-  				audio: false
-  			},
-  			function(stream) {
-  				videoStream = stream;
-  				video.src = createSrc(stream);
-  				video.play();
-          var c = document.getElementById('canvas');
-  				var c1 = document.getElementById('canvas1');
-
-  	 		 var ctx1 = c1.getContext('2d');
-  			 interact = "true";
-  			 (function loop() {
-  			 if (!video.paused && !video.ended) {
-  				 height = video.Height;
-  				 c1.setAttribute('height', c.height);
-  				 c1.setAttribute('width', c.width);
-    ctx1.save();
-    // Create a circle
-    ctx1.beginPath();
-    ctx1.rect(0,0,c.width,c.height, false);
-    // Clip to the current path
-    ctx1.clip();
-    ctx1.drawImage(video, -video.videoWidth/3, 0, video.videoWidth, video.videoHeight*1.68);
-             		 setTimeout(loop, 1000 / 30); // drawing at 30fps
-  			 }
-  	 		})();
-  			},
-  			function(error) {
-  				console.log("Video capture error: ", error.code);
-  			});
-      $(this).removeClass('icon-camera').addClass('icon-circle');
-  } else if ($(this).hasClass('icon-circle')) {
-    var temp = new Image;
-    var c1 = document.getElementById('canvas1');
-    var ctx1 = c1.getContext('2d');
-    interact = "true";
-
-clearTimeout(time);
-         ctx1.drawImage(video, -video.videoWidth/3, 0, video.videoWidth, video.videoHeight*1.68);
-        var data = c1.toDataURL('image/jpeg');
-        temp.setAttribute('src', data);
-        img.setAttribute('src', data);
-    video.pause();
-    ctx1.drawImage(temp, 0, 0, width, c1.height);
-
-      $(this).removeClass('icon-circle').addClass('icon-play');
-  } else if ($(this).hasClass('icon-play')) {
-
-    var c1 = document.getElementById('canvas1');
-    var data = c1.toDataURL('image/jpeg');
-        img.setAttribute('src', data);
-    video.pause();
-    interact = "false";
-videoStream.stop();
-    processor.doLoad();
-      $(this).removeClass('icon-play').addClass('icon-pause');
-  }
-  else if ($(this).hasClass('icon-pause')) {
-    clearTimeout(time);
-    $(this).removeClass('icon-pause').addClass('icon-camera');
-    var ajax = new XMLHttpRequest();
-    var postdata='/saveimage.php';
-    ajax.open('POST', postdata, false);
-    ajax.setRequestHeader('Content-Type', 'application/upload');
-    ajax.send(data);
-}
-		});
-
-	}
 
   processor.doLoad = function doLoad() {
+
 		 var c = document.getElementById('canvas');
 		 var ctx = c.getContext('2d');
 		 var c1 = document.getElementById('canvas1');
 		 var ctx1 = c1.getContext('2d');
      let frame =  document.getElementById("img");
-		 c1.setAttribute('width', width);
-		 c1.setAttribute('height', c.height);
-		 if(interact ===  "false"){
-       setTimeout(function(){
-       r1=Math.floor(Math.random()*2.0) == 1 ? 1 : -1;
-       r2=Math.floor(Math.random()*1.0) == 1 ? 1 : -1;
-       r3=Math.floor(Math.random()*2.0) == 1 ? 1 : -1;
-     }, 400);
+
+
+     var light = 0.49;
+
+
+
+         r1 =  light; // this will get a number between 1 and 99;
+         //r1 *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+         r2=  light; // this will get a number between 1 and 99;
+         //r2 *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+         r3=  light; // this will get a number between 1 and 99;
+        // r3 *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+
+         //light  -= 0.1;
+
+
+
+
 			 time = setTimeout(function(){
-         steps()
+sobel1()
 				 doLoad();
-			 }, 200);
-		 }else{
+			 }, 1000/30);
 
-		 }
-     function steps(){
-       setTimeout(custom1, 10)
-       setTimeout(brightness, 200)
-       setTimeout(custom1, 30)
-        setTimeout(sobel1, 40)
-       setTimeout(custom1, 50)
-       setTimeout(gaussianBlur, 60)
-       setTimeout(grayscale, 70)
-       setTimeout(threshold, 80)
-       setTimeout(sobel1, 90)
 
-     }
+
+
+
+
      ctx1.drawImage(frame, 0, 0, width, c.height);
      frame = c1.toDataURL('image/jpeg');
-	     /* ctx1.drawImage(img, 0, 0, width, c.height);
-    let frame = ctx1.getImageData(0, 0, width, c.height);
 
-     frame= sobel(frame);
-    ctx1.putImageData(frame, 0, 0);*/
-    function brightness(){
-
-    frame = ctx1.getImageData(0, 0, width, c.height);
-
-    frame= processor.brightness(frame, 10);
-    ctx1.putImageData(frame, 0, 0);
-    var data = c1.toDataURL('image/jpeg');
-        img.setAttribute('src', data);
-
-  }
-
-  function custom1(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  var randominput = [Math.random()*0.2,Math.random()*3.2,Math.random()*3.2,Math.random()*1.2,Math.random()*1.2,Math.random()*1.2,-Math.random()*3.2,-Math.random()*3.2,-Math.random()*3.2];
-  frame= processor.convolute(frame, randominput, true);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
-
-  }
-  function custom2(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  var randominput = [Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0]
-  frame= processor.convolute(frame, randominput, true);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
-
-  }
-  function custom3(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  var randominput = [Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0]
-  frame= processor.convolute(frame, randominput, true);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
-
-  }
 
     function grayscale(){
 
@@ -213,34 +72,11 @@ videoStream.stop();
         img.setAttribute('src', data);
 
   }
-  function threshold(){
-  frame = ctx1.getImageData(0, 0, width, c.height);
-  frame= processor.threshold(frame, 155);
-  ctx1.putImageData(frame, 0, 0);
-  var data = c1.toDataURL('image/jpeg');
-      img.setAttribute('src', data);
 
-}
-function sharpen1(){
-frame = ctx1.getImageData(0, 0, width, c.height);
-frame= sharpen(frame);
-ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
-    img.setAttribute('src', data);
 
-}
-function gaussianBlur(){
-frame = ctx1.getImageData(0, 0, width, c.height);
-frame= processor.gaussianBlur(frame, 2);
-ctx1.putImageData(frame, 0, 0);
-var data = c1.toDataURL('image/jpeg');
-    img.setAttribute('src', data);
-
-}
 function sobel1(){
 frame = ctx1.getImageData(0, 0, width, c.height);
-var randominput = [Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0,-Math.random()*1.0]
-frame= sobel(frame, randominput, randominput);
+frame= sobel(frame);
 ctx1.putImageData(frame, 0, 0);
 var data = c1.toDataURL('image/jpeg');
     img.setAttribute('src', data);
@@ -249,45 +85,9 @@ var data = c1.toDataURL('image/jpeg');
     }
 	  ///////////////////////////////////////////////
 	  //  FROM : https://www.html5rocks.com/en/tutorials/canvas/imagefilters/#toc-convolution
-    if (typeof Float32Array == 'undefined') {
-  processor.getFloat32Array =
-  processor.getUint8Array = function(len) {
-    if (len.length) {
-      return len.slice(0);
-    }
-    return new Array(len);
-  };
-} else {
-  processor.getFloat32Array = function(len) {
-    return new Float32Array(len);
-  };
-  processor.getUint8Array = function(len) {
-    return new Uint8Array(len);
-  };
-}
 
-		processor.brightness = function(pixels, adjustment) {
-			var d = pixels.data;
-			for (var i=0; i<d.length; i+=4) {
-				d[i] += adjustment;
-				d[i+1] += adjustment;
-				d[i+2] += adjustment;
-			}
-			return pixels;
 
-		};
-		processor.threshold = function(pixels, threshold) {
-			//pixels = processor.brightness(pixels, -10);
-			var d = pixels.data;
-			for (var i=0; i<d.length; i+=4) {
-				var r = d[i];
-				var g = d[i+1];
-				var b = d[i+2];
-				var v = (0.2126*r + 0.7152*g + 0.0722*b >= threshold) ? 255 : 0;
-				d[i] = d[i+1] = d[i+2] = v
-			}
-			return pixels;
-		};
+
         processor.grayscale = function grayscale(px) {
 
 					var d = px.data;
@@ -302,49 +102,7 @@ var data = c1.toDataURL('image/jpeg');
 
           return px;
         };
-        processor.convolute = function(pixels, weights, opaque) {
-  var side = Math.round(Math.sqrt(weights.length));
-  var halfSide = Math.floor(side/2);
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-  // pad output by the convolution matrix
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageData(w, h);
-  var dst = output.data;
-  // go through the destination image pixels
-  var alphaFac = opaque ? 1 : 0;
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      // calculate the weighed sum of the source image pixels that
-      // fall under the convolution matrix
-      var r=0, g=0, b=0, a=0;
-      for (var cy=0; cy<side; cy++) {
-        for (var cx=0; cx<side; cx++) {
-          var scy = sy + cy - halfSide;
-          var scx = sx + cx - halfSide;
-          if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
-            var srcOff = (scy*sw+scx)*4;
-            var wt = weights[cy*side+cx];
-            r += src[srcOff] * wt;
-            g += src[srcOff+1] * wt;
-            b += src[srcOff+2] * wt;
-            a += src[srcOff+3] * wt;
-          }
-        }
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
+
 				processor.convoluteFloat32 = function(pixels, weights, opaque) {
 					var side = Math.round(Math.sqrt(weights.length));
 					var halfSide = Math.floor(side/2);
@@ -404,172 +162,20 @@ var data = c1.toDataURL('image/jpeg');
   return output;
 };
 //https://github.com/kig/canvasfilters/blob/master/filters.js
-processor.createImageDataFloat32 = function(w, h) {
-  return {width: w, height: h, data: this.getFloat32Array(w*h*4)};
-};
-processor.verticalConvolveFloat32 = function(pixels, weightsVector, opaque) {
-  var side = weightsVector.length;
-  var halfSide = Math.floor(side/2);
 
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
 
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageDataFloat32(w, h);
-  var dst = output.data;
 
-  var alphaFac = opaque ? 1 : 0;
-
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      var r=0, g=0, b=0, a=0;
-      for (var cy=0; cy<side; cy++) {
-        var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
-        var scx = sx;
-        var srcOff = (scy*sw+scx)*4;
-        var wt = weightsVector[cy];
-        r += src[srcOff] * wt;
-        g += src[srcOff+1] * wt;
-        b += src[srcOff+2] * wt;
-        a += src[srcOff+3] * wt;
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
-processor.verticalConvolve = function(pixels, weightsVector, opaque) {
-  var side = weightsVector.length;
-  var halfSide = Math.floor(side/2);
-
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageData(w, h);
-  var dst = output.data;
-
-  var alphaFac = opaque ? 1 : 0;
-
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      var r=0, g=0, b=0, a=0;
-      for (var cy=0; cy<side; cy++) {
-        var scy = Math.min(sh-1, Math.max(0, sy + cy - halfSide));
-        var scx = sx;
-        var srcOff = (scy*sw+scx)*4;
-        var wt = weightsVector[cy];
-        r += src[srcOff] * wt;
-        g += src[srcOff+1] * wt;
-        b += src[srcOff+2] * wt;
-        a += src[srcOff+3] * wt;
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
-
-processor.horizontalConvolve = function(pixels, weightsVector, opaque) {
-  var side = weightsVector.length;
-  var halfSide = Math.floor(side/2);
-
-  var src = pixels.data;
-  var sw = pixels.width;
-  var sh = pixels.height;
-
-  var w = sw;
-  var h = sh;
-  var output = processor.createImageData(w, h);
-  var dst = output.data;
-
-  var alphaFac = opaque ? 1 : 0;
-
-  for (var y=0; y<h; y++) {
-    for (var x=0; x<w; x++) {
-      var sy = y;
-      var sx = x;
-      var dstOff = (y*w+x)*4;
-      var r=0, g=0, b=0, a=0;
-      for (var cx=0; cx<side; cx++) {
-        var scy = sy;
-        var scx = Math.min(sw-1, Math.max(0, sx + cx - halfSide));
-        var srcOff = (scy*sw+scx)*4;
-        var wt = weightsVector[cx];
-        r += src[srcOff] * wt;
-        g += src[srcOff+1] * wt;
-        b += src[srcOff+2] * wt;
-        a += src[srcOff+3] * wt;
-      }
-      dst[dstOff] = r;
-      dst[dstOff+1] = g;
-      dst[dstOff+2] = b;
-      dst[dstOff+3] = a + alphaFac*(255-a);
-    }
-  }
-  return output;
-};
-
-processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque) {
-  return this.horizontalConvolve(
-    this.verticalConvolveFloat32(pixels, vertWeights, opaque),
-    horizWeights, opaque
-  );
-};
-        processor.gaussianBlur = function(pixels, diameter) {
-    diameter = Math.abs(diameter);
-    if (diameter <= 1) return processor.identity(pixels);
-    var radius = diameter / 2;
-    var len = Math.ceil(diameter) + (1 - (Math.ceil(diameter) % 2))
-    var weights = this.getFloat32Array(len);
-    var rho = (radius+0.5) / 3;
-    var rhoSq = rho*rho;
-    var gaussianFactor = 1 / Math.sqrt(2*Math.PI*rhoSq);
-    var rhoFactor = -1 / (2*rho*rho)
-    var wsum = 0;
-    var middle = Math.floor(len/2);
-    for (var i=0; i<len; i++) {
-      var x = i-middle;
-      var gx = gaussianFactor * Math.exp(x*x*rhoFactor);
-      weights[i] = gx;
-      wsum += gx;
-    }
-    for (var i=0; i<weights.length; i++) {
-      weights[i] /= wsum;
-    }
-    return processor.separableConvolve(pixels, weights, weights, false);
-  };
-  var  custom = function(px, inputs) {
-
-    var arr = [];
-    for (var i=0; i<inputs.length; i++) {
-      arr.push(parseFloat(inputs[i].value));
-    }
-   processor.convolute(px, arr, true);
-  }
-
-		var sobel = function sobel(px, inputV, inputH) {
+		var sobel = function sobel(px) {
 
           px = processor.grayscale(px);
-          var vertical = processor.convoluteFloat32(px,inputV
-          );
-          var horizontal = processor.convoluteFloat32(px, inputH);
+          var vertical = processor.convoluteFloat32(px,
+            [-r1,-r2,-r3,
+              0, 0, 0,
+              r1, r2, r3]);
+          var horizontal = processor.convoluteFloat32(px,
+            [-r3,0,r3,
+             -r2,0,r2,
+             -r1,0,r1]);
           var id = processor.createImageData(vertical.width, vertical.height);
           for (var i=0; i<id.data.length; i+=4) {
             var v = Math.abs(vertical.data[i]);
@@ -615,19 +221,18 @@ processor.separableConvolve = function(pixels, horizWeights, vertWeights, opaque
 
 <div class="front" id="front">
 
-	<video id="video"  style="display:none"></video>
+
+  <img  id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
 
 
   <canvas id="canvas" class="canvases" width="418px" height="674px" style="display: none;margin:auto;"></canvas>
 <canvas id="canvas1" class="canvases" width="418px" height="674px" style="display: block; margin:auto;"></canvas>
 	<!--<img id="orig" src="perfil.jpg" display="none!important">-->
-	<img onload="" id="img" width="418px" height="674px" src="perfil.jpg" style="display:none;width: 50%;">
-	<div id="button" class="text-center"  >
+	<!--<div id="button" class="text-center"  >
     <div id="icon" class="btn btn-default btn-circle icon-camera"></div><br><br><br>
-    <p>U THINK IT WILL LOOK BETTER</p>
-    <p>BUT IT WILL BE BROKEN</p>
-	</div>
 
+	</div>
+-->
 </div>
 <div id="cv">
 	<p>
