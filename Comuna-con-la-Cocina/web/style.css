@@ -49,6 +49,22 @@ li{
 
 
 }
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 #front{
 	background-color: #FFF;
 	position: absolute;
@@ -70,11 +86,13 @@ li{
 	width:100%;
 
 }
-#back{
-	background-color: #FFF;
-	float:right;
-	font-size:  1.3vw;
-	color:grey;
-	text-decoration: none!important;
-	font-family: Pixeled;
+#back {
+  position: fixed;
+  float: right;
+  font-size: 10px;
+  top: 95%;
+  right: 5%;
+  color: grey;
+  text-decoration: none!important;
+  font-family: Pixeled;
 }

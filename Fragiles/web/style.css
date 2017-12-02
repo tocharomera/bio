@@ -72,10 +72,13 @@ li{
 	width:100%;
 
 }
-#back{
-	float:right;
-	font-size:  20px;
-	color:grey;
-	text-decoration: none!important;
-	font-family: Pixeled;
+#back {
+  position: fixed;
+  float: right;
+  font-size: 10px;
+  top: 95%;
+  right: 5%;
+  color: grey;
+  text-decoration: none!important;
+  font-family: Pixeled;
 }

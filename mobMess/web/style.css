@@ -1,173 +1,150 @@
-
-body  {
-
-	width:90%;
-	display: block;
-margin: auto;
-	color:#164201;
+body {
+  width: 90%;
+  color: #164201;
 }
+
 @font-face {
-	font-family: Consolas;
-	src: url(Consolas.ttf);
+  font-family: Consolas;
+  src: url(Consolas.ttf);
 }
+
 @font-face {
-	font-family: ConnectionSerif;
-	src: url(ConnectionSerif.otf);
+  font-family: ConnectionSerif;
+  src: url(ConnectionSerif.otf);
 }
+
 @font-face {
-	font-family: Pixeled;
-	src: url(Pixeled.ttf);
-	font-size: 2.5vw;
-	text-decoration: none;
-	color:blueviolet;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: Pixeled;
+  src: url(Pixeled.ttf);
+  font-size: 2.5vw;
+  text-decoration: none;
+  color: blueviolet;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#fixedMenu{
-	position:absolute;
-	z-index: 1;
-
-
-
-
-	color:#000;
+#fixedMenu {
+  position: absolute;
+  z-index: 1;
+  color: #000;
 }
-	#title{
 
-		font-size: 2.5vw;
-		text-decoration-style: dotted;
-		text-decoration: none;
-		padding-left: 50px;
-	background-image:
-		linear-gradient(90deg, #333 5px, white 5px),
-		linear-gradient(90deg, white 5px, #333 5px),
-		linear-gradient(90deg, #333 5px, white 5px),
-		linear-gradient(90deg, white 5px, #333 5px),
-		linear-gradient(90deg, #333 5px, white 5px),
-		linear-gradient(90deg, #FFF 5px, #333 5px),
-		linear-gradient(90deg, #333 5px, white 5px),
-		linear-gradient(90deg, #FFF 5px, #333 5px);
-	background-position: 0 0, 0 5px, 0 10px, 0 15px, 0 20px, 0 25px, 0 30px, 0 35px;
-	background-repeat: repeat-x;
-	background-size: 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px;
-	font-family: Pixeled;
+#title {
+  font-size: 2.5vw;
+  text-decoration-style: dotted;
+  text-decoration: none;
+  padding-left: 50px;
+  background-image: linear-gradient(90deg, #333 5px, white 5px), linear-gradient(90deg, white 5px, #333 5px), linear-gradient(90deg, #333 5px, white 5px), linear-gradient(90deg, white 5px, #333 5px), linear-gradient(90deg, #333 5px, white 5px), linear-gradient(90deg, #FFF 5px, #333 5px), linear-gradient(90deg, #333 5px, white 5px), linear-gradient(90deg, #FFF 5px, #333 5px);
+  background-position: 0 0, 0 5px, 0 10px, 0 15px, 0 20px, 0 25px, 0 30px, 0 35px;
+  background-repeat: repeat-x;
+  background-size: 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px;
+  font-family: Pixeled;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  text-align: center;
+}
 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
 
-	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-text-align:center;
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-	}
-	#video{
+#player {
+  font-size: 0px;
+  padding: 0;
+}
 
-		width:100%!important;
-
-		display: block;
-		margin: auto;
-
-
-	}
-	#back{
-		position: relative;
-		float: right;
-		font-size:  1.3vw;
-		z-index: 3;
-		color:grey;
-		text-decoration: none!important;
-		font-family: Pixeled;
-	}
-
-
-
+#back {
+  position: fixed;
+  float: right;
+  font-size: 10px;
+  top: 95%;
+  right: 5%;
+  color: grey;
+  text-decoration: none!important;
+  font-family: Pixeled;
+}
+#description {
+  font-size: 10px;
+}
 
 #center-content {
-	opacity: 1;
-
-
-	left:30%;
-	width:50%;
-	font-family: Consolas;
-	display: block;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word
+  opacity: 1;
+  display: block;
+  left: 30%;
+  width: 50%;
+font-size: 14px;
+  font-family: Consolas;
+  margin: auto;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 
 
-
-.sketch{
-
-	display:block;
-
-	width:100%;
-
-
+.sketch {
+  display: block;
+  width: 100%;
 }
 
-.input-group{
-
- width:30%;
-
-display:  block;
-margin:auto +32%;
-
+.input-group {
+  width: 30%;
+  display: block;
+  margin: auto +32%;
 }
 
-	table.table-bordered > tbody > tr > td{
-    border:30px solid  black;
-
+table.table-bordered>tbody>tr>td {
+  border: 30px solid black;
 }
 
-#tabla{
-
-
-	width:19%;
-
-	margin: auto;
+#tabla {
+  width: 19%;
+  margin: auto;
 }
-	table{
 
-		font-family: ConnectionSerif;
-	border-color: #000;
-
-	}
-	table.table td:hover{
-	  background: black;
-	  color: white;
-	}
-
-
-.phones{
-
-
+table {
+  font-family: ConnectionSerif;
+  border-color: #000;
 }
-.phones .phone{
 
+table.table td:hover {
+  background: black;
+  color: white;
 }
-#schema{
 
+.phones {}
 
+.phones .phone {}
 
-}
-table.table td{
+#schema {}
+
+table.table td {
   text-align: center;
   cursor: default;
-	background: #FFF;
+  background: #FFF;
   /*http://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css#4407335*/
-   user-select: none;
-   border-color: #000;
-
+  user-select: none;
+  border-color: #000;
 }
-table.table td.connected{
+
+table.table td.connected {
   border-width: 3px;
   border-style: solid;
-   border-color: green;
-
-
+  border-color: green;
 }
-table.table td.selected{
+
+table.table td.selected {
   background: black;
   color: black;
-
 }
