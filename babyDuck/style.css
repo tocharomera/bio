@@ -23,6 +23,7 @@ src: url(web/Pixeled.ttf);
   	text-decoration: none;
   }
   #babyDuck{
+    padding-left: 50px;
   	position: absolute;
   	text-decoration: none!important;
   	font-family: babyblocks;

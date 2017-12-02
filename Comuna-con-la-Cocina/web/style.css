@@ -16,7 +16,7 @@
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 body{
-	
+
 	width:90%;
 	display: block;
 	margin: auto;
@@ -32,7 +32,7 @@ li{
 	list-style: none;
 }
 #comuna{
-
+	padding-left: 50px;
 	position: absolute;
 	text-decoration: none!important;
 		color: #FFF;

@@ -15,6 +15,7 @@
 @media (max-width: 1298px){
 }
 .banner{
+	padding-left: 50px;
 	display: table;
 	float:left;
 	position: absolute;
