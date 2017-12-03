@@ -34,9 +34,39 @@ margin: auto;
     linear-gradient(135deg, transparent 7%, #a85 0, #a85 13%, transparent 0),
     linear-gradient(45deg, transparent 7%, #dca 0, #dca 13%, transparent 0) #753;
 }
-li{
-	font: bold 0px/40px arial, sans-serif;
 
+.navigation, .navigation a.main {
+
+	transfor: skew(40deg) translate(-2%, 0%);
+	z-index: 2;
+}
+
+.navigation{
+	transform: skew(40deg) translate(7%, 42%);
+
+	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
+    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
+		background-size: 70px 70px;
+	height: 40px;
+	width: 250px;
+	font: bold 0px/40px arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+.navigation li#n9 {
+
+	transform: translate(-5%, -300%);
+}
+#Fragiles{
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	color: white;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: Biohack;
+	font-size: 60px;
+	font: bold;
+	transform: skewX( -40deg) translate(0%, 300%);
 }
 #front{
 	position: absolute;
@@ -56,18 +86,7 @@ li{
 	text-justify: inter-word;
 }
 
-#Fragiles{
-	padding-left: 50px;
-	list-style: none;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	color: white;
-	position: absolute;
-	text-decoration: none!important;
-	font-family: Biohack;
-	font-size: 60px;
-	font: bold;
 
-}
 .images{
 	width:100%;
 

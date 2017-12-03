@@ -36,16 +36,14 @@ margin: auto;
 }
 
 .navigation{
-	transform: skew(40deg) translate(-10%, 0%);
-	padding-left: 50px;
+	transform: skew(40deg) translate(-20%, 0%);
+
 	height:0px;
 	height: 40px;
 	width: 250px;
 	font: bold 0px/40px arial, sans-serif;
 	text-align: center;
 	text-decoration: none;
-
-
 }
 
 #power{

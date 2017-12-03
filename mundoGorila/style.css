@@ -42,9 +42,27 @@
 	display: block;
 	margin: auto;
 }
-.title{
-	font-family: Pixeled;
-	color:black;
+.navigation, .navigation a.main {
+
+	transfor: skew(40deg) translate(-2%, 0%);
+	z-index: 2;
+}
+.navigation{
+	transform: skew(40deg) translate(7%, 42%);
+	background-color: #333;
+	height: 40px;
+	width: 250px;
+	font: bold 0px/40px arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+#mundoGorila{
+	position: absolute;
+	text-decoration: none!important;
+		color: #FFF;
+	font-familY: Pixeled;
+	font-size: 20px;
+	transform: skewX( -40deg) translate(-45%, 0%);
 }
 body{
 	color:#292828;

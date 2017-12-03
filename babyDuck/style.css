@@ -13,7 +13,7 @@ src: url(web/Pixeled.ttf);
 }
 @media only screen and (min-width : 1224px) {/* Styles */
   .navigation{
-  	transform: skew(40deg) translate(-10%, 0%);
+  	transform: skew(40deg) translate(-20%, 0%);
 
   	height:0px;
   	height: 40px;
@@ -160,7 +160,7 @@ background-size: cover;
 
 @media (min-width: 480px) and (max-width: 1224px) {
   .navigation{
-    transform: skew(40deg) translate(-10%, 0%);
+    transform: skew(40deg) translate(7%, 42%);
 
 
     height: 40px;

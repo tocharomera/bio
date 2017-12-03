@@ -31,15 +31,36 @@ body{
 li{
 	list-style: none;
 }
-#comuna{
-	padding-left: 50px;
-	position: absolute;
-	text-decoration: none!important;
-		color: #FFF;
-	text-shadow: -1px 0 #FD0105, 0 1px #FD0105, 1px 0 #FD0105, 0 -1px #FD0105;
-	font-familY: Pixeled;
-	font-size: 20px;
+.navigation, .navigation a.main {
+
+	transform: skew(40deg) translate(-2%, 0%);
+	z-index: 2;
+	height:0px;
 }
+
+.navigation{
+	transform: skew(40deg) translate(7%, 42%);
+background-color: #FFF;
+
+	height: 40px;
+	width: 250px;
+	font: bold 0px/40px arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+	#comuna{
+		position: absolute;
+		width:250px;
+		text-decoration: none!important;
+			color: #FFF;
+		text-shadow: -1px 0 #FD0105, 0 1px #FD0105, 1px 0 #FD0105, 0 -1px #FD0105;
+		font-family: Pixeled;
+		font-size: 12px;
+
+		font-kerning: auto;
+		transform:scale(1, 2) skewX( -58deg) translate(-55%, 0%);
+	}
+
 #video{
 
 	width:100%;
