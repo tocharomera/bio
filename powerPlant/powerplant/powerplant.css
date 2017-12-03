@@ -37,7 +37,7 @@ margin: auto;
 
 .navigation{
 	transform: skew(40deg) translate(-20%, 0%);
-
+position: fixed;
 	height:0px;
 	height: 40px;
 	width: 250px;

@@ -32,7 +32,7 @@ li{
 	list-style: none;
 }
 .navigation, .navigation a.main {
-
+position: fixed;
 	transform: skew(40deg) translate(-2%, 0%);
 	z-index: 2;
 	height:0px;
