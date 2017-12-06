@@ -17,37 +17,45 @@
 	var processor = {};
 	var r1,r2,r3,r4;
 
-	var width =  200;    // We will scale the photo width to this
-	var height = 400;
+
   var time;
 $( document ).ready(function() {
 
   processor.doLoad = function doLoad() {
-
+    var img2 = document.getElementById('img2');
+    var c2 = document.getElementById('canvas2');
+    var ctx2 = c2.getContext('2d');
+    var c3 = document.getElementById('canvas3');
+    var ctx3 = c3.getContext('2d');
+    let frame2 =  document.getElementById("img2");
 		 var c = document.getElementById('canvas');
 		 var ctx = c.getContext('2d');
 		 var c1 = document.getElementById('canvas1');
 		 var ctx1 = c1.getContext('2d');
      let frame =  document.getElementById("img");
      var light = 0.49;
+     var light2 = 0.39;
 
          r1 =  light;
-
-         r2=  light;
-
-         r3=  light;
+         r2 =  light;
+         r3 =  light;
+         r4 =  light2;
+         r5 =  light2;
+         r6 =  light2;
 
 			 time = setTimeout(function(){
-         sobel1()
+         sobel1();
+         sobel2();
 				 doLoad();
 			 }, 1000/24);
-     ctx1.drawImage(frame, 0, 0, width, height);
+     ctx1.drawImage(frame, 0, 0,  c1.width,  c1.height);
      frame = c1.toDataURL('image/jpeg');
 
-
+     ctx3.drawImage(frame2, 0, 0, c3.width, c3.height);
+     frame2 = c3.toDataURL('image/jpeg');
     function grayscale(){
 
-    frame = ctx1.getImageData(0, 0, width, height);
+    frame = ctx1.getImageData(0, 0,  c1.width,  c1.height);
 
     frame= processor.grayscale(frame);
     ctx1.putImageData(frame, 0, 0);
@@ -55,10 +63,17 @@ $( document ).ready(function() {
         img.setAttribute('src', data);
 
   }
+  function sobel2(){
+  frame2 = ctx3.getImageData(0, 0, c3.width, c3.height);
+  frame2= sobel2nd(frame2);
+  ctx3.putImageData(frame2, 0, 0);
+  var data2 = c3.toDataURL('image/jpeg');
+      img2.setAttribute('src', data2);
 
+  }
 
 function sobel1(){
-frame = ctx1.getImageData(0, 0, width, height);
+frame = ctx1.getImageData(0, 0,  c1.width,  c1.height);
 frame= sobel(frame);
 ctx1.putImageData(frame, 0, 0);
 var data = c1.toDataURL('image/jpeg');
@@ -145,7 +160,30 @@ var data = c1.toDataURL('image/jpeg');
   return output;
 };
 //https://github.com/kig/canvasfilters/blob/master/filters.js
+var sobel2nd = function sobel(px2) {
+      this.px = px2;
 
+      var vertical = processor.convoluteFloat32(px ,
+        [-r4,-r5,-r6,
+          0, 0, 0,
+          r4, r5, r6]);
+      var horizontal = processor.convoluteFloat32(px ,
+        [-r6,0,r6,
+         -r5,0,r5,
+         -r4,0,r4]);
+      var id = processor.createImageData(vertical.width, vertical.height);
+      for (var i=0; i<id.data.length; i+=4) {
+        var v = Math.abs(vertical.data[i]);
+        id.data[i] = v;
+        var h = Math.abs(horizontal.data[i]);
+        id.data[i+1] = h
+        id.data[i+2] = (v+h)/4;
+        id.data[i+3] = 255;
+      }
+
+      return id;
+
+  };
 
 
 		var sobel = function sobel(px) {
@@ -203,9 +241,17 @@ var data = c1.toDataURL('image/jpeg');
   </div>
 
 <div class="front" id="front">
-  <canvas id="canvas" class="canvases" width="200px" height="400px" style="display: none;margin:auto;"></canvas>
-<canvas id="canvas1" class="canvases" width="200px" height="400px" style="display: block; margin:auto;"></canvas>
-<img  id="img" width="200px" height="400px" src="perfil.jpg" style="display:none; ">
+    <canvas id="canvas" class="canvases" width=148 height=262     style="display: none;margin:auto;"></canvas>
+  <canvas id="canvas1" class="canvases" width=148 height=262   style="display: block; margin:auto;"></canvas>
+  <img  id="img"   src="perfil.jpg" width=148 height=262   style="display:none; ">
+  <div id="qdiv"> <p id="quote"> All art, as the letting happen of the advent of the truth of what is, is, as such, essentially poetry.
+
+    To be a work means to set up a world.</p> <p id="author">Heidegger(1971,70)<p></div>
+  <canvas id="canvas2" class="canvases2" width=148 height=262  style="display: none;margin:auto;"></canvas>
+  <canvas id="canvas3" class="canvases2" width=148 height=262 style="display: block; margin:auto;"></canvas>
+  <img  id="img2"   src="perfil2.jpg" width=148 height=262  style="display:none; ">
+  <img src="dell-28.png" id="frame1"  alt="">
+  <img src="dell-28.png" id="frame2"   alt="">
   <!--<img id="orig" src="perfil.jpg" display="none!important">-->
 	<!--<div id="button" class="text-center"  >
     <div id="icon" class="btn btn-default btn-circle icon-camera"></div><br><br><br>
