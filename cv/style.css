@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 html{
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
@@ -11,8 +10,9 @@ html{
 @media (min-width: 1221px) {
 	#profile{
 		transform-origin: 70% 80%!important;
-		right: 2%!important;
+		right: -1%!important;
 		position: fixed;
+
 	}
 	#videos{
 		position: fixed;
@@ -21,8 +21,7 @@ html{
 		font-family: pixeled;
 		font-size:10px;
 		top: 5%;
-		right:4%;
-
+		right:3%;
 	}
 	#curriculo{
 		position: fixed;
@@ -30,93 +29,20 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-		top: 32%;
-		right:3.5%;
+		top: 35%;
+		right:2%;
 		transform: rotate(90deg);
-
 	}
 	#documents{
 		position: fixed;
-
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
 		top: 18%;
-		right:1%;
+		right:0%;
 		transform: rotate(90deg);
 	}
-	#img {
-		width: 148;
-		height: 262;
-	}
-	#img2{
-		width: 148;
-		height: 262;
-	}
- #frame1{
-	 width: 295;
-		height: 295;
-	 position: absolute;
-	top:203px;
-	left:120px;
- }
- #frame2{
-	 width: 295;
-   height: 295;
-	 position: absolute;
-	top:203px;
-	left:760px;
- }
-
-.canvases{
-	width: 148;
-	height: 262;
-	position: absolute;
-	top:210px;
-z-index: -10000;
-	left:192px;
-}
-.canvases2{
-	width: 148;
-	height: 262;
-	position: absolute;
-	top:210px;
-z-index: -10000;
-	left:832px;
-}
-#quote{
-	line-height: 45px;
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-	font-family: Champignon;
-	font-size: 49px ;
-}
-#qdiv{
-	position: absolute;
-	width: 450px;
-	top: 200px;
-	 left: 352px;
-}
-#author{
-
-	position: absolute;
-	top: 200px;
-	left: 321px;
-	z-index:  1;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-
-	font-family: Champignon;
-	font-size: 28px;
-}
 }
 @media (min-width: 600px) and (max-width: 1224px) {
 	#profile{
@@ -130,207 +56,76 @@ z-index: -10000;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-		top: 8%;
-		right:4%;
-
+		top: 6%;
+		right:0%;
+		transform: rotate(90deg)
 	}
 	#curriculo{
-		position: fixed;
-		color:#5555;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-		top: 16%;
-		right:4%;
-
-
-	}
-	#documents{
-		position: fixed;
-		color:#5555;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-		top: 12%;
-		right:4%;
-
-	}
-#img {
-	width: 124px;
-	height: 221px;
-}
-#img2{
-	width: 124px;
-	height: 221px;
-}
-#frame1{
-	position: absolute;
-	width: 248px;
-	height: 248px;
- top:300px;
- left: 51px;
-}
-#frame2{
-		position: absolute;
-		width: 248px;
-	  height: 248px;
-top:300px;
- left:292px;
-}
-#quote{
-	line-height: 45px;
-	position: absolute;
-	top: 0px;
-	left: 10px;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-	font-family: Champignon;
-	font-size: 49px ;
-}
-#qdiv{
-	position: absolute;
-	width: 450px;
-	top: 100px;
-	 left: 102px;
-}
-#author{
-
-	position: absolute;
-	top: 460px;
-	left: 321px;
-	z-index:  1;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-
-	font-family: Champignon;
-	font-size: 28px;
-}
-.canvases{
-		position: absolute;
-		width: 124px;
-		height: 221px;
-  top:306px;
-z-index: -10000;
- left: 114px;
-
-}
-.canvases2{
-		position: absolute;
-		width: 124px;
-		height: 221px;
-top:306px;
-z-index: -10000;
- left:355px;
-}
-}
-@media (min-width: 0px) and (max-width: 600px) {
-  #front{
-		left:0%!important;
-	}
-	#cv{
-		left:0%!important;
-		width:80%!important;
-	}
-	#profile{
-		transform-origin: 70% 80%!important;
-		right: -7%!important;
-		position: fixed;
-	}
-	#videos{
-		position: fixed;
-		color:#5555;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-		top: 20%;
-		right:0%;
- transform: rotate(90deg);
-	}
-	#documents{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
 		top: 35%;
-		right:-5.5%;
+		right:1%;
 		transform: rotate(90deg);
 	}
+	#documents{
+		position: fixed;
+		color:#5555;
+		text-decoration: none!important;
+		font-family: pixeled;
+		font-size:10px;
+		top: 21%;
+		right:-2.5%;
+		transform: rotate(90deg)
+	}
+}
+@media (max-width: 600px) {
+
 	#curriculo{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-		top: 47%;
-		right:5%;
+		top: 35%;
+		right:3%;
 		transform: rotate(90deg);
+
+	}
+	#profile{
+		transform-origin: 70% 80%!important;
+		right: -12%!important;
+		position: fixed;
+
+	}
+	#videos{
+		position: fixed;
+		color:grey;
+		text-decoration: none!important;
+		font-family: pixeled;
+		font-size:10px;
+		top: 6%;
+		right:0%;
+		transform: rotate(90deg)
+
+	}
+	#documents{
+		position: fixed;
+		color:#5555;
+		text-decoration: none!important;
+		font-family: pixeled;
+		font-size:10px;
+		top: 21%;
+		right:-5%;
+		transform: rotate(90deg)
 
 	}
 	.navigation, .navigation a.main {
 		transform: skew(40deg) translate(-40%, 0%)!important;
 	}
-	#img {
-		width: 124px;
-		height: 221px;
-	}
-	#img2{
-		width: 124px;
-		height: 221px;
-		display:none!important;
-	}
-	#frame1{
-		position: absolute;
-		width: 248px;
-		height: 248px;
-	 top:289px;
-	 left: 51px;
-	}
-	#frame2{
-			display:none!important;
 
-	}
-#quote{
-	position: absolute;
-	top: 100px;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-	font-family: Champignon;
-	font-size: 33px ;
-}
-#author{
-
-	position: absolute;
-	top: 549px;
-	left: 151px;
-	z-index:  1;
-	margin: auto;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-
-	font-family: Champignon;
-	font-size: 28px;
-}
-	.canvases{
-
-			position: absolute;
-			width: 124px;
-			height: 221px;
-	  top:294px;
-	z-index: -10000;
-	 left: 114px;
-	}
-	.canvases2{
-			display: none!important;
-
-	}
 }
 @font-face {
 	font-family: babyblocks;
@@ -400,6 +195,22 @@ z-index: -10000;
 	}
 
 }
+.embed-container {
+	position: relative;
+	padding-bottom: 96.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 .navigation, .navigation a.main {
 
 	transform: skew(40deg) translate(-2%, 0%);
@@ -407,10 +218,6 @@ z-index: -10000;
 	height:0px;
 }
 
- video {
-    height: auto;
-    width: 100%!important;
-}
 #button{
 	display: block;
 		  margin:auto;
@@ -462,6 +269,7 @@ z-index: -10000;
 	right: 3%;
 	z-index: 1;
 	position: fixed;
+
 }
 #signature{
 	position:absolute;
@@ -570,14 +378,8 @@ z-index: -3;
 	transform: translate(25%, 100%);
 	z-index: 2;
 }
+.navigation li:nth-child(2) {
 
-.navigation li#n1 {
-	-webkit-transition:all 1.2s ease ;
-	-o-transition:all 1.2s ease ;
-	transition: all 1.2s ease ;
-	transform: translate(10%, 120%);
-	-webkit-transition-delay: 2s; /* Safari */
-		transition-delay: 2s;
 	background-image:
 		linear-gradient(90deg, #333 5px, white 5px),
 		linear-gradient(90deg, white 5px, #333 5px),
@@ -639,29 +441,32 @@ div.main:hover ~li#n1{
 	-moz-animation-directionn: normal;
 	 		visibility: visible!important;
 }
-.is-hover1{
-	-webkit-transition:all 0.2s ease!important ;
-	-o-transition:all 0.2s ease!important ;
-	transition: all 0.2s ease!important ;
-	transform: translate(-8%, 250%)!important;
-	animation-name: fadein!important;
-	animation-duration:3s!important;
-	animation-timing-function:ease!important;
-	animation-delay:2s!important;
-	animation-directionn: normal!important;
-	-webkit-animation-name: fadein!important;
-	-webkit-animation-duration:3s!important;
-	-webkit-animation-timing-function:ease!important;
-	-webkit-animation-delay:2s!important;
-	-webkit-animation-directionn: normal!important;
-	-moz-animation-name: fadein!important;
-	-moz-animation-duration:3s!important;
-	-moz-animation-timing-function:ease!important;
-	-moz-animation-delay:2s!important;
-	-moz-animation-directionn: normal!important;
-	 		visibility: visible!important;
-}
 
+.navigation li#n1 {
+	-webkit-transition:all 1.2s ease ;
+	-o-transition:all 1.2s ease ;
+	transition: all 1.2s ease ;
+	transform: translate(10%, 120%);
+	-webkit-transition-delay: 2s; /* Safari */
+    transition-delay: 2s;
+	z-index: 2;
+	animation-name: fadeout;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadeout;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+
+}
 li#n1:hover{
 	 -webkit-transition:all paused ease ;
  	-o-transition:all paused ease ;
@@ -696,29 +501,6 @@ li#n1:hover ~li#n2{
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-.is-hover2{
-	-webkit-transition:all 0.2s ease !important;
-	-o-transition:all 0.2s ease !important;
-	transition: all 0.2s ease !important;
-	visibility: visible!important;
-	transform: translate(-42%, 410%)!important;
-	background:  #126302!important;
-	animation-name: fadein!important;
-	animation-duration:3s!important;
-	animation-timing-function:ease!important;
-	animation-delay:2s!important;
-	animation-directionn: normal!important;
-	-webkit-animation-name: fadein!important;
-	-webkit-animation-duration:3s!important;
-	-webkit-animation-timing-function:ease!important;
-	-webkit-animation-delay:2s!important;
-	-webkit-animation-directionn: normal!important;
-	-moz-animation-name: fadein!important;
-	-moz-animation-duration:3s!important;
-	-moz-animation-timing-function:ease!important;
-	-moz-animation-delay:2s!important;
-	-moz-animation-directionn: normal!important;
-}
 div.main:hover ~li#n2 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -743,8 +525,28 @@ div.main:hover ~li#n2 {
 	-moz-animation-directionn: normal;
 	 	visibility: visible!important;
 }
-
-
+li#n2:hover ~  #n1 {
+	-webkit-transition:all 0.2s ease ;
+	-o-transition:all 0.2s ease ;
+	transition: all 0.2s ease ;
+	transform: translate(-18%, 250%)!important;
+	animation-name: fadein;
+	animation-duration:3s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-directionn: normal;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:ease;
+	-webkit-animation-delay:2s;
+	-webkit-animation-directionn: normal;
+	-moz-animation-name: fadein;
+	-moz-animation-duration:3s;
+	-moz-animation-timing-function:ease;
+	-moz-animation-delay:2s;
+	-moz-animation-directionn: normal;
+			visibility: visible!important;
+}
 li#n2:hover{
 	-webkit-transition:all paused ease ;
  -o-transition:all paused ease ;
@@ -822,29 +624,6 @@ li#n2:hover ~li#n3
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-.is-hover3{
-	-webkit-transition:all 0.2s ease!important ;
-	-o-transition:all 0.2s ease!important ;
-	transition: all 0.2s ease!important ;
-	visibility: visible!important;
-	transform: translate(-84%, 615%)!important;
-	background:  #FFDD30!important;
-	animation-name: fadein!important;
-	animation-duration:3s!important;
-	animation-timing-function:ease!important;
-	animation-delay:2s!important;
-	animation-directionn: normal!important;
-	-webkit-animation-name: fadein!important;
-	-webkit-animation-duration:3s!important;
-	-webkit-animation-timing-function:ease!important;
-	-webkit-animation-delay:2s!important;
-	-webkit-animation-directionn: normal!important;
-	-moz-animation-name: fadein!important;
-	-moz-animation-duration:3s!important;
-	-moz-animation-timing-function:ease!important;
-	-moz-animation-delay:2s!important;
-	-moz-animation-directionn: normal!important;
-}
 li#n1:hover ~li#n3{
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -868,30 +647,7 @@ li#n1:hover ~li#n3{
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-.is-hover4{
-	-webkit-transition:all 0.2s ease !important;
-	-o-transition:all 0.2s ease !important;
-	transition: all 0.2s ease!important ;
-	visibility: visible!important;
-	transform: translate(-126%, 800%)!important;
-	background:  #F87173!important;
-	animation-name: fadein!important;
-	animation-duration:3s!important;
-	animation-timing-function:ease!important;
-	animation-delay:2s!important;
-	animation-directionn: normal!important;
-	-webkit-animation-name: fadein!important;
-	-webkit-animation-duration:3s!important;
-	-webkit-animation-timing-function:ease!important;
-	-webkit-animation-delay:2s!important;
-	-webkit-animation-directionn: normal!important;
-	-moz-animation-name: fadein!important;
-	-moz-animation-duration:3s!important;
-	-moz-animation-timing-function:ease!important;
-	-moz-animation-delay:2s!important;
-	-moz-animation-directionn: normal!important;
-}
-li#n3:hover ~  li#n4 {
+li#n3:hover ~  #n4 {
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
 	transition: all 0.2s ease ;
@@ -1117,34 +873,6 @@ div.main:hover ~li#n4 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-.is-hover5{
-	-webkit-transition:all 0.2s ease !important;
-	-o-transition:all 0.2s ease !important;
-	transition: all 0.2s ease !important;
-	visibility: visible!important;
-	transform: translate(-162%, 1000%)!important;
-	background:radial-gradient(#303258 5%, transparent 15%) 0 0,
-	radial-gradient(#2a2c4d 15%, transparent 5%),
-	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%),
-	radial-gradient(rgba(255,255,255,.1) 5%, transparent 50%);
-	 background-size: 10px 10px!important;
-	background-color: #FFF!important;
-	animation-name: fadein!important;
-	animation-duration:3s!important;
-	animation-timing-function:ease!important;
-	animation-delay:2s!important;
-	animation-directionn: normal!important;
-	-webkit-animation-name: fadein!important;
-	-webkit-animation-duration:3s!important;
-	-webkit-animation-timing-function:ease!important;
-	-webkit-animation-delay:2s!important;
-	-webkit-animation-directionn: normal!important;
-	-moz-animation-name: fadein!important;
-	-moz-animation-duration:3s!important;
-	-moz-animation-timing-function:ease!important;
-	-moz-animation-delay:2s!important;
-	-moz-animation-directionn: normal!important;
-}
 li#n1:hover ~li#n5{
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -1335,20 +1063,6 @@ div.main:hover ~li#n5 {
 	-moz-animation-delay:2s;
 	-moz-animation-directionn: normal;
 }
-.is-hover9{
-	-webkit-transition:all 0.2s ease!important ;
-	-o-transition:all 0.2s ease !important;
-	transition: all 0.2s ease!important ;
-	visibility: visible!important;
-	transform: translate(-199%, 1180%)!important;
-	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
-		linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
-		linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
-	 z-index: 2!important;
-	-webkit-animation: crossing 3s ease infinite,1s ease 2s normal forwards 1 fadein !important!important;
-	animation: crossing 3s ease infinite,0s ease 1s normal forwards 1 fadein  !important;
-
-}
 li#n1:hover ~li#n9{
 	-webkit-transition:all 0.2s ease ;
 	-o-transition:all 0.2s ease ;
@@ -1484,7 +1198,7 @@ div.main:hover ~li#n9 {
 	opacity: 1;
 	top: 10%;
 	right: 10%;
-	width:70%;
+	width:80%;
 	height:90%;
 	position: absolute;
 	z-index: -1;
