@@ -1,5 +1,5 @@
 body {
-  width: 90%;
+  width:100%;
   color: #164201;
 }
 
@@ -94,12 +94,15 @@ body {
 
 #center-content {
   opacity: 1;
-  display: block;
-  left: 30%;
-  width: 50%;
+  display: table;
+  margin: auto;
+  width:50%;
+	height:90%;
+	left:30%;
+	top:10%;
 font-size: 14px;
   font-family: Consolas;
-  margin: auto;
+
   overflow-wrap: break-word;
   text-align: justify;
   text-justify: inter-word;
