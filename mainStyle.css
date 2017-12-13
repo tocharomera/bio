@@ -20,6 +20,7 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top:  50px;
 		right:50px;
 
@@ -27,13 +28,25 @@ html{
 	#curriculo{
 		display: none!important;
 
+=======
+		top: 5%;
+		right:4%;
+
+	}
+	#curriculo{
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 210px;
 		right:48px;
+=======
+		top: 32%;
+		right:3.5%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		transform: rotate(90deg);
 
 	}
@@ -44,8 +57,13 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 125px;
 		right:12px;
+=======
+		top: 18%;
+		right:1%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		transform: rotate(90deg);
 	}
 	#img {
@@ -132,6 +150,7 @@ z-index: -10000;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 50px;
 		right:40px;
 
@@ -139,13 +158,25 @@ z-index: -10000;
 	#curriculo{
 		display: none!important;
 
+=======
+		top: 8%;
+		right:4%;
+
+	}
+	#curriculo{
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 80px;
 		right:40px;
+=======
+		top: 16%;
+		right:4%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 
 
 	}
@@ -155,8 +186,13 @@ z-index: -10000;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 110px;
 		right:40px;
+=======
+		top: 12%;
+		right:4%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 
 	}
 #img {
@@ -250,8 +286,13 @@ z-index: -10000;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 50px;
 		right:10px;
+=======
+		top: 20%;
+		right:0%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
  transform: rotate(90deg);
 	}
 	#documents{
@@ -260,19 +301,32 @@ z-index: -10000;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 140px;
 		right:-9px;
 		transform: rotate(90deg);
 	}
 	#curriculo{
 		display: none!important;
+=======
+		top: 35%;
+		right:-5.5%;
+		transform: rotate(90deg);
+	}
+	#curriculo{
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 215px;
 		right:27px;
+=======
+		top: 47%;
+		right:5%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		transform: rotate(90deg);
 
 	}

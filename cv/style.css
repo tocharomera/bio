@@ -14,6 +14,7 @@ html{
 		position: fixed;
 
 	}
+<<<<<<< HEAD
 	#en{
 		position: absolute;
 		color:#333;
@@ -44,15 +45,22 @@ html{
 			top: 80px;
 
 	}
+=======
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	#videos{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 50px;
 		right:40px;
 
+=======
+		top: 5%;
+		right:3%;
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 	#curriculo{
 		position: fixed;
@@ -60,10 +68,16 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 80px;
 		right:40px;
 
 
+=======
+		top: 35%;
+		right:2%;
+		transform: rotate(90deg);
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 	#documents{
 		position: fixed;
@@ -71,9 +85,15 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 110px;
 		right:40px;
 
+=======
+		top: 18%;
+		right:0%;
+		transform: rotate(90deg);
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 }
 @media (min-width: 600px) and (max-width: 1224px) {
@@ -82,6 +102,7 @@ html{
 		right: -1%!important;
 		position: fixed;
 	}
+<<<<<<< HEAD
 	#videos {
     position: fixed;
     color: #5555;
@@ -152,14 +173,33 @@ html{
 
 	}
 	#videos{
+=======
+	#videos{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+		top: 6%;
+		right:0%;
+		transform: rotate(90deg)
+	}
+	#curriculo{
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
+		position: fixed;
+		color:#5555;
+		text-decoration: none!important;
+		font-family: pixeled;
+		font-size:10px;
+<<<<<<< HEAD
 		top: 100px;
 		right:-1px;
  transform: rotate(90deg);
+=======
+		top: 35%;
+		right:1%;
+		transform: rotate(90deg);
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 	#documents{
 		position: fixed;
@@ -167,16 +207,27 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 190px;
 		right:-19px;
 		transform: rotate(90deg);
 	}
+=======
+		top: 21%;
+		right:-2.5%;
+		transform: rotate(90deg)
+	}
+}
+@media (max-width: 600px) {
+
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	#curriculo{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
+<<<<<<< HEAD
 		top: 270px;
 		right:9px;
 		transform: rotate(90deg);
@@ -210,6 +261,39 @@ html{
 		font-size:10px;
 			right: 20%;
 			top: 100px;
+=======
+		top: 35%;
+		right:3%;
+		transform: rotate(90deg);
+
+	}
+	#profile{
+		transform-origin: 70% 80%!important;
+		right: -12%!important;
+		position: fixed;
+
+	}
+	#videos{
+		position: fixed;
+		color:grey;
+		text-decoration: none!important;
+		font-family: pixeled;
+		font-size:10px;
+		top: 6%;
+		right:0%;
+		transform: rotate(90deg)
+
+	}
+	#documents{
+		position: fixed;
+		color:#5555;
+		text-decoration: none!important;
+		font-family: pixeled;
+		font-size:10px;
+		top: 21%;
+		right:-5%;
+		transform: rotate(90deg)
+>>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 
 	}
 	.navigation, .navigation a.main {
