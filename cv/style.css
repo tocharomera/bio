@@ -14,53 +14,14 @@ html{
 		position: fixed;
 
 	}
-<<<<<<< HEAD
-	#en{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 50%;
-			top: 80px;
-
-	}
-	#es{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 55%;
-			top: 80px;
-
-	}
-	#de{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 45%;
-			top: 80px;
-
-	}
-=======
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	#videos{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-<<<<<<< HEAD
-		top: 50px;
-		right:40px;
-
-=======
 		top: 5%;
 		right:3%;
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 	#curriculo{
 		position: fixed;
@@ -68,16 +29,9 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-<<<<<<< HEAD
-		top: 80px;
-		right:40px;
-
-
-=======
 		top: 35%;
 		right:2%;
 		transform: rotate(90deg);
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 	#documents{
 		position: fixed;
@@ -85,15 +39,9 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-<<<<<<< HEAD
-		top: 110px;
-		right:40px;
-
-=======
 		top: 18%;
 		right:0%;
 		transform: rotate(90deg);
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 }
 @media (min-width: 600px) and (max-width: 1224px) {
@@ -102,78 +50,6 @@ html{
 		right: -1%!important;
 		position: fixed;
 	}
-<<<<<<< HEAD
-	#videos {
-    position: fixed;
-    color: #5555;
-    text-decoration: none!important;
-    font-family: pixeled;
-    font-size: 10px;
-    top: 60px;
-    right: 20px;
-    transform: rotate(90deg)
-  }
-  #curriculo {
-    position: fixed;
-    color: #5555;
-    text-decoration: none!important;
-    font-family: pixeled;
-    font-size: 10px;
-    top: 237px;
-    right: 30px;
-    transform: rotate(90deg)
-  }
-  #documents {
-    position: fixed;
-    color: #5555;
-    text-decoration: none!important;
-    font-family: pixeled;
-    font-size: 10px;
-    top: 150px;
-    right:  2px;
-    transform: rotate(90deg)
-  }
-	#en{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 20%;
-			top: 60px;
-
-	}
-	#es{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 25%;
-			top: 60px;
-
-	}
-	#de{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 15%;
-			top: 60px;
-
-	}
-}
-@media (max-width: 600px) {
-
-	#profile{
-		transform-origin: 70% 80%!important;
-		right: -12%!important;
-		position: fixed;
-
-	}
-	#videos{
-=======
 	#videos{
 		position: fixed;
 		color:#5555;
@@ -185,21 +61,14 @@ html{
 		transform: rotate(90deg)
 	}
 	#curriculo{
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-<<<<<<< HEAD
-		top: 100px;
-		right:-1px;
- transform: rotate(90deg);
-=======
 		top: 35%;
 		right:1%;
 		transform: rotate(90deg);
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	}
 	#documents{
 		position: fixed;
@@ -207,12 +76,6 @@ html{
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-<<<<<<< HEAD
-		top: 190px;
-		right:-19px;
-		transform: rotate(90deg);
-	}
-=======
 		top: 21%;
 		right:-2.5%;
 		transform: rotate(90deg)
@@ -220,48 +83,12 @@ html{
 }
 @media (max-width: 600px) {
 
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 	#curriculo{
 		position: fixed;
 		color:#5555;
 		text-decoration: none!important;
 		font-family: pixeled;
 		font-size:10px;
-<<<<<<< HEAD
-		top: 270px;
-		right:9px;
-		transform: rotate(90deg);
-
-	}
-	#en{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 30%;
-			top: 100px;
-
-	}
-	#es{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 40%;
-			top: 100px;
-
-	}
-	#de{
-		position: absolute;
-		color:#333;
-		text-decoration: none!important;
-		font-family: pixeled;
-		font-size:10px;
-			right: 20%;
-			top: 100px;
-=======
 		top: 35%;
 		right:3%;
 		transform: rotate(90deg);
@@ -293,7 +120,6 @@ html{
 		top: 21%;
 		right:-5%;
 		transform: rotate(90deg)
->>>>>>> 097b9cf500ff88467b1baf97e90a559af2e31a79
 
 	}
 	.navigation, .navigation a.main {
