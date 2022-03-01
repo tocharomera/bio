@@ -1,0 +1,129 @@
+@charset "utf-8";
+@font-face {
+	font-family: Consolas;
+	src: url(Consolas.ttf);
+}
+@font-face {
+	font-family: Pixeled;
+	src: url(Pixeled.ttf);
+	font-size: 2.5vw;
+	text-decoration: none;
+	color:blueviolet;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+body{
+
+	width:90%;
+	display: block;
+margin: auto;
+	color:#164201;
+
+}
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+	position: absolute;
+	top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.navigation{
+	transform: skew(40deg) translate(-20%, 0%);
+position: fixed;
+	height:0px;
+	height: 40px;
+	width: 250px;
+	font: bold 0px/40px arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+
+#power{
+	color: aliceblue;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-66%, -10%);
+}
+#plant{
+	color: #126302;
+	position: absolute;
+	text-decoration: none!important;
+	font-family: pixeled;
+	font-size: 30px;
+	transform: skewX( -40deg) translate(-1%, 80%);
+}
+li#n2 {
+	background: #126302;
+}
+#video{
+
+	width:100%;
+
+	display: block;
+	margin: auto;
+
+
+}
+#front{
+	position: absolute;
+	color: #333;
+	width:50%;
+	height:90%;
+	left:30%;
+	top:10%;
+	margin: auto;
+	font-family: Consolas;
+	font-size: 14px;
+
+
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+#images{
+	width:100%;
+
+}
+#image2{
+	width:100%;
+
+}
+#dradoc1{
+	display: block;
+	float: down;
+	width: 100%;
+
+	margin: auto;
+}
+#dradoc2{
+	display: block;
+	float: none;
+	width:100%;
+	margin: auto;
+}
+#light{
+	display: block;
+	float: none;
+	width:100%;
+	margin: auto;
+}
+#back {
+  position: fixed;
+  float: right;
+  font-size: 10px;
+  top: 95%;
+  right: 5%;
+  color: grey;
+  text-decoration: none!important;
+  font-family: Pixeled;
+}
