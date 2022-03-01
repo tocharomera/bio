@@ -1,401 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <link href="mainStyle.css" rel="stylesheet" type="text/css" />
 
-<head>
-  <style>
-  </style>
-  <link href="mainStyle.css" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    var processor = {};
-    var r1, r2, r3, r4;
-
-
-    var time;
-    $(document).ready(function() {
-
-      processor.doLoad = function doLoad() {
-        var img2 = document.getElementById('img2');
-        var c2 = document.getElementById('canvas2');
-        var ctx2 = c2.getContext('2d');
-        var c3 = document.getElementById('canvas3');
-        var ctx3 = c3.getContext('2d');
-        let frame2 = document.getElementById("img2");
-        var c = document.getElementById('canvas');
-        var ctx = c.getContext('2d');
-        var c1 = document.getElementById('canvas1');
-        var ctx1 = c1.getContext('2d');
-        let frame = document.getElementById("img");
-        var light = 0.49;
-        var light2 = 0.39;
-
-        r1 = light;
-        r2 = light;
-        r3 = light;
-        r4 = light2;
-        r5 = light2;
-        r6 = light2;
-
-        time = setTimeout(function() {
-          sobel1();
-          sobel2();
-          doLoad();
-        }, 1000 / 24);
-        ctx1.drawImage(frame, 0, 0, c1.width, c1.height);
-        frame = c1.toDataURL('image/jpeg');
-
-        ctx3.drawImage(frame2, 0, 0, c3.width, c3.height);
-        frame2 = c3.toDataURL('image/jpeg');
-
-        function grayscale() {
-
-          frame = ctx1.getImageData(0, 0, c1.width, c1.height);
-
-          frame = processor.grayscale(frame);
-          ctx1.putImageData(frame, 0, 0);
-          var data = c1.toDataURL('image/jpeg');
-          img.setAttribute('src', data);
-
-        }
-
-        function sobel2() {
-          frame2 = ctx3.getImageData(0, 0, c3.width, c3.height);
-          frame2 = sobel2nd(frame2);
-          ctx3.putImageData(frame2, 0, 0);
-          var data2 = c3.toDataURL('image/jpeg');
-          img2.setAttribute('src', data2);
-
-        }
-
-        function sobel1() {
-          frame = ctx1.getImageData(0, 0, c1.width, c1.height);
-          frame = sobel(frame);
-          ctx1.putImageData(frame, 0, 0);
-          var data = c1.toDataURL('image/jpeg');
-          img.setAttribute('src', data);
-
-        }
-      }
-      ///////////////////////////////////////////////
-      //  FROM : https://www.html5rocks.com/en/tutorials/canvas/imagefilters/#toc-convolution
-
-
-
-      processor.grayscale = function grayscale(px) {
-
-        var d = px.data;
-        for (var i = 0; i < d.length; i += 4) {
-          var r = d[i];
-          var g = d[i + 1];
-          var b = d[i + 2];
-          // CIE luminance for the RGB
-          var v = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-          d[i] = d[i + 1] = d[i + 2] = v
-        }
-
-        return px;
-      };
-
-      processor.convoluteFloat32 = function(pixels, weights, opaque) {
-        var side = Math.round(Math.sqrt(weights.length));
-        var halfSide = Math.floor(side / 2);
-
-        var src = pixels.data;
-        var sw = pixels.width;
-        var sh = pixels.height;
-
-        var w = sw;
-        var h = sh;
-        var output = {
-          width: w,
-          height: h,
-          data: new Float32Array(w * h * 4)
-        };
-        var dst = output.data;
-
-        var alphaFac = opaque ? 1 : 0;
-
-        for (var y = 0; y < h; y++) {
-          for (var x = 0; x < w; x++) {
-            var sy = y;
-            var sx = x;
-            var dstOff = (y * w + x) * 4;
-            var r = 0,
-              g = 0,
-              b = 0,
-              a = 0;
-            for (var cy = 0; cy < side; cy++) {
-              for (var cx = 0; cx < side; cx++) {
-                var scy = Math.min(sh - 1, Math.max(0, sy + cy - halfSide));
-                var scx = Math.min(sw - 1, Math.max(0, sx + cx - halfSide));
-                var srcOff = (scy * sw + scx) * 4;
-                var wt = weights[cy * side + cx];
-                r += src[srcOff] * wt;
-                g += src[srcOff + 1] * wt;
-                b += src[srcOff + 2] * wt;
-                a += src[srcOff + 3] * wt;
-              }
-            }
-            dst[dstOff] = r;
-            dst[dstOff + 1] = g;
-            dst[dstOff + 2] = b;
-            dst[dstOff + 3] = a + alphaFac * (255 - a);
-          }
-        }
-        return output;
-      };
-      processor.tmpCanvas = document.createElement('canvas');
-      processor.tmpCtx = processor.tmpCanvas.getContext('2d');
-
-      processor.createImageData = function(w, h) {
-        return this.tmpCtx.createImageData(w, h);
-      };
-      processor.identity = function(pixels, args) {
-        var output = processor.createImageData(pixels.width, pixels.height);
-        var dst = output.data;
-        var d = pixels.data;
-        for (var i = 0; i < d.length; i++) {
-          dst[i] = d[i];
-        }
-        return output;
-      };
-      //https://github.com/kig/canvasfilters/blob/master/filters.js
-      var sobel2nd = function sobel(px2) {
-        this.px = px2;
-
-        var vertical = processor.convoluteFloat32(px, [-r4, -r5, -r6,
-          0, 0, 0,
-          r4, r5, r6
-        ]);
-        var horizontal = processor.convoluteFloat32(px, [-r6, 0, r6, -r5, 0, r5, -r4, 0, r4]);
-        var id = processor.createImageData(vertical.width, vertical.height);
-        for (var i = 0; i < id.data.length; i += 4) {
-          var v = Math.abs(vertical.data[i]);
-          id.data[i] = v;
-          var h = Math.abs(horizontal.data[i]);
-          id.data[i + 1] = h
-          id.data[i + 2] = (v + h) / 4;
-          id.data[i + 3] = 255;
-        }
-
-        return id;
-
-      };
-
-
-      var sobel = function sobel(px) {
-
-        px = processor.grayscale(px);
-        var vertical = processor.convoluteFloat32(px, [-r1, -r2, -r3,
-          0, 0, 0,
-          r1, r2, r3
-        ]);
-        var horizontal = processor.convoluteFloat32(px, [-r3, 0, r3, -r2, 0, r2, -r1, 0, r1]);
-        var id = processor.createImageData(vertical.width, vertical.height);
-        for (var i = 0; i < id.data.length; i += 4) {
-          var v = Math.abs(vertical.data[i]);
-          id.data[i] = v;
-          var h = Math.abs(horizontal.data[i]);
-          id.data[i + 1] = h
-          id.data[i + 2] = (v + h) / 4;
-          id.data[i + 3] = 255;
-        }
-
-        return id;
-
-      };
-      processor.doLoad();
-    });
-  </script>
-
-  <meta charset="utf-8">
-  <title>Mario Romera Gómez</title>
-</head>
-
-<body>
-
-    <div id="videos" style="cursor:pointer;" onclick="location.href='/videos/';">
-      <p>videos</p>
-  </div>
-  <div id="documents" style="cursor:pointer;" onclick="location.href='/documents/';">
-    <p>documents</p>
-</div>
-<div id="curriculo" style="cursor:pointer;" onclick="location.href='/cv/';">
-  <p>cv</p>
-</div>
-  <ul class="navigation">
-    <div class="main" href=""></div>
-
-    <li class="list" id="n1" style="cursor:pointer;" onclick="location.href='/mobMess';"><a id="mobMess" href="/mobMess/">mobMess</a></li>
-
-    <li class="list" id="n2" style="cursor:pointer;" onclick="location.href='/powerPlant';"><a id="power" href="/powerPlant/">Power</a><a id="plant" href="/powerPlant/">PLant</a></li>
-
-
-    <li class="list" id="n3" style="cursor:pointer;" onclick="location.href='/babyDuck/';"><a id="babyDuck" href="/babyDuck/">BabyDuck</a></li>
-    <li class="list" id="n4" style="cursor:pointer;" onclick="location.href='/mundoGorila/';"><a id="mundoGorila" href="/mundoGorila/">MundoGorila</a></li>
-    <li class="list" id="n5" style="cursor:pointer;" onclick="location.href='/Comuna-con-la-Cocina/';"><a id="comuna" href="/Comuna-con-la-Cocina/">Comuna</a></li>
-
-    <li class="list" id="n9" style="cursor:pointer;" onclick="location.href='/Fragiles/';"><a id="Fragiles" href="/Fragiles/">Fragiles</a></li>
-  </ul>
-
-  <div id="profile" href="">
-    <div id="signature">
-      <p>Mario Romera Gomez 2017</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Mario Romera Gómez</title>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <div id="videos">
+      <a href="/videos/">videos</a>
     </div>
-  </div>
-
-  <div class="front" id="front">
-    <canvas id="canvas" class="canvases" width=148 height=262 style="display: none;margin:auto;"></canvas>
-    <canvas id="canvas1" class="canvases" width=148 height=262 style="display: block; margin:auto;"></canvas>
-    <img id="img" src="perfil.jpg" width=148 height=262 style="display:none; ">
-    <div id="qdiv">
-      <p id="quote"> All art, as the letting happen of the advent of the truth of what is, is, as such, essentially poetry. To be a work means to set up a world.</p>
-      <p id="author">Heidegger(1971,70)
-        <p>
+    <div id="documents"  >
+      <a href="/documents/">documents</a>
     </div>
-    <canvas id="canvas2" class="canvases2" width=148 height=262 style="display: none;margin:auto;"></canvas>
-    <canvas id="canvas3" class="canvases2" width=148 height=262 style="display: block; margin:auto;"></canvas>
-    <img id="img2" src="perfil2.jpg" width=148 height=262 style="display:none; ">
-    <img src="dell-28.png" id="frame1" alt="">
-    <img src="dell-28.png" id="frame2" alt="">
-    <!--<img id="orig" src="perfil.jpg" display="none!important">-->
-    <!--<div id="button" class="text-center"  >
-    <div id="icon" class="btn btn-default btn-circle icon-camera"></div><br><br><br>
+    <div id="curriculo">
+      <a href="/cv">cv</a>
+    </div>
 
-	</div>
--->
-  </div>
-  <div id="cv">
-    <p>
-      <br>
-      <br>
-      <br>
-      <br />Born and raised in Madrid, Spain. Have been always interested in creative ways to express ideas and concepts. he started to draw and attend painting lessons from childhood at the same time that his father taught him some electronic skills soldering circuits to make random dices,
-       automatized switches. But I guess creative procedures are the only ones he could follow using imagination and intuition to reflex about his context, in a art and experimental way.  <br />He developed his skills of drawing and painting, but his favourite discipline was always contemporary sculpture
-       . After some years in the university he realized about sculpture possibilities and new ways of expanding the three-dimensional conceptualization, as also his first introduction to site-specific installations, performances and happenings took place.
-       <br />He received his Bachelor of Fine Arts from the University of Granada, Spain. Where he lived for three years combined with one year of exchange in the Aristotle University of Thessaloniki, Greece in 2012.<br
+    <div id="profile">
+      <div id="signature">
+        <p>Mario Romera Gomez</p>
+      </div>
+    </div>
+
+    <div class="front" id="front">
+      <canvas
+        id="canvas"
+        class="canvases"
+        width="148"
+        height="262"
+        style="display: none; margin: auto"
+      ></canvas>
+      <canvas
+        id="canvas1"
+        class="canvases"
+        width="148"
+        height="262"
+        style="display: block; margin: auto"
+      ></canvas>
+      <img
+        id="img"
+        src="perfil.jpg"
+        width="148"
+        height="262"
+        style="display: none"
       />
-      <br />In between his university studies he spent in Venezuela a year, in which he studied in a Master Chef School, work in gastronomical field and had very satisfactory experiences after achieving some knowledge that was developed in Comuna con la Cocina project, in which it was a
-       food happening based on pre-Marxists theories of the commune. This project is a key factor in his perspective of how art changed since then to a more critical and participative way.
- <br />
-      <br /> All experiences he had from the places he lived inspired him in art and critical motivations, in such a way that he don't differ from one apart from the other. His focus then is on community works and interactive installations where the people can participate and get involved to,
-       in the end his works could be integrated systems to satisfy community needs in a creative way.<br />
-      <br /> He spent another year in Venezuela having the opportunity to work with some of the art infrastructures of Caracas, such as a gallery, a cultural park, and the National Gallery. Also he has been very connected to the new experimental university of arts. With these experiences
-       he realized about how important are finding new paths to connect with institutions to develop more accurate ways of art to connect with society and how this interpolate day-to-day life.
-      <br>Currently I am studying in the  University of Art and Design Linz, the Master program of Interface Cultures in the Austrian city of Linz. <br>
-        <br />  His focus in art is based on the belief that new ways of alternative lifestyle is possible, where he include his work of art and politics as possible solutions to achieve a better culture. He commit to this purpose experimenting through art. critical thinking, philosophy,
-        politics and social concepts that ping in the direction of the matter of life.  <br />
-      <br />
-      <br />Mario Romera Gómez<br /> tocharomera@gmail.com
-      <br />
-      <br />
-    </p>
+      <div id="qdiv">
+        <p id="quote">
+          All art, as the letting happen of the advent of the truth of what is,
+          is, as such, essentially poetry. To be a work means to set up a world.
+        </p>
+        <p id="author">Heidegger(1971,70)</p>
+        <p></p>
+      </div>
 
-  </div>
+      <canvas
+        id="canvas2"
+        class="canvases2"
+        width="148"
+        height="262"
+        style="display: none; margin: auto"
+      ></canvas>
+      <canvas
+        id="canvas3"
+        class="canvases2"
+        width="148"
+        height="262"
+        style="display: block; margin: auto"
+      ></canvas>
+      <img
+        id="img2"
+        src="perfil2.jpg"
+        width="148"
+        height="262"
+        style="display: none"
+      />
+      <img src="dell-28.png" id="frame1" alt="" />
+      <img src="dell-28.png" id="frame2" alt="" />
+    </div>
+    <link href="extern.html" rel="import" />
+    <div id="bio">
+      <p>
+        <br />
+        <br />
+        <br />
+        <br />Born and raised in Madrid, Spain. Have been always interested in
+        creative ways to express ideas and concepts. he started to draw and
+        attend painting lessons from childhood at the same time that his father
+        taught him some electronic skills soldering circuits to make random
+        dices, automatized switches. But I guess creative procedures are the
+        only ones he could follow using imagination and intuition to reflex
+        about his context, in a art and experimental way. <br />He developed his
+        skills of drawing and painting, but his favourite discipline was always
+        contemporary sculpture . After some years in the university he realized
+        about sculpture possibilities and new ways of expanding the
+        three-dimensional conceptualization, as also his first introduction to
+        site-specific installations, performances and happenings took place.
+        <br />He received his Bachelor of Fine Arts from the University of
+        Granada, Spain. Where he lived for three years combined with one year of
+        exchange in the Aristotle University of Thessaloniki, Greece in 2012.<br />
+        <br />In between his university studies he spent in Venezuela a year, in
+        which he studied in a Master Chef School, work in gastronomical field
+        and had very satisfactory experiences after achieving some knowledge
+        that was developed in Comuna con la Cocina project, in which it was a
+        food happening based on pre-Marxists theories of the commune. This
+        project is a key factor in his perspective of how art changed since then
+        to a more critical and participative way.
+        <br />
+        <br />
+        All experiences he had from the places he lived inspired him in art and
+        critical motivations, in such a way that he don't differ from one apart
+        from the other. His focus then is on community works and interactive
+        installations where the people can participate and get involved to, in
+        the end his works could be integrated systems to satisfy community needs
+        in a creative way.<br />
+        <br />
+        He spent another year in Venezuela having the opportunity to work with
+        some of the art infrastructures of Caracas, such as a gallery, a
+        cultural park, and the National Gallery. Also he has been very connected
+        to the new experimental university of arts. With these experiences he
+        realized about how important are finding new paths to connect with
+        institutions to develop more accurate ways of art to connect with
+        society and how this interpolate day-to-day life. <br />Currently I am
+        studying in the University of Art and Design Linz, the Master program of
+        Interface Cultures in the Austrian city of Linz. <br />
+        <br />
+        His focus in art is based on the belief that new ways of alternative
+        lifestyle is possible, where he include his work of art and politics as
+        possible solutions to achieve a better culture. He commit to this
+        purpose experimenting through art. critical thinking, philosophy,
+        politics and social concepts that ping in the direction of the matter of
+        life. <br />
+        <br />
+        <br />Mario Romera<br />
+        marioromera@servus.at
+        <br />
+        <br />
+      </p>
+    </div>
 
-
-  <script>
-
-  $("li#n2").on('mouseover', function(){
-      $(".navigation li#n1").addClass('is-hover1');
-$("li#n2").on('mouseout', function(){
-     $(".navigation li#n1").removeClass('is-hover1');
-});
-});
-$("li#n3").on('mouseover', function(){
-    $(".navigation li#n1").addClass('is-hover1');
-$("li#n3").on('mouseout', function(){
-   $(".navigation li#n1").removeClass('is-hover1');
-});
-});
-
-$("li#n4").on('mouseover', function(){
-    $(".navigation li#n1").addClass('is-hover1');
-$("li#n4").on('mouseout', function(){
-   $(".navigation li#n1").removeClass('is-hover1');
-});
-});
-$("li#n5").on('mouseover', function(){
-    $(".navigation li#n1").addClass('is-hover1');
-$("li#n5").on('mouseout', function(){
-   $(".navigation li#n1").removeClass('is-hover1');
-});
-});
-$("li#n9").on('mouseover', function(){
-    $(".navigation li#n1").addClass('is-hover1');
-$("li#n9").on('mouseout', function(){
-   $(".navigation li#n1").removeClass('is-hover1');
-});
-});
-//////
-$("li#n3").on('mouseover', function(){
-    $(".navigation li#n2").addClass('is-hover2');
-$("li#n3").on('mouseout', function(){
-   $(".navigation li#n2").removeClass('is-hover2');
-});
-});
-$("li#n4").on('mouseover', function(){
-  $(".navigation li#n2").addClass('is-hover2');
-$("li#n4").on('mouseout', function(){
- $(".navigation li#n2").removeClass('is-hover2');
-});
-});
-$("li#n5").on('mouseover', function(){
-  $(".navigation li#n2").addClass('is-hover2');
-$("li#n5").on('mouseout', function(){
- $(".navigation li#n2").removeClass('is-hover2');
-});
-});
-$("li#n9").on('mouseover', function(){
-  $(".navigation li#n2").addClass('is-hover2');
-$("li#n9").on('mouseout', function(){
- $(".navigation li#n2").removeClass('is-hover2');
-});
-});
-////
-$("li#n4").on('mouseover', function(){
-    $(".navigation li#n3").addClass('is-hover3');
-$("li#n4").on('mouseout', function(){
-   $(".navigation li#n3").removeClass('is-hover3');
-});
-});
-$("li#n5").on('mouseover', function(){
-  $(".navigation li#n3").addClass('is-hover3');
-$("li#n5").on('mouseout', function(){
- $(".navigation li#n3").removeClass('is-hover3');
-});
-});
-$("li#n9").on('mouseover', function(){
-  $(".navigation li#n3").addClass('is-hover3');
-$("li#n9").on('mouseout', function(){
- $(".navigation li#n3").removeClass('is-hover3');
-});
-});
-/////
-$("li#n5").on('mouseover', function(){
-    $(".navigation li#n4").addClass('is-hover4');
-$("li#n5").on('mouseout', function(){
-   $(".navigation li#n4").removeClass('is-hover4');
-});
-});
-$("li#n9").on('mouseover', function(){
-  $(".navigation li#n4").addClass('is-hover4');
-$("li#n9").on('mouseout', function(){
- $(".navigation li#n4").removeClass('is-hover4');
-});
-});
-$("li#n9").on('mouseover', function(){
-  $(".navigation li#n5").addClass('is-hover5');
-$("li#n9").on('mouseout', function(){
- $(".navigation li#n5").removeClass('is-hover5');
-});
-});
-
-
-  </script>
-</body>
-
+    <script src="./libs/jquery-3.6.0.min.js"></script>
+    <script src="./screens.js"></script>
+    <script src="./navigation.js"></script>
+  </body>
 </html>
