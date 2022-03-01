@@ -26,42 +26,12 @@ video {
   left: 0%;
   top: 0%;
   margin: auto;
-  font-family: Consolas;
   overflow-wrap: break-word;
   text-align: justify;
   text-justify: inter-word;
   font: normal 12px/1x Consolas;
   padding: 1rem;
   max-height: 100%;
-}
-
-#front {
-  animation-name: fadein;
-  animation-duration: 02.21s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-direction: normal;
-  -webkit-animation-name: fadein;
-  -webkit-animation-duration: 02.2s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-direction: normal;
-  -moz-animation-name: fadein;
-  -moz-animation-duration: 02.2s;
-  -moz-animation-timing-function: ease;
-  -moz-animation-delay: 0s;
-  -moz-animation-direction: normal;
-  -webkit-transition: opacity 1.2s ease;
-  -o-transition: opacity 1.2s ease;
-  transition: opacity all 1.2s ease;
-  opacity: 1;
-  top: 10%;
-  left: 10%;
-  width: 70%;
-  height: 90%;
-  position: absolute;
-  z-index: -1;
-  margin: auto;
 }
 
 .canvases {
@@ -124,9 +94,6 @@ video {
   font-size: 18px;
 }
 
-.screens {
-}
-
 .screens #canvas3,
 .screens #frame2,
 .screens #img1 {
@@ -155,3 +122,17 @@ video {
     width: 80%;
   }
 }
+
+.front {
+  position: relative;
+  left: 0;
+  padding: 10% 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  font: normal 12px/30px Consolas;
+}
+ 

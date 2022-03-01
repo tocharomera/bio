@@ -1,15 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="/mainStyle.css" rel="stylesheet" type="text/css" />
     <link href="/navigation.css" rel="stylesheet" type="text/css" />
+    <link href="/masonry.css" rel="stylesheet" type="text/css" />
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Old Fashion Selfie</title>
+
+    <style>
+      .masonry {
+        column-count: 5;
+        column-gap: 10px;
+      }
+    </style>
   </head>
   <body>
-    Coming soon...
+    <div class="front">
+      <div class="masonry grid"></div>
+      <h1>Old fashion selfie</h1>
+      <h2>Concept</h2>
+      Old fashion selfie is a photography map, it gives pixels pieces of
+      information to navigate images counteracting the fast consumption of an
+      image.
+      <h2>Tech</h2>
+      It’s a device thought to be obsolete and still be functional, thanks to
+      E-ink when the battery would be over, if no recharge, the image will still
+      be present. The pictures shown in old fashion selfie are encrypted in
+      layered, split tiles. Filtered images present information with different
+      levels of pixelation, which are related to the zoom of the image. Only on
+      the last level of the image, we can appreciate the original pixels of the
+      images and all the tiny details kept on them.
+      <h2>Context</h2>
+      As maps work, the first impression just gives us hint of what is contained
+      in the following images, the more detailed information we want to receive,
+      the “closer” we have to augment, therefore reducing the proportional scale
+      of the represented territory. Snapshots are treated as maps, processing
+      information not by only augmenting the scale of the images, but creating
+      abstractions of the subject using the bricks that build digital images.
+      They depict every gesture as a mountain and every line as river, making
+      the imagination to work as when looking at a very old picture, trying to
+      guess what is the story behind every detail, making a journey through the
+      image as a walking trip, slowly travelling through territory accidentals.
+      The represented subject intimacy is protected with this kind of
+      encryption. Only the human mind can put together and reproduce the whole
+      picture mentally. Everything seen shows special but at the same time, very
+      similar to the standards our vocabulary can describe. When a face is
+      represented, we can appreciate the similarities with other equals, two
+      eyes, one nose, mouth and chin. If for Viléms Flusser´s photography was
+      capturing the passing river aka time, todays selfies symbolizes the
+      pressured water torrent each person leaks into the social networks
+      frameworks. The consumerism of media, polemic trends like Facebook which
+      will at some point or another will involve us point to make photography
+      and video obsolete in favor of more immersive media such as the
+      combination of both previous mediums together with physical gestures
+      embodiment. How do we look at pictures nowadays and how generations prior
+      to us used to look at them has significantly changed. Its impossible to
+      measure how much attention people were putting into pictures when
+      photography was invented. If we would compare it with today’s scrolling
+      media consumption, we can figure out what is the difference we are talking
+      about. What is the problem of looking at pictures so fast? Everything must
+      be catchy, then pixel perfection is required(smiles, faces, bodies,
+      landscapes) and we have to produce massive of this content to feed the
+      social machinery that keep us feeling connected to other peoples through
+      mainly, screens. Artificial scarcity works as the artistic principle,
+      creating a gamification of the glance over the different levels, realizing
+      about the simplicity of the logic that keep our brain interested and
+      realizing how we look at images in our everyday life.
+    </div>
     <script src="/libs/jquery-3.6.0.min.js"></script>
     <script src="/navigation.js"></script>
+
+    <script>
+      var folder = "./imgs/";
+
+      $.ajax({
+        url: folder,
+        success: function (data) {
+          $(data)
+            .find("a")
+            .attr("href", function (i, val) {
+              if (val.match(/\.(jpe?g|png|gif)$/)) {
+                $(".masonry").append(
+                  "<figure><img class='item' src='" + val + "'></figure>"
+                );
+              }
+            });
+        },
+      });
+    </script>
   </body>
 </html>

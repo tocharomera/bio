@@ -8,7 +8,7 @@ function getTopTransformStr(top = 0) {
 }
 
 function showLinks(links) {
-  var navHeight = window.innerHeight / 2 / links.length;
+  var navHeight = (window.innerHeight * 0.7) / links.length;
   links.each(function (idx) {
     var trans = getTopTransformStr((idx + 1) * navHeight);
 
@@ -22,6 +22,7 @@ function hideLinks(links) {
     $(this).attr("style", `translate(0,0)skew(45deg)`);
   });
 }
+
 $(function () {
   $("body").prepend(
     `<ul id="nav" class="navigation">
@@ -54,10 +55,36 @@ $(function () {
   </li>
 </ul>`
   );
-  $("#bio").fadeOut();
+
+  $("body").append(`
+    <div class="sidebar">
+    <div id="videos">
+      <a href="/videos/">videos</a>
+    </div>
+
+    <div id="documents">
+      <a href="/documents/">documents</a>
+    </div>
+
+    <div id="curriculo">
+      <a href="/cv">cv</a>
+    </div>
+
+    <div id="profile">
+      <div id="signature">
+        <p>Mario Romera Gomez</p>
+      </div>
+    </div>
+    </div>
+  `);
+
+  if (window.location.pathname !== "/") {
+    $("body").append(`<a class="home" href="/">⌂</a>`);
+  }
 
   var links = $("#nav").children(".nav-link");
-  var maxScroll = $("document").height();
+  var maxScroll = $(document).height();
+  console.log(maxScroll, "Max");
   $(".navigation").height(maxScroll);
 
   $(".navigation .main").on("click", function () {

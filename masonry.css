@@ -1,0 +1,25 @@
+img {
+  max-width: 100%;
+  display: block;
+}
+
+figure {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin: 10px;
+  break-inside: avoid;
+}
+ 
+
+figure > img {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  gap: 10px;
+}
