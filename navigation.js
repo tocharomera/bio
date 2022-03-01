@@ -1,6 +1,5 @@
 function getTransformItem(idx, totalLen, height) {
-  var top = (idx + 0.8) * (height / totalLen - 1);
-
+  var top = (height / totalLen) * idx;
   return getTopTransformStr(top);
 }
 
@@ -9,10 +8,10 @@ function getTopTransformStr(top = 0) {
 }
 
 function showLinks(links) {
+  var navHeight = window.innerHeight / 2 / links.length;
   links.each(function (idx) {
-    var navHeight = window.innerHeight;
-    var trans = getTransformItem(idx, links.length, navHeight);
-    console.log("nav", navHeight);
+    var trans = getTopTransformStr((idx + 1) * navHeight);
+
     $(this).attr("style", `${trans}skew(45deg)`);
     $(this).addClass("is-hover");
   });
@@ -55,8 +54,10 @@ $(function () {
   </li>
 </ul>`
   );
+  $("#bio").fadeOut();
+
   var links = $("#nav").children(".nav-link");
-  var maxScroll = $(document).height();
+  var maxScroll = $("document").height();
   $(".navigation").height(maxScroll);
 
   $(".navigation .main").on("click", function () {
@@ -66,6 +67,10 @@ $(function () {
     } else {
       showLinks(links);
     }
+  });
+
+  $("#profile").on("click", function () {
+    window.location.href = "/bio";
   });
 
   $(".navigation").on("mouseover", function () {

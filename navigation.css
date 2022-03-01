@@ -1,0 +1,563 @@
+@font-face {
+  font-family: "babyblocks";
+  src: url(web/babyblocks.ttf);
+}
+@font-face {
+  font-family: "champignon";
+  src: url(web/Champignon.otf);
+}
+@font-face {
+  font-family: "biohack";
+  src: url(web/Biohack.ttf);
+}
+@font-face {
+  font-family: "pixeled";
+  src: url(web/Pixeled.ttf);
+  font-size: 2.5vw;
+  text-decoration: none;
+  color: blueviolet;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes crossing {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes crossing {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+[href] {
+  cursor: pointer;
+}
+
+#profile {
+  background: -webkit-linear-gradient(
+    -45deg,
+    #66ff66,
+    #ff6eff,
+    #aaf0d1
+  ); /* Safari 5.1-6.0 */
+  background: linear-gradient(-45deg, #66ff66, #ff6eff, #aaf0d1);
+  -webkit-animation: crossing 8s ease infinite;
+  animation: crossing 8s ease infinite;
+  background-size: 600% 600%;
+  display: block;
+  height: 40px;
+  width: 250px;
+
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  background-color: #333;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 70% 80%;
+  transform: rotate(90deg) skew(-40deg);
+  bottom: 15%;
+  right: 3%;
+  z-index: 1;
+  position: fixed;
+
+  cursor: pointer;
+}
+#signature {
+  position: absolute;
+  color: grey;
+  text-decoration: none;
+  font-family: pixeled;
+  font-size: 10px;
+  right: 2%;
+  transform: skew(40deg);
+}
+#profile:hover ~ .front {
+  animation-name: fadeout;
+  animation-duration: 01.21s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  -webkit-animation-name: fadeout;
+  -webkit-animation-duration: 01.2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-direction: normal;
+  -moz-animation-name: fadeout;
+  -moz-animation-duration: 01.2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-delay: 0s;
+  -moz-animation-direction: normal;
+  -webkit-transition: opacity 1.2s ease;
+  -o-transition: opacity 1.2s ease;
+  transition: opacity all 1.2s ease;
+  opacity: 0;
+}
+
+.navigation {
+  position: relative;
+  height: 100%;
+  margin: 1rem;
+  margin-left: 0;
+  width: 250px;
+  z-index: 999;
+}
+
+.navigation .main {
+  visibility: visible;
+
+  opacity: 1;
+  cursor: pointer;
+  background: -webkit-linear-gradient(
+    -45deg,
+    #66ff66,
+    #ff6eff,
+    #aaf0d1
+  ); /* Safari 5.1-6.0 */
+  background: linear-gradient(-45deg, #66ff66, #ff6eff, #aaf0d1);
+  -webkit-animation: crossing 8s ease infinite;
+  animation: crossing 8s ease infinite;
+  background-size: 600% 600%;
+  display: block;
+  height: 40px;
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  background-color: #333;
+  -webkit-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  margin: 0 1rem;
+
+  cursor: pointer;
+}
+.navigation li {
+  visibility: hidden;
+  background-color: pink;
+  list-style-type: none;
+  width: 250px;
+  height: 40px;
+  font: normal 12px/40px arial, sans-serif;
+  text-align: center;
+  transform: skew(45deg);
+  display: block;
+
+  margin: 0 1rem;
+  transition-property: transform, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  opacity: 0;
+  position: absolute;
+}
+.navigation li > a {
+  font-family: "pixeled";
+  color: #fff !important;
+  display: block;
+  transform: skew(-45deg);
+
+  font: normal 15px/40px "pixeled";
+  text-decoration: none;
+}
+
+.is-hover {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#old-fashion-selfie {
+  background: url(picture-frame-png-transparent-5.png) no-repeat;
+}
+#old-fashion-selfie {
+}
+
+#proof-of-consensus {
+  /* ref: https://css-tricks.com/drawing-images-with-css-gradients/ */
+
+  background: radial-gradient(
+      1em 1em at 6.25em 2.5em,
+      #141478 0.2em,
+      #464646 0.21em,
+      #464646 49%,
+      rgba(70, 70, 70, 0) 50%
+    ),
+    radial-gradient(200% 100% at 100% 50%, #464646 49%, rgba(70, 70, 70, 0) 50%)
+      calc(50% + 0.125em - 2em - 0.25em) 2em/0.5em 1em,
+    radial-gradient(200% 100% at 0% 50%, #464646 49%, rgba(70, 70, 70, 0) 50%)
+      calc(50% + 0.125em + 2em + 0.25em) 2em/0.5em 1em,
+    linear-gradient(#464646, #464646) calc(50% + 0.125em) 2em/4em 1em,
+    linear-gradient(#191419, #191419) calc(50% + 0.125em) 5em/17.25em 30em,
+    radial-gradient(
+        200% 200% at 100% 100%,
+        rgba(120, 120, 120, 0) 0.3em,
+        #787878 0.35em,
+        #787878 0.48em,
+        rgba(120, 120, 120, 0) 0.5em
+      )
+      calc(50% + 0.125em - 0.5em) 36.5em/0.5em 0.5em,
+    radial-gradient(
+        200% 200% at 0% 100%,
+        rgba(120, 120, 120, 0) 0.3em,
+        #787878 0.35em,
+        #787878 0.48em,
+        rgba(120, 120, 120, 0) 0.5em
+      )
+      calc(50% + 0.125em + 0.5em) 36.5em/0.5em 0.5em,
+    radial-gradient(
+        200% 200% at 100% 0%,
+        rgba(120, 120, 120, 0) 0.3em,
+        #787878 0.35em,
+        #787878 0.48em,
+        rgba(120, 120, 120, 0) 0.5em
+      )
+      calc(50% + 0.125em - 0.5em) 37.5em/0.5em 0.5em,
+    radial-gradient(
+        200% 200% at 0% 0%,
+        rgba(120, 120, 120, 0) 0.3em,
+        #787878 0.35em,
+        #787878 0.48em,
+        rgba(120, 120, 120, 0) 0.5em
+      )
+      calc(50% + 0.125em + 0.5em) 37.5em/0.5em 0.5em,
+    linear-gradient(
+        #787878 0.15em,
+        rgba(120, 120, 120, 0) 0.2em,
+        rgba(120, 120, 120, 0) 1.35em,
+        #787878 1.35em
+      )
+      calc(50% + 0.125em) 36.5em/0.5em 1.5em,
+    linear-gradient(
+        90deg,
+        #787878 0.15em,
+        rgba(120, 120, 120, 0) 0.2em,
+        rgba(120, 120, 120, 0) 1.3em,
+        #787878 1.35em
+      )
+      calc(50% + 0.125em) 37em/1.5em 0.5em,
+    radial-gradient(
+      3em 3em at calc(50% + 0.125em) 37.25em,
+      rgba(10, 10, 10, 0) 1.25em,
+      #0a0a0a 1.3em,
+      #0a0a0a 49%,
+      rgba(10, 10, 10, 0) 50%
+    ),
+    linear-gradient(
+        rgba(120, 120, 120, 0) 5em,
+        #787878 5em,
+        #787878 7.5em,
+        rgba(120, 120, 120, 0) 7.5em,
+        rgba(120, 120, 120, 0) 9.5em,
+        #787878 9.5em,
+        #787878 11em,
+        rgba(120, 120, 120, 0) 11em,
+        rgba(120, 120, 120, 0) 13em,
+        #787878 13em,
+        #787878 14.5em,
+        rgba(120, 120, 120, 0) 14.5em
+      )
+      0 0/0.3em 100%,
+    radial-gradient(
+        200% 200% at 100% 100%,
+        #323232 1.45em,
+        #787878 1.5em,
+        #787878 50%,
+        rgba(120, 120, 120, 0) 51%
+      )
+      0.25em 0/2em 2em,
+    radial-gradient(
+        200% 200% at 0% 100%,
+        #323232 1.45em,
+        #787878 1.5em,
+        #787878 50%,
+        rgba(120, 120, 120, 0) 51%
+      )
+      18em 0/2em 2em,
+    radial-gradient(
+        200% 200% at 100% 0%,
+        #323232 1.45em,
+        #787878 1.5em,
+        #787878 50%,
+        rgba(120, 120, 120, 0) 51%
+      )
+      0.25em 38em/2em 2em,
+    radial-gradient(
+        200% 200% at 0% 0%,
+        #323232 1.45em,
+        #787878 1.5em,
+        #787878 50%,
+        rgba(120, 120, 120, 0) 51%
+      )
+      18em 38em/2em 2em,
+    linear-gradient(
+        #787878 0.5em,
+        #323232 0.55em,
+        #323232 39.5em,
+        #787878 39.55em
+      )
+      2.25em 0/15.75em 40em,
+    linear-gradient(
+        90deg,
+        #787878 0.5em,
+        #323232 0.55em,
+        #323232 19.175em,
+        #787878 19.25em
+      )
+      0.25em 2em/19.75em 36em;
+  background-repeat: no-repeat;
+}
+#proof-of-consensus > :first-child {
+  font-size: 1em;
+}
+
+#mobmess {
+  background-image: linear-gradient(90deg, #333 5px, white 5px),
+    linear-gradient(90deg, white 5px, #333 5px),
+    linear-gradient(90deg, #333 5px, white 5px),
+    linear-gradient(90deg, white 5px, #333 5px),
+    linear-gradient(90deg, #333 5px, white 5px),
+    linear-gradient(90deg, #fff 5px, #333 5px),
+    linear-gradient(90deg, #333 5px, white 5px),
+    linear-gradient(90deg, #fff 5px, #333 5px);
+  background-position: 0 0, 0 5px, 0 10px, 0 15px, 0 20px, 0 25px, 0 30px,
+    0 35px;
+  background-repeat: repeat-x;
+  background-size: 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px, 10px 5px,
+    10px 5px;
+  position: absolute;
+  text-decoration: none;
+}
+#mobmess > :first-child {
+  color: black !important;
+  stroke: 1px solid black;
+  font-family: "pixeled";
+  font-size: 30px;
+  line-height: 30px;
+  padding-left: 1rem;
+}
+#power-plant {
+  background-color: transparent;
+  background: #126302;
+}
+#power-plant > :first-child {
+  color: aliceblue;
+  position: absolute;
+  text-decoration: none;
+  font-family: pixeled;
+  font-size: 30px;
+  transform: skewX(-45deg) translate(10%, -5%);
+}
+.navigation li#power-plant > a:nth-child(2) {
+  color: #126302 !important;
+  position: absolute;
+  text-decoration: none;
+  font-family: pixeled;
+  font-size: 30px;
+
+  transform: skewX(-45deg) translate(100%, 80%);
+}
+#baby-duck {
+  position: absolute;
+  text-decoration: none;
+  font-size: 30px;
+  background: #ffdd30;
+}
+#baby-duck > :first-child {
+  font-family: babyblocks;
+
+  font-size: 30px;
+  color: rgb(0, 174, 255) !important;
+}
+#mundo-gorila {
+  position: absolute;
+  text-decoration: none;
+  background: #f87173;
+  color: #000000;
+  font-family: Pixeled;
+  font-size: 20px;
+}
+#comuna-con-la-cocina {
+  position: absolute;
+  text-decoration: none;
+  color: #fff;
+
+  background: radial-gradient(#303258 5%, transparent 15%) 0 0,
+    radial-gradient(#2a2c4d 15%, transparent 5%),
+    radial-gradient(rgba(255, 255, 255, 0.1) 5%, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.1) 5%, transparent 50%);
+  text-shadow: -1px 0 #fd0105, 0 1px #fd0105, 1px 0 #fd0105, 0 -1px #fd0105;
+  background-size: 10px 10px;
+  background-color: #fff;
+  font-size: 20px;
+}
+#fragiles {
+  position: absolute;
+  background: linear-gradient(
+      45deg,
+      #dca 12%,
+      transparent 0,
+      transparent 88%,
+      #dca 0
+    ),
+    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0)
+      #753;
+}
+#fragiles > :first-child {
+  font-size: 40px;
+  color: white;
+  font-family: biohack;
+
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-decoration: none;
+  color: white;
+  font-family: biohack;
+  font: bold;
+}
+
+#profile {
+  right: 10%;
+  bottom: 30%;
+  position: fixed;
+}
+
+#curriculo {
+  position: fixed;
+  color: #5555;
+  text-decoration: none;
+  font-family: pixeled;
+  font-size: 10px;
+  top: 7%;
+  right: 20%;
+  transform: rotate(90deg);
+}
+#documents {
+  position: fixed;
+  color: #5555;
+  text-decoration: none !important;
+  font-family: pixeled;
+  font-size: 10px;
+  top: 15%;
+  right: 12.5%;
+  transform: rotate(90deg);
+}
+#videos {
+  position: fixed;
+  color: #5555;
+  text-decoration: none;
+  font-family: pixeled;
+  font-size: 10px;
+  right: 16.5%;
+  top: 24.5%;
+  transform: rotate(90deg);
+}
+
+@media (min-width: 600px) {
+  #profile {
+    right: 10%;
+    bottom: 30%;
+    position: fixed;
+  }
+
+  #curriculo {
+    top: 2%;
+    right: 8%;
+    transform: rotate(0deg);
+  }
+  #documents {
+    top: 10%;
+    right: 0%;
+    transform: rotate(90deg);
+  }
+  #videos {
+    right: 2.5%;
+    top: 20%;
+    transform: rotate(90deg);
+  }
+
+  #profile {
+    right: 0%;
+  }
+}
+
+@media (min-width: 1221px) {
+  #profile {
+    right: 2%;
+  }
+  #videos {
+    right: 3.2%;
+    top: 25%;
+  }
+  #documents {
+    right: 2%;
+    transform: rotate(90deg);
+  }
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,177 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="web/jQueryRotate.js"></script>
-<link href="style.css" rel="stylesheet" type="text/css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>babyDuck</title>
-</head>
+  <head>
+    <link href="/navigation.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="web/jQueryRotate.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>babyDuck</title>
+  </head>
 
-<body>
+  <body>
+    <br />
+    <ul class="navigation" style="cursor: pointer" onclick="location.href='/';">
+      <li class="list" id="n3" href="/">
+        <a id="babyDuck" href="/" style="">BabyDuck</a>
+      </li>
+    </ul>
 
-	<br>
-	<ul class="navigation" style="cursor:pointer;" onclick="location.href='/';">
-	<li class="list" id="n3" href="/"><a id="babyDuck" href="/" style="" >BabyDuck</a></li>
+    <div id="anim">
+      <!--<div id="bg" alt="background"> </div>-->
+      <br />
+      <div id="front">
+        <br />
+        <br />
+        <div class="embed-container">
+          <iframe
+            id="video"
+            src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+            width="1280"
+            height="720"
+            frameborder="0"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">-->
+        <br />
+        <div id="text1">
+          Baby Duck is a small child(between 0 and 2 years) that will be involve
+          in an non adult logical enviroment, which will be a difficulty for the
+          player because it will have to deal with the babies coordination of
+          senses with motor responses, and sensory curiosity about the world.
+          <br />
+          <br />
+        </div>
+        <div id="text2">
+          <h1>OBJECTIVES</h1>
+          <br />
+          The main purpose of the game is to involve adults in the learning
+          process of babies, in a joyful way there will be abstractions of how
+          could we dive in into the senses of the small childrens.
+          <br />
+          <h1>GENRE</h1>
+          <br />
+          The game is based on the Puzzle platform, with an orientation of
+          Art-game and Casual-game. The engine will be a 3D enviroment with
+          possible changes between first and third person point of view but
+          without any change in the development only for questions of taste for
+          the user.
+          <br />
+          <h1>VISUAL STYLE</h1>
+          <br />
+          The development of the game will be done into an 3D space with no
+          barriers but limited by the infinite repetition of landscape, that
+          means it is a round world. The special features of the game will be
+          the psycodelich view for an adult perspective, but based on the
+          development of the sight of a baby. The measure of distance and the
+          distinction of lights and colors will make not easy to find the proper
+          paths in the plot scenario so could be easy to get lost but joyful no
+          to go straigh for the target, playing also with the random orientation
+          and swaping directions while time pass by.
+          <br />
+        </div>
+        <p id="links">
+          (In development)
+          <a href="http://issuu.com/tocharomera/docs/gdden"
+            >D_O_C: Game Design Document</a
+          >
+        </p>
+      </div>
+    </div>
+    <script>
+      var colours = [
+          "green",
+          "red",
+          "grey",
+          "violet",
+          "orange",
+          "brown",
+          "blue",
+        ],
+        idx;
+      var cursorInPage = false;
+      $(document).ready(function () {
+        for (var i = 0; i < 3; i++) {
+          $("#anim").append(
+            '<image id="' +
+              i +
+              '" class="ducks" src="web/ducks/duckS.png"></image>'
+          );
+          if ($(window).width() > 1224) {
+            $("#topCrawl").attr("src", "web/baby/babyAnimTopL.svg");
+            $("#" + i).attr("src", "web/ducks/duckL.png");
+          } else if ($(window).width() > 480) {
+            $("#topCrawl").attr("src", "web/baby/babyAnimTopM.svg");
+            $("#" + i).attr("src", "web/ducks/duckM.png");
+          } else {
+            $("#topCrawl").attr("src", "web/baby/babyAnimTopS.svg");
+            $("#" + i).attr("src", "web/ducks/duckS.png");
+          }
+        }
+        var div = $("#text1");
+        var chars = div.text().split("");
+        div.html("");
+        for (var i = 0; i < chars.length; i++) {
+          idx = Math.floor(Math.random() * colours.length);
+          var span = $("<span>" + chars[i] + "</span>").css(
+            "color",
+            colours[idx]
+          );
+          div.append(span);
+        }
+      });
 
-	</ul>
+      $.fn.animateRotate = function (angle, duration, easing, complete) {
+        var args = $.speed(duration, easing, complete);
+        var step = args.step;
+        return this.each(function (i, e) {
+          args.complete = $.proxy(args.complete, e);
+          args.step = function (now) {
+            $.style(e, "transform", "rotate(" + now + "deg)");
+            if (step) return step.apply(e, arguments);
+          };
+          $({
+            deg: 0,
+          }).animate(
+            {
+              deg: angle,
+            },
+            args
+          );
+        });
+      };
+      if (cursorInPage == false) {
+        function Duck(idNum) {
+          this.idNum = idNum;
+          this.direction = 0;
+          this.elem = document.getElementById("#" + idNum);
 
-	<div id="anim">
+          //var duck = '<image id='+idNum+' src="web/duck.svg" top="0" left="0" style="position:absolute; height:100px; width:100px margin:auto; display:block;"></image>';
+          this.makeNewPosition = function () {
+            this.h = $(window).height() - 100;
+            this.w = $(window).width() - 100;
+            this.nh = Math.floor(Math.random() * h);
+            this.nw = Math.floor(Math.random() * w);
+            return [nh, nw];
+          };
+          this.animateDiv = function (idNum) {
+            this.idNum = idNum;
+            this.item = $("#" + idNum);
 
-<!--<div id="bg" alt="background"> </div>-->
-<br>
-<div id="front">
-	<br>
-	<br>
-	<div class='embed-container'>
-	<iframe id="video" src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	 </div>
-	 <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">-->
-<br>
-<div id="text1"> Baby Duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
-  curiosity about the world.
-   <br>
-  <br>
-</div>
-<div id="text2">
-	<h1>OBJECTIVES</h1>
-	<br>
-The main purpose of the game is to involve adults in the learning process of babies, in a joyful way there will be abstractions of how could we dive in into the senses of the small childrens.
-<br>
-<h1>GENRE</h1>
-<br>
-The game is based on the Puzzle platform, with an orientation of Art-game and Casual-game. The engine will be a 3D enviroment with possible changes between first and third person point of view but without any change in the development only for questions of taste for the user.
-<br>
-<h1>VISUAL STYLE</h1>
-<br>
-The development of the game will be done into an 3D space with no barriers but limited by the infinite repetition of landscape, that means it is a round world. The special features of the game will be the psycodelich view for an adult perspective, but based on the development of the sight of a baby. The measure of distance and the distinction of lights and colors will make not easy to find the proper paths in the plot scenario so could be easy to get lost but joyful no to go straigh for the target, playing also with the random orientation and swaping directions while time pass by.
-<br>
-</div>
-<p id="links"> (In development) <a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a> </p>
+            this.newq = makeNewPosition();
+            this.itemCenter = [
+              item.offset().left + item.width() / 2,
+              item.offset().top + item.height() / 2,
+            ];
 
-</div>
+            $("#" + idNum).animate(
+              {
+                top: newq[0],
+                left: newq[1],
+              },
+              Math.random() * (8000 - 4000 + 2000),
+              function () {
+                animateDiv(idNum);
+              }
+            );
+            this.dx = newq[0];
+            this.dy = newq[1];
 
-</div>
-<script>
-		var colours = ["green", "red", "grey", "violet", "orange", "brown", "blue"],
-			idx;
-		var cursorInPage = false;
-		$(document).ready(function() {
-			for (var i = 0; i < 3; i++) {
-				$('#anim').append('<image id="' + i + '" class="ducks" src="web/ducks/duckS.png"></image>');
-			if($(window).width() > 1224) {
-				$("#topCrawl").attr("src", "web/baby/babyAnimTopL.svg");
-         $("#"+i).attr("src", "web/ducks/duckL.png");
-     } else if ($(window).width() > 480){
-		 $("#topCrawl").attr("src", "web/baby/babyAnimTopM.svg");
-         $("#"+i).attr("src", "web/ducks/duckM.png");
-     }else{
-		 $("#topCrawl").attr("src", "web/baby/babyAnimTopS.svg");
-		 $("#"+i).attr("src", "web/ducks/duckS.png");
-	 }
-			}
-			var div = $('#text1');
-			var chars = div.text().split('');
-			div.html('');
-			for (var i = 0; i < chars.length; i++) {
-				idx = Math.floor(Math.random() * colours.length);
-				var span = $('<span>' + chars[i] + '</span>').css("color", colours[idx]);
-				div.append(span);
-			}
-		});
+            this.direction =
+              Math.atan2(dx - itemCenter[0], -(dy - itemCenter[1])) *
+              (180 / Math.PI);
+            this.rotated = $("#" + idNum).getRotateAngle();
 
-
-		$.fn.animateRotate = function(angle, duration, easing, complete) {
-			var args = $.speed(duration, easing, complete);
-			var step = args.step;
-			return this.each(function(i, e) {
-				args.complete = $.proxy(args.complete, e);
-				args.step = function(now) {
-					$.style(e, 'transform', 'rotate(' + now + 'deg)');
-					if (step) return step.apply(e, arguments);
-				};
-				$({
-					deg: 0
-				}).animate({
-					deg: angle
-				}, args);
-			});
-		};
-		if (cursorInPage == false) {
-			console.log(cursorInPage);
-
-			function Duck(idNum) {
-				this.idNum = idNum;
-				this.direction = 0;
-				this.elem = document.getElementById('#' + idNum);
-
-				//var duck = '<image id='+idNum+' src="web/duck.svg" top="0" left="0" style="position:absolute; height:100px; width:100px margin:auto; display:block;"></image>';
-				this.makeNewPosition = function() {
-					this.h = $(window).height() - 100;
-					this.w = $(window).width() - 100;
-					this.nh = Math.floor(Math.random() * h);
-					this.nw = Math.floor(Math.random() * w);
-					return [nh, nw];
-				}
-				this.animateDiv = function(idNum) {
-					this.idNum = idNum;
-					this.item = $('#' + idNum);
-
-					this.newq = makeNewPosition();
-					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
-
-					$('#' + idNum).animate({
-						top: newq[0],
-						left: newq[1]
-					}, Math.random() * ((8000 - 4000) + 2000), function() {
-						animateDiv(idNum);
-					});
-					this.dx = newq[0];
-					this.dy = newq[1];
-
-					this.direction = Math.atan2(dx - itemCenter[0], -(dy - itemCenter[1])) * (180 / Math.PI);
-					this.rotated = $('#' + idNum).getRotateAngle();
-
-					$('#' + idNum).rotate({
-						duration: 100,
-						angle: rotated,
-						animateTo: direction,
-					})
-					/*item.css({
+            $("#" + idNum).rotate({
+              duration: 100,
+              angle: rotated,
+              animateTo: direction,
+            });
+            /*item.css({
 						'transform-origin': '0% 50%',
 						'-moz-transform': 'rotate(' + direction + 'deg)'
 					});*/
-				};
-				$(document).ready(function() {
-					animateDiv(idNum);
-				});
-			}
-			for (var i = 0; i < 7; i++) {
-				Duck(i);
-			}
-		}
-		var mouseMovementX;
-		var mouseMovementY;
-		$(document).mousemove(function(e) {
-			mouseMovementX = e.pageX;
-			mouseMovementY = e.pageY;
-		});
-		$(document).on('mousemove', function(e) {
-			cursorInPage = true;
+          };
+          $(document).ready(function () {
+            animateDiv(idNum);
+          });
+        }
+        for (var i = 0; i < 7; i++) {
+          Duck(i);
+        }
+      }
+      var mouseMovementX;
+      var mouseMovementY;
+      $(document).mousemove(function (e) {
+        mouseMovementX = e.pageX;
+        mouseMovementY = e.pageY;
+      });
+      $(document).on("mousemove", function (e) {
+        cursorInPage = true;
 
-			function Duck(i) {
-				this.idNum = i;
-				this.animateDiv = function(idNum) {
-					this.dx = mouseMovementX;
-					this.dy = mouseMovementY;
-					/*this.baby = $('#topCrawl');
+        function Duck(i) {
+          this.idNum = i;
+          this.animateDiv = function (idNum) {
+            this.dx = mouseMovementX;
+            this.dy = mouseMovementY;
+            /*this.baby = $('#topCrawl');
 					this.babyCenter = [baby.offset().left + baby.width(), baby.offset().top + baby.height() / 2];
 					this.babyDirection = Math.atan2(-(dx - babyCenter[1]), (dy - babyCenter[0])) * (180 / Math.PI);*/
-					this.item = $('#' + idNum);
-					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
-					this.direction = Math.atan2((dx + 100 - itemCenter[0]), -(dy + 150 - itemCenter[1])) * (180 / Math.PI);
-					this.babyrotated = /*$('#topCrawl').getRotateAngle();
+            this.item = $("#" + idNum);
+            this.itemCenter = [
+              item.offset().left + item.width() / 2,
+              item.offset().top + item.height() / 2,
+            ];
+            this.direction =
+              Math.atan2(
+                dx + 100 - itemCenter[0],
+                -(dy + 150 - itemCenter[1])
+              ) *
+              (180 / Math.PI);
+            this.babyrotated =
+              /*$('#topCrawl').getRotateAngle();
 					this.rotated = $('#' + idNum).getRotateAngle();
 
 					$('#topCrawl').rotate({
@@ -183,30 +245,35 @@ The development of the game will be done into an 3D space with no barriers but l
 						top: mouseMovementY - 100,
 						left: mouseMovementX - 150
 					}, 100, function() {});*/
-					$('#' + idNum).rotate({
-						duration: 1000,
-						angle: rotated,
-						animateTo: direction,
-					})
-					$('#' + idNum).animate({
-						top: mouseMovementY - 50,
-						left: mouseMovementX - (50 * idNum + 1)
-					}, 500 + (150 * idNum + 1), function() {
-						animateDiv(idNum);
-					});
-					//END animateDiv
-				};
-			}
-			for (var i = 0; i < 7; i++) {
-				Duck(i)
-			}
-		});
-		$(document).on('mouseleave', function() {
-			cursorInPage = false;
-			for (var i = 0; i < 7; i++) {
-				Duck(i);
-			}
-		});
-	</script>
-</body>
+              $("#" + idNum).rotate({
+                duration: 1000,
+                angle: rotated,
+                animateTo: direction,
+              });
+            $("#" + idNum).animate(
+              {
+                top: mouseMovementY - 50,
+                left: mouseMovementX - (50 * idNum + 1),
+              },
+              500 + (150 * idNum + 1),
+              function () {
+                animateDiv(idNum);
+              }
+            );
+            //END animateDiv
+          };
+        }
+        for (var i = 0; i < 7; i++) {
+          Duck(i);
+        }
+      });
+      $(document).on("mouseleave", function () {
+        cursorInPage = false;
+        for (var i = 0; i < 7; i++) {
+          Duck(i);
+        }
+      });
+    </script>
+    <script src="/navigation.js"></script>
+  </body>
 </html>
