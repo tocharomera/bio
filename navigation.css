@@ -481,18 +481,18 @@
 
 @media (min-width: 476px) {
   .sidebar {
-    width: 80vh;
-    top: 40vh;
-    left: 55vw;
+    width: 500px;
+    height: 100px;
+    top: 250px;
+    left: calc(75% - 100px);
   }
-  .home{
+  .home {
     padding-bottom: 0;
   }
 }
 
 @media (min-width: 978px) {
   .sidebar {
-    width: 80vh;
     top: 45vh;
     left: 77.5vw;
   }
