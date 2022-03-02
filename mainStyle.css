@@ -61,15 +61,15 @@ iframe {
   height: 221px;
   top: 350px;
   z-index: -10000;
-  left: 65px;
+  right: 65px;
 }
 .canvases2 {
   position: absolute;
   width: 124px;
   height: 221px;
-  top: 406px;
+  top: 350px;
   z-index: -10000;
-  left: 65px;
+  right: 65px;
 }
 
 #frame1 {
@@ -77,36 +77,32 @@ iframe {
   width: 248px;
   height: 248px;
   top: 345px;
-  left: 5px;
+  right: 5px;
 }
 #frame2 {
   position: absolute;
   width: 248px;
   height: 248px;
-  top: 400px;
-  left: 5px;
+  top: 345px;
+  right: 5px;
 }
 
 #quote {
   line-height: 35px;
-  margin: auto;
+  margin: 0;
   overflow-wrap: break-word;
   text-align: justify;
   text-justify: inter-word;
   font-family: Champignon;
   font-size: 49px;
-  overflow: hidden;
+  left: 25%;
+  padding-left: 5%;
+  padding-top: 15%;
 }
 
 #author {
-  z-index: 1;
-  margin: auto;
-  overflow-wrap: break-word;
-  text-align: justify;
-  text-justify: inter-word;
-
-  font-family: Champignon;
   font-size: 18px;
+  text-align: right;
 }
 
 .screens #canvas3,
@@ -121,21 +117,28 @@ iframe {
   .screens #img1 {
     display: block !important;
   }
-
-  #frame2 {
-    position: absolute;
-    top: 345px;
-    left: 305px;
+  .canvases {
+    right: 0%;
   }
 
   .canvases2 {
-    top: 350px;
-    z-index: -10000;
-    left: 367px;
+    right: 75%;
   }
-  #bio {
-    width: 80%;
+  #frame1 {
+    right: calc(0% - 62px);
   }
+
+  #frame2 {
+    right: calc(75% - 62px);
+  }
+
+  #quote {
+    width: 50%;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: 967px) {
 }
 
 .front {
