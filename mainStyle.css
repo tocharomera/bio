@@ -10,9 +10,7 @@ html {
 }
 
 video,
-.embed-container {
-  position: relative;
-  overflow: hidden;
+.embed-container { 
   width: 100%;
   padding-top: 56.25%;
 }
