@@ -34,7 +34,7 @@ $(function () {
     <a href="/proof-of-consensus/">Proof of consensus</a>
   </li>
   <li class="nav-link" id="mobmess">
-    <a href="/mobmess/">mobMess</a>
+    <a href="/mob-mess/">mobMess</a>
   </li>
 
   <li class="nav-link" id="power-plant">
@@ -51,7 +51,7 @@ $(function () {
     <a href="/comuna-con-la-cocina/">Comuna</a>
   </li>
   <li class="nav-link" id="fragiles">
-    <a href="/fragiles/">Fragiles</a>
+    <a href="/fra-giles/">Fragiles</a>
   </li>
 </ul>`
   );
