@@ -19,7 +19,26 @@
   </head>
   <body>
     <div class="front">
-      <div class="masonry grid"></div>
+      <div class="masonry grid">
+        <figure>
+          <img class="item" src="/old-fashion-selfie/imgs/0.jpeg" />
+        </figure>
+        <figure>
+          <img class="item" src="/old-fashion-selfie/imgs/1.jpeg" />
+        </figure>
+        <figure>
+          <img class="item" src="/old-fashion-selfie/imgs/2.jpeg" />
+        </figure>
+        <figure>
+          <img class="item" src="/old-fashion-selfie/imgs/3.jpeg" />
+        </figure>
+        <figure>
+          <img class="item" src="/old-fashion-selfie/imgs/4.jpeg" />
+        </figure>
+        <figure>
+          <img class="item" src="/old-fashion-selfie/imgs/5.jpeg" />
+        </figure>
+      </div>
       <h1>Old fashion selfie</h1>
       <h2>Concept</h2>
       Old fashion selfie is a photography map, it gives pixels pieces of
@@ -74,26 +93,5 @@
     </div>
     <script src="/libs/jquery-3.6.0.min.js"></script>
     <script src="/navigation.js"></script>
-
-    <script>
-      $(function () {
-        var folder = "./imgs/";
-
-        $.ajax({
-          url: folder,
-          success: function (data) {
-            $(data)
-              .find("a")
-              .attr("href", function (i, val) {
-                if (val.match(/\.(jpe?g|png|gif)$/)) {
-                  $(".masonry").append(
-                    "<figure><img class='item' src='" + val + "'></figure>"
-                  );
-                }
-              });
-          },
-        });
-      });
-    </script>
   </body>
 </html>
