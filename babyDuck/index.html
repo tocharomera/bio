@@ -11,69 +11,63 @@
   </head>
 
   <body>
-    <div id="front">
-      <div id="anim">
-        <!--<div id="bg" alt="background"> </div>-->
+    <div class="front">
+      <div id="text1">
+        Baby Duck is a small child(between 0 and 2 years) that will be involve
+        in an non adult logical enviroment, which will be a difficulty for the
+        player because it will have to deal with the babies coordination of
+        senses with motor responses, and sensory curiosity about the world.
         <br />
         <br />
-        <br />
-        <div class="embed-container">
-          <iframe
-            id="video"
-            src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&title=0&byline=0&portrait=0"
-            width="1280"
-            height="720"
-            frameborder="0"
-            webkitallowfullscreen
-            mozallowfullscreen
-            allowfullscreen
-          ></iframe>
-        </div>
-        <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">-->
-        <br />
-        <div id="text1">
-          Baby Duck is a small child(between 0 and 2 years) that will be involve
-          in an non adult logical enviroment, which will be a difficulty for the
-          player because it will have to deal with the babies coordination of
-          senses with motor responses, and sensory curiosity about the world.
-          <br />
-          <br />
-        </div>
-        <div id="text2">
-          <h1>OBJECTIVES</h1>
-          <br />
-          The main purpose of the game is to involve adults in the learning
-          process of babies, in a joyful way there will be abstractions of how
-          could we dive in into the senses of the small childrens.
-          <br />
-          <h1>GENRE</h1>
-          <br />
-          The game is based on the Puzzle platform, with an orientation of
-          Art-game and Casual-game. The engine will be a 3D enviroment with
-          possible changes between first and third person point of view but
-          without any change in the development only for questions of taste for
-          the user.
-          <br />
-          <h1>VISUAL STYLE</h1>
-          <br />
-          The development of the game will be done into an 3D space with no
-          barriers but limited by the infinite repetition of landscape, that
-          means it is a round world. The special features of the game will be
-          the psycodelich view for an adult perspective, but based on the
-          development of the sight of a baby. The measure of distance and the
-          distinction of lights and colors will make not easy to find the proper
-          paths in the plot scenario so could be easy to get lost but joyful no
-          to go straigh for the target, playing also with the random orientation
-          and swaping directions while time pass by.
-          <br />
-        </div>
-        <p id="links">
-          (In development)
-          <a href="http://issuu.com/tocharomera/docs/gdden"
-            >D_O_C: Game Design Document</a
-          >
-        </p>
       </div>
+      <div id="text2">
+        <h1>OBJECTIVES</h1>
+        <br />
+        The main purpose of the game is to involve adults in the learning
+        process of babies, in a joyful way there will be abstractions of how
+        could we dive in into the senses of the small childrens.
+        <br />
+        <h1>GENRE</h1>
+        <br />
+        The game is based on the Puzzle platform, with an orientation of
+        Art-game and Casual-game. The engine will be a 3D enviroment with
+        possible changes between first and third person point of view but
+        without any change in the development only for questions of taste for
+        the user.
+        <br />
+        <h1>VISUAL STYLE</h1>
+        <br />
+        The development of the game will be done into an 3D space with no
+        barriers but limited by the infinite repetition of landscape, that means
+        it is a round world. The special features of the game will be the
+        psycodelich view for an adult perspective, but based on the development
+        of the sight of a baby. The measure of distance and the distinction of
+        lights and colors will make not easy to find the proper paths in the
+        plot scenario so could be easy to get lost but joyful no to go straigh
+        for the target, playing also with the random orientation and swaping
+        directions while time pass by.
+        <br />
+      </div>
+      <p id="links">
+        (In development)
+        <a href="http://issuu.com/tocharomera/docs/gdden"
+          >D_O_C: Game Design Document</a
+        >
+      </p>
+      <div class="embed-container">
+        <iframe
+          id="video"
+          src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+          width="1280"
+          height="720"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">-->
+      <br />
     </div>
     <script src="/libs/jquery-3.6.0.min.js"></script>
     <script src="web/jQueryRotate.js"></script>
@@ -91,7 +85,7 @@
       var cursorInPage = false;
       $(document).ready(function () {
         for (var i = 0; i < 3; i++) {
-          $("#anim").append(
+          $(".front").append(
             '<image id="' +
               i +
               '" class="ducks" src="web/ducks/duckS.png"></image>'
