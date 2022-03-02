@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head><link href="/mainStyle.css" rel="stylesheet" type="text/css" />
+  <head>
+    <link href="/mainStyle.css" rel="stylesheet" type="text/css" />
 
     <link href="/navigation.css" rel="stylesheet" type="text/css" />
 
@@ -11,19 +12,6 @@
   </head>
 
   <body>
-    <div id="videos" style="cursor: pointer" onclick="location.href='/videos';">
-      <p>videos</p>
-    </div>
-    <div id="documents" style="cursor: pointer" onclick="location.href='/';">
-      <div class="back-to-main">main</div>
-    </div>
-
-    <div id="profile" href="">
-      <div id="signature">
-        <p>Mario Romera Gomez 2017</p>
-      </div>
-    </div>
-
     <div class="front" id="front">
       <div class="embed-container">
         <iframe
@@ -113,5 +101,15 @@
     </div>
     <script src="/libs/jquery-3.6.0.min.js"></script>
     <script src="/navigation.js"></script>
+    <script>
+      $("iframe").each(function () {
+        var src = $(this).attr("src");
+        var name = src.split("https://issuu.com/tocharomera/docs/")[1];
+        $(this)
+          .parent()
+          .append(`<a class="iframe-link" href="${src}">${name} - Link👉</a>`);
+        $(this).remove();
+      });
+    </script>
   </body>
 </html>

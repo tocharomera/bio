@@ -83,11 +83,15 @@ $(function () {
   }
 
   var links = $("#nav").children(".nav-link");
-  var maxScroll = $(document).height();
-  console.log(maxScroll, "Max");
-  $(".navigation").height(maxScroll);
 
   $(".navigation .main").on("click", function () {
+    var maxScroll = $(document).height();
+    if ($("body").hasClass("menu-visible")) {
+      $(".navigation").height(100);
+    } else {
+      $(".navigation").height(maxScroll);
+    }
+
     $("body").toggleClass("menu-visible");
     if (!$("body").hasClass("menu-visible")) {
       hideLinks(links);
