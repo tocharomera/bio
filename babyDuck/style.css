@@ -1,26 +1,26 @@
 @font-face {
-font-family: babyblocks;
-src: url(web/babyblocks.ttf);
+  font-family: babyblocks;
+  src: url(web/babyblocks.ttf);
 }
 @font-face {
-font-family: Consolas;
-src: url(web/Consolas.ttf);
+  font-family: Consolas;
+  src: url(web/Consolas.ttf);
 }
 @font-face {
-font-family: Pixeled;
-src: url(web/Pixeled.ttf);
-
+  font-family: Pixeled;
+  src: url(web/Pixeled.ttf);
 }
-@media only screen and (min-width : 1224px) {/* Styles */
-  .navigation{
-  	transform: skew(40deg) translate(0%, 0%);
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  .navigation {
+    transform: skew(40deg) translate(0%, 0%);
     position: fixed;
-  	height:0px;
-  	height: 40px;
-  	width: 250px;
-  	font: bold 0px/40px arial, sans-serif;
-  	text-align: center;
-  	text-decoration: none;
+    height: 0px;
+    height: 40px;
+    width: 250px;
+    font: bold 0px/40px arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
     z-index: 1;
   }
   .embed-container {
@@ -32,138 +32,132 @@ src: url(web/Pixeled.ttf);
     height: auto;
   }
 
-  .embed-container iframe, .embed-container object, .embed-container embed {
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  #babyDuck{
+  #babyDuck {
     padding-left: 50px;
-  	position: absolute;
-  	text-decoration: none!important;
-  	font-family: babyblocks;
-  	font-size: 30px;
-  	transform: skewX( -40deg) translate(-45%, 0%);
+    position: absolute;
+    text-decoration: none !important;
+    font-family: babyblocks;
+    font-size: 30px;
+    transform: skewX(-40deg) translate(-45%, 0%);
   }
   li#n3 {
-    	background: #FFDD30;
+    background: #ffdd30;
   }
-body{
+  body {
+    width: 90%;
 
-	width:90%;
+    background-color: #fff;
+  }
+  #video {
+    width: 100%;
 
-  background-color: #FFF;
-}
-#video{
-	width:100%;
+    display: block;
+    margin: auto;
+  }
+  #front {
+    color: #333;
+    width: 50%;
 
-	display: block;
-	margin: auto;
-}
-#front{
-	color: #333;
-	width:50%;
+    left: 30%;
 
-	left:30%;
+    margin: auto;
+    font-family: Consolas;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  #crawl {
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background: #1b9f07;
+  }
+  #links {
+    color: hotpink;
+    text-align: right;
 
-	margin: auto;
-	font-family: Consolas;
-	font-size: 14px;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-#crawl {
-position: absolute;
-height: 30%;
-width: 100%;
-background: #1B9F07;
-}
-#links {
-color: hotpink;
-text-align:right;
-
-width: 95%;
-font-size: 20px;
-font-family: babyblocks;
-z-index: 4;
-}
-#text1 {
-  font-size: 20px;
-z-index: 4;
-font-family: babyblocks;
-overflow-wrap: break-word;
-text-align: justify;
-text-justify: inter-word;
-}
-h1{
-  color:#164201;
-text-decoration: none!important;
-font-family: Consolas!important;
-font-size: 2.3vw;
-}
-#text2 {
-
-
-
-color:#164201;
-text-decoration: none!important;
-font-family: Consolas;
-font-size: 14px;
-  overflow-wrap: break-word;
-text-align: justify;
-text-justify: inter-word;
-}
-#anim {
-position: absolute;
-width: 100%;
-
-margin: auto;
-}
-#topCrawl {
-position: absolute;
-/*errror
+    width: 95%;
+    font-size: 20px;
+    font-family: babyblocks;
+    z-index: 4;
+  }
+  #text1 {
+    font-size: 20px;
+    z-index: 4;
+    font-family: babyblocks;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  h1 {
+    color: #164201;
+    text-decoration: none !important;
+    font-family: Consolas !important;
+    font-size: 2.3vw;
+  }
+  #text2 {
+    color: #164201;
+    text-decoration: none !important;
+    font-family: Consolas;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  } 
+  #topCrawl {
+    position: absolute;
+    /*errror
 width: 300px;
 height: 200px;*/
-top: 50%;
-left: 50%;
-transform-origin: 150px 100px!important;
-}
-.ducks {
-position: absolute;
-top: 40%;
-left: 40%;
-transform-origin: 0% 50%!important;
-}
-#bg {
-top: 0px;
-left: 0px;
-position: absolute;
-height: 100%;
-width: 100%;
-background-image: url("web/pantallas/bgL.png");
-background-repeat: no-repeat;
-background-size: cover;
-}
-#back {
-  position: fixed;
-  float: right;
-  font-size: 10px;
-  top: 95%;
-  right: 5%;
-  color: grey;
-  text-decoration: none!important;
-  font-family: Pixeled;
-}
+    top: 50%;
+    left: 50%;
+    transform-origin: 150px 100px !important;
+  }
+  .ducks {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform-origin: 0% 50% !important;
+    width: 4rem;
+    height: 4rem;
+  }
+  #bg {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("web/pantallas/bgL.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #back {
+    position: fixed;
+    float: right;
+    font-size: 10px;
+    top: 95%;
+    right: 5%;
+    color: grey;
+    text-decoration: none !important;
+    font-family: Pixeled;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1224px) {
-  .navigation{
+  .navigation {
     transform: skew(40deg) translate(7%, 42%);
-position: fixed;
-z-index: 1;
+    position: fixed;
+    z-index: 1;
     height: 40px;
     width: 250px;
     font: bold 0px/40px arial, sans-serif;
@@ -171,14 +165,14 @@ z-index: 1;
     text-decoration: none;
   }
   li#n3 {
-    	background: #FFDD30;
+    background: #ffdd30;
   }
-  #babyDuck{
-  	position: absolute;
-  	text-decoration: none!important;
-  	font-family: babyblocks;
-  	font-size: 30px;
-  	transform: skewX( -40deg) translate(-45%, 0%);
+  #babyDuck {
+    position: absolute;
+    text-decoration: none !important;
+    font-family: babyblocks;
+    font-size: 30px;
+    transform: skewX(-40deg) translate(-45%, 0%);
   }
   .embed-container {
     position: relative;
@@ -189,268 +183,246 @@ z-index: 1;
     height: auto;
   }
 
-  .embed-container iframe, .embed-container object, .embed-container embed {
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  body{
-
-
-  	width:90%;
-  	display: block;
-  margin: auto;
-    background-color: #FFF;
+  body {
+    width: 90%;
+    display: block;
+    margin: auto;
+    background-color: #fff;
   }
-  #video{
-  	width:100%;
+  #video {
+    width: 100%;
 
-  	display: block;
-  	margin: auto;
+    display: block;
+    margin: auto;
   }
-  #front{
-  	color: #333;
-  	width:50%;
+  #front {
+    color: #333;
+    width: 50%;
 
+    left: 30%;
 
-  	left:30%;
-
-  	margin: auto;
-  	font-family: Consolas;
-  	font-size: 14px;
-  	overflow-wrap: break-word;
-  	text-align: justify;
-  	text-justify: inter-word;
+    margin: auto;
+    font-family: Consolas;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
   }
-@font-face {
-font-family: babyblocks;
-src: url(web/babyblocks.ttf);
-}
+  @font-face {
+    font-family: babyblocks;
+    src: url(web/babyblocks.ttf);
+  }
 
-#text1 {
-font-size: 18px;
-z-index: 4;
-font-family: babyblocks;
-overflow-wrap: break-word;
-text-align: justify;
-text-justify: inter-word;
-}
-h1{
-  color:grey;
-text-decoration: none!important;
-font-family: Consolas;
-font-size: 2.3vw;
-}
-#text2 {
+  #text1 {
+    font-size: 18px;
+    z-index: 4;
+    font-family: babyblocks;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  h1 {
+    color: grey;
+    text-decoration: none !important;
+    font-family: Consolas;
+    font-size: 2.3vw;
+  }
+  #text2 {
+    margin: auto;
 
-  margin: auto;
+    color: #164201;
+    text-decoration: none !important;
+    font-family: Consolas;
+    font-size: 1.5vw;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  }
 
-color:#164201;
-text-decoration: none!important;
-font-family: Consolas;
-font-size: 1.5vw;
-  overflow-wrap: break-word;
-text-align: justify;
-text-justify: inter-word;
-}
-#anim {
-position: absolute;
-width: 100%;
+  #topCrawl {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform-origin: 150px 100px !important;
+  }
+  .ducks {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform-origin: 0% 50% !important;
+  }
+  #bg {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("web/pantallas/bgM.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #links {
+    color: lightseagreen;
+    text-align: left;
+    font-size: 20px;
+    width: 100%;
 
-margin: auto;
-}
-#topCrawl {
-position: absolute;
-/*EERROORR
-width: 300px;
-height: 200px;*/
-top: 50%;
-left: 50%;
-transform-origin: 150px 100px!important;
-}
-.ducks {
-position: absolute;
-top: 40%;
-left: 40%
-transform-origin: 0% 50%!important;
-}
-#bg {
-top: 0px;
-left: 0px;
-position: absolute;
-height: 100%;
-width: 100%;
-background-image: url("web/pantallas/bgM.png");
-background-repeat: no-repeat;
-background-size: cover;
-}
-#links {
-color: lightseagreen;
-text-align: left;
-font-size: 20px;
-width: 100%;
-
-font-family: babyblocks;
-z-index: 4;
-}
-#back {
-  position: fixed;
-  float: right;
-  font-size: 10px;
-  top: 95%;
-  right: 5%;
-  color: grey;
-  text-decoration: none!important;
-  font-family: Pixeled;
-}
+    font-family: babyblocks;
+    z-index: 4;
+  }
+  #back {
+    position: fixed;
+    float: right;
+    font-size: 10px;
+    top: 95%;
+    right: 5%;
+    color: grey;
+    text-decoration: none !important;
+    font-family: Pixeled;
+  }
 }
 
 @media (max-width: 600px) {
-@font-face {
-font-family: babyblocks;
-src: url(web/babyblocks.ttf);
-}
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  height: auto;
-}
+  @font-face {
+    font-family: babyblocks;
+    src: url(web/babyblocks.ttf);
+  }
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+  }
 
-.embed-container iframe, .embed-container object, .embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.navigation{
+  .embed-container iframe,
+  .embed-container object,
+  .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .navigation {
+    transform: skew(40deg) translate(-10%, 0%);
+    position: fixed;
+    z-index: 1;
+    height: 0px;
+    height: 40px;
+    width: 250px;
+    font: bold 0px/40px arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+  }
+  li#n3 {
+    background: #ffdd30;
+  }
+  #babyDuck {
+    position: absolute;
+    text-decoration: none !important;
+    font-family: babyblocks;
+    font-size: 30px;
+    transform: skewX(-40deg) translate(-45%, 0%);
+  }
+  body {
+    width: 90%;
+    display: block;
+    margin: auto;
+    background-color: #fff;
+  }
+  #video {
+    width: 100%;
 
-  transform: skew(40deg) translate(-10%, 0%);
-position: fixed;
-z-index: 1;
-  height:0px;
-  height: 40px;
-  width: 250px;
-  font: bold 0px/40px arial, sans-serif;
-  text-align: center;
-  text-decoration: none;
-}
-li#n3 {
-    background: #FFDD30;
-}
-#babyDuck{
-	position: absolute;
-	text-decoration: none!important;
-	font-family: babyblocks;
-	font-size: 30px;
-	transform: skewX( -40deg) translate(-45%, 0%);
-}
-body{
+    display: block;
+    margin: auto;
+  }
+  #front {
+    color: #333;
+    width: 50%;
 
-	width:90%;
-	display: block;
-margin: auto;
-  background-color: #FFF;
-}
-#video{
-	width:100%;
+    left: 30%;
 
-	display: block;
-	margin: auto;
-}
-#front{
-	color: #333;
-	width:50%;
+    margin: auto;
+    font-family: Consolas;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  }
 
-	left:30%;
+  #text1 {
+    font-size: 18px;
+    z-index: 4;
+    font-family: babyblocks;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  h1 {
+    color: #164201;
+    text-decoration: none !important;
+    font-family: Consolas;
+    font-size: 2.3vw;
+  }
+  #text2 {
+    color: #164201;
+    text-decoration: none !important;
+    font-family: Consolas;
+    font-size: 2.3vw;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-word;
+  } 
+  #topCrawl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 150px 100px !important;
+  }
+  .ducks {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform-origin: 0% 50% !important;
+  }
+  #bg {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("web/pantallas/bgS.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #back {
+    position: fixed;
+    float: right;
+    font-size: 10px;
+    top: 95%;
+    right: 5%;
+    color: grey;
+    text-decoration: none !important;
+    font-family: Pixeled;
+  }
+  #links {
+    color: darkorange;
+    font-size: 20px;
 
-	margin: auto;
-	font-family: Consolas;
-	font-size: 14px;
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
+    width: 100%;
 
-#text1 {
-
-font-size: 18px;
-z-index: 4;
-font-family: babyblocks;
-overflow-wrap: break-word;
-text-align: justify;
-text-justify: inter-word;
-}
-  h1{
-  color:#164201;
-text-decoration: none!important;
-font-family: Consolas;
-font-size: 2.3vw;
-}
-#text2 {
-
-
-color:#164201;
-text-decoration: none!important;
-font-family: Consolas;
-font-size: 2.3vw;
-  overflow-wrap: break-word;
-text-align: justify;
-text-justify: inter-word;
-}
-#anim {
-top: 0px;
-left: 0px;
-position: absolute;
-width: 100%;
-height: 100%;
-
-}
-#topCrawl {
-position: absolute;
-top: 50%;
-left: 50%;
-transform-origin: 150px 100px!important;
-}
-.ducks {
-position: absolute;
-top: 40%;
-  left: 40%;
-transform-origin: 0% 50%!important;
-}
-#bg {
-top: 0px;
-left: 0px;
-position: absolute;
-height: 100%;
-width: 100%;
-background-image: url("web/pantallas/bgS.png");
-background-repeat: no-repeat;
-background-size: cover;
-}
-#back {
-  position: fixed;
-  float: right;
-  font-size: 10px;
-  top: 95%;
-  right: 5%;
-  color: grey;
-  text-decoration: none!important;
-  font-family: Pixeled;
-}
-#links {
-color: darkorange;
-font-size: 20px;
-
-
-width: 100%;
-
-font-family: babyblocks;
-z-index: 4;
-}
+    font-family: babyblocks;
+    z-index: 4;
+  }
 }
