@@ -19,7 +19,10 @@ video,
 embed {
   width: 100%;
 }
-img,
+img {
+  width: 100%;
+  height: auto;
+}
 iframe {
   width: 100%;
   height: auto;
