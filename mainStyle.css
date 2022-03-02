@@ -76,10 +76,7 @@ iframe {
 }
 
 #quote {
-  line-height: 35px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  line-height: 35px; 
   margin: auto;
   overflow-wrap: break-word;
   text-align: justify;
@@ -89,10 +86,7 @@ iframe {
   overflow: hidden;
 }
 
-#author {
-  position: absolute;
-  bottom: 5%;
-  right: 0%;
+#author { 
   z-index: 1;
   margin: auto;
   overflow-wrap: break-word;
