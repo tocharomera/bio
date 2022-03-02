@@ -42,7 +42,7 @@ $(function () {
   </li>
 
   <li class="nav-link" id="babyduck">
-    <a href="/babyduck/">BabyDuck</a>
+    <a href="/baby-duck/">BabyDuck</a>
   </li>
   <li class="nav-link" id="mundo-gorila">
     <a href="/mundo-gorila/">MundoGorila</a>
