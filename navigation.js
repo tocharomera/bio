@@ -105,6 +105,9 @@ $(function () {
   });
 
   $(".navigation").on("mouseover", function () {
+    var maxScroll = $(document).height();
+    $(".navigation").height(maxScroll);
+
     $("body").toggleClass("menu-visible");
 
     showLinks(links);
