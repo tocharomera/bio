@@ -76,21 +76,23 @@
     <script src="/navigation.js"></script>
 
     <script>
-      var folder = "./imgs/";
+      $(function () {
+        var folder = "./imgs/";
 
-      $.ajax({
-        url: folder,
-        success: function (data) {
-          $(data)
-            .find("a")
-            .attr("href", function (i, val) {
-              if (val.match(/\.(jpe?g|png|gif)$/)) {
-                $(".masonry").append(
-                  "<figure><img class='item' src='" + val + "'></figure>"
-                );
-              }
-            });
-        },
+        $.ajax({
+          url: folder,
+          success: function (data) {
+            $(data)
+              .find("a")
+              .attr("href", function (i, val) {
+                if (val.match(/\.(jpe?g|png|gif)$/)) {
+                  $(".masonry").append(
+                    "<figure><img class='item' src='" + val + "'></figure>"
+                  );
+                }
+              });
+          },
+        });
       });
     </script>
   </body>
