@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head><link href="/mainStyle.css" rel="stylesheet" type="text/css" />
+  <head>
+    <link href="/mainStyle.css" rel="stylesheet" type="text/css" />
 
     <link href="/navigation.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="web/jQueryRotate.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>babyDuck</title>
   </head>
 
   <body>
-    <br />
-    <ul class="navigation" style="cursor: pointer" onclick="location.href='/';">
-      <li class="list" id="n3" href="/">
-        <a id="babyDuck" href="/" style="">BabyDuck</a>
-      </li>
-    </ul>
-
-    <div id="anim">
-      <!--<div id="bg" alt="background"> </div>-->
-      <br />
-      <div id="front">
+    <div id="front">
+      <div id="anim">
+        <!--<div id="bg" alt="background"> </div>-->
+        <br />
         <br />
         <br />
         <div class="embed-container">
@@ -83,6 +75,8 @@
         </p>
       </div>
     </div>
+    <script src="/libs/jquery-3.6.0.min.js"></script>
+    <script src="web/jQueryRotate.js"></script>
     <script>
       var colours = [
           "green",
@@ -275,6 +269,7 @@
         }
       });
     </script>
+
     <script src="/navigation.js"></script>
   </body>
 </html>
