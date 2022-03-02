@@ -113,7 +113,13 @@
     overflow-wrap: break-word;
     text-align: justify;
     text-justify: inter-word;
-  } 
+  }
+  #anim {
+    position: absolute;
+    width: 100%;
+
+    margin: auto;
+  }
   #topCrawl {
     position: absolute;
     /*errror
@@ -383,7 +389,14 @@ height: 200px;*/
     overflow-wrap: break-word;
     text-align: justify;
     text-justify: inter-word;
-  } 
+  }
+  #anim {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
   #topCrawl {
     position: absolute;
     top: 50%;
