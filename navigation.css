@@ -353,13 +353,13 @@
 
   transform: skewX(-45deg) translate(100%, 80%);
 }
-#baby-duck {
+#babyduck {
   position: absolute;
   text-decoration: none;
   font-size: 30px;
   background: #ffdd30;
 }
-#baby-duck > :first-child {
+#babyduck > :first-child {
   font-family: babyblocks;
 
   font-size: 30px;

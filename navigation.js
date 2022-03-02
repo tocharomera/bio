@@ -41,8 +41,8 @@ $(function () {
     <a href="/power-plant/">Power</a><a href="/power-plant/">PLant</a>
   </li>
 
-  <li class="nav-link" id="baby-duck">
-    <a href="/baby-duck/">BabyDuck</a>
+  <li class="nav-link" id="babyduck">
+    <a href="/babyduck/">BabyDuck</a>
   </li>
   <li class="nav-link" id="mundo-gorila">
     <a href="/mundo-gorila/">MundoGorila</a>
