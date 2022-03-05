@@ -1,95 +1,34 @@
-@charset "utf-8";
-
-@media (max-width: 1221px){
-}
-@font-face {
-	font-family: Biohack;
-	src: url(Biohack.ttf);
-}
-@font-face {
-	font-family: Consolas;
-	src: url(Consolas.ttf);
-}
-@font-face {
-	font-family: Pixeled;
-	src: url(Pixeled.ttf);
-	font-size: 2.5vw;
-	text-decoration: none;
-	color:blueviolet;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-body{
-
-	width:90%;
-	display: block;
-margin: auto;
-	color:#164201;
-	text-decoration: none!important;
-	font-family: Consolas;
-
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-	background: linear-gradient(45deg, #dca 2%, transparent 0, transparent 18%, #dca 0),
+body {
+  width: 90%;
+  display: block;
+  margin: auto;
+  color: #164201;
+  text-decoration: none !important;
+  font-family: Consolas;
+  
+  background: linear-gradient(
+      45deg,
+      #dca 2%,
+      transparent 0,
+      transparent 18%,
+      #dca 0
+    ),
     linear-gradient(135deg, transparent 7%, #a85 0, #a85 13%, transparent 0),
     linear-gradient(45deg, transparent 7%, #dca 0, #dca 13%, transparent 0) #753;
 }
 
-.navigation, .navigation a.main {
-
-	transfor: skew(40deg) translate(-2%, 0%);
-	z-index: 2;
+#Fragiles {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
+  position: absolute;
+  text-decoration: none !important;
+  font-family: Biohack;
+  font-size: 60px;
+  font: bold;
+  transform: skewX(-40deg) translate(0%, 300%);
 }
-
-.navigation{
-	transform: skew(40deg) translate(7%, 42%);
-	position: fixed;
-	background: linear-gradient(45deg, #dca 12%, transparent 0, transparent 88%, #dca 0),
-    linear-gradient(135deg, transparent 37%, #a85 0, #a85 63%, transparent 0),
-    linear-gradient(45deg, transparent 37%, #dca 0, #dca 63%, transparent 0) #753;
-		background-size: 70px 70px;
-	height: 40px;
-	width: 250px;
-	font: bold 0px/40px arial, sans-serif;
-	text-align: center;
-	text-decoration: none;
-}
-.navigation li#n9 {
-
-	transform: translate(-5%, -300%);
-}
-#Fragiles{
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	color: white;
-	position: absolute;
-	text-decoration: none!important;
-	font-family: Biohack;
-	font-size: 60px;
-	font: bold;
-	transform: skewX( -40deg) translate(0%, 300%);
-}
-#front{
-	position: absolute;
-	color: #333;
-	width:50%;
-
-	left:30%;
-
-	margin: auto;
-	font-family: Consolas;
-	font-size: 14	px;
-	color:#333;
-	/*text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;*/
-
-	overflow-wrap: break-word;
-	text-align: justify;
-	text-justify: inter-word;
-}
-
-
-.images{
-	width:100%;
-
+.images {
+  width: 100%;
 }
 #back {
   position: fixed;
@@ -98,6 +37,6 @@ margin: auto;
   top: 95%;
   right: 5%;
   color: grey;
-  text-decoration: none!important;
+  text-decoration: none !important;
   font-family: Pixeled;
 }
