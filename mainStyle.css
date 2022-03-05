@@ -146,6 +146,9 @@ img {
   align-items: center;
   width: 90%;
   height: 100%;
-  font: normal 12px/30px Consolas;
+  font: normal 12px/30px consolas;
+
+  font-family: "consolas";
+
   max-width: 1200px;
 }
