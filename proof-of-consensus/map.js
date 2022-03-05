@@ -56,7 +56,7 @@ function imageWithLeaflet(imgWidth, imgHeight) {
       if (window.innerWidth > 476)
         map.setView([82.90411186468847, -146.5796799296965], 3.75);
       if (window.innerWidth > 976)
-        map.setView([83.44143053115053, -131.32860320816494], 4.25);
+        map.setView([83.64176234718275, -137.06131590142647], 4.25);
       else map.setView([30.1993751412958, -114.3598927354169], 2);
 
       map.on("click", function (ev) {
