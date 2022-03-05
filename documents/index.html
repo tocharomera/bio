@@ -9,10 +9,15 @@
 
     <meta charset="utf-8" />
     <title>Mario Romera Gómez</title>
+    <style>
+      .embed-container {
+        padding-top: 3rem;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="front" id="front">
+    <div class="front">
       <div class="embed-container">
         <iframe
           src="https://issuu.com/tocharomera/docs/proyecto_mario_romera_gomezucm"
@@ -23,7 +28,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
 
       <div class="embed-container">
@@ -36,7 +40,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
       <div class="embed-container">
         <iframe
@@ -48,7 +51,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
       <div class="embed-container">
         <iframe
@@ -60,7 +62,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
       <div class="embed-container">
         <iframe
@@ -72,7 +73,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
       <div class="embed-container">
         <iframe
@@ -84,7 +84,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
       <div class="embed-container">
         <iframe
@@ -96,7 +95,6 @@
           mozallowfullscreen
           allowfullscreen
         ></iframe>
-        <p></p>
       </div>
     </div>
     <script src="/libs/jquery-3.6.0.min.js"></script>
@@ -108,7 +106,6 @@
         $(this)
           .parent()
           .append(`<a class="iframe-link" href="${src}">${name} - Link👉</a>`);
-        $(this).remove();
       });
     </script>
   </body>
