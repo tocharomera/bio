@@ -113,6 +113,8 @@ $(function () {
     showLinks(links);
   });
   $(".navigation").on("mouseout", function () {
+    $(".navigation").height(100);
+
     $("body").toggleClass("menu-visible");
 
     hideLinks(links);

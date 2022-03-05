@@ -15,10 +15,9 @@ const ZOOM_SNAP = 0.25;
 
 function imageWithLeaflet(imgWidth, imgHeight) {
   var map;
-  var rc;
 
   minZoom = getMinZoom(
-    window.innerWidth,
+    window.innerWidth * 0.9,
     window.innerHeight,
     imgWidth,
     imgHeight
@@ -28,10 +27,9 @@ function imageWithLeaflet(imgWidth, imgHeight) {
     map = L.map(id, {
       zoomSnap: ZOOM_SNAP,
       zoomControl: false,
-      minZoom: minZoom,
     });
-    map.addControl(L.control.zoom({ position: "bottomright" }));
 
+    map.addControl(L.control.zoom({ position: "bottomright" }));
     // the tile layer containing the image generated with `gdal2tiles --leaflet -p raster -w none <img> tiles`
     L.tileLayer("./tiles/{z}/{x}/{y}.png", {
       noWrap: true,
@@ -51,18 +49,24 @@ function imageWithLeaflet(imgWidth, imgHeight) {
     mapDiv.style.height = `${windowHeight}px`;
 
     if (map) {
-      map.setMinZoom(minZoom);
+      map.invalidateSize();
+      // map.setMinZoom(minZoom);
 
-      if (window.innerWidth > 476)
-        map.setView([82.90411186468847, -146.5796799296965], 3.75);
-      if (window.innerWidth > 976)
-        map.setView([83.64176234718275, -137.06131590142647], 4.25);
-      else map.setView([30.1993751412958, -114.3598927354169], 2);
+      if (window.innerWidth < 476) {
+        var southWest = map.unproject([0, windowHeight]);
+        var northEast = map.unproject([windowWidth, 0]);
+      } else {
+        var southWest = map.unproject([-windowWidth * 0.5, windowHeight * 0.5]);
+        var northEast = map.unproject([windowWidth * 0.5, -windowHeight * 0.5]);
+      }
+      var bounds = L.latLngBounds(southWest, northEast);
 
-      map.on("click", function (ev) {
-        var latlng = map.mouseEventToLatLng(ev.originalEvent);
-        console.log(latlng.lat + ", " + latlng.lng, map.getZoom());
-      });
+      var wantedZoom = map.getBoundsZoom(bounds, true);
+      map.setMaxBounds(bounds);
+
+      map.setMinZoom(wantedZoom);
+      /* [0,0] in pointCoords */
+      map.setView([80, -180], wantedZoom);
     }
   }
 
@@ -74,7 +78,7 @@ function imageWithLeaflet(imgWidth, imgHeight) {
 }
 
 function getMinZoom(wW, wH, imgW, imgH) {
-  return Math.min(wW / imgW, wH / imgH);
+  return Math.min(imgW / wW, imgH / wH);
 }
 
 imgWidth = 2480;

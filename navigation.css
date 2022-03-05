@@ -129,6 +129,7 @@
   margin: 0 1rem;
 
   cursor: pointer;
+  z-index: 9999;
 }
 .navigation li {
   visibility: hidden;
@@ -462,21 +463,17 @@
   position: absolute;
 
   width: 70vh;
-  top: 40vh;
+  top: calc(50vh);
   left: 15vw;
 }
 
 .home {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 3rem;
   padding: 1rem;
   font-size: 40px;
-}
-
-.home::after {
-  content: "Home";
-  font-family: "Champignon";
+  width: 3rem;
 }
 
 @media (min-width: 476px) {
@@ -486,14 +483,16 @@
     top: 250px;
     left: calc(75% - 100px);
   }
-  .home {
-    padding-bottom: 0;
+ 
+  .home::after {
+    content: "Home";
+    font-family: "Champignon";
   }
 }
 
 @media (min-width: 978px) {
   .sidebar {
     top: 45vh;
-    left: 77.5vw;
+    left: calc(77.5vw - 100px);
   }
 }
